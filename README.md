@@ -6,3 +6,4 @@ Principales funciones:
 - Crear comunidades
 - Crear, editar y eliminar publicaciones, ventas, eventos, opiniones
 - Comentar publicaciones y eventos
+- Gestionar cada una de las secciones (Administradores)
