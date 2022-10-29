@@ -55,3 +55,24 @@ $(document).ready(function(){
       }    
     });
   });
+
+$('#formRegistro').submit(function(e){
+    e.preventDefault();
+     let datos = new FormData(this);
+     
+     $.ajax({
+         type: 'POST' ,
+         url: 'validLogin.php' ,
+         dataType: 'html',
+         data: datos, 
+         success: function(){
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Felicidades! Te haz registrado con exito!',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+     })
+ });

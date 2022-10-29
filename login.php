@@ -33,7 +33,7 @@
 					<h5 class="modal-title">REGISTRO DE CUENTA</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
-				<form action="validLogin.php" method="POST">
+				<form id="formRegistro" method="POST" enctype="multipart/form-data">
 					<div class="modal-body">
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Vista previa</label>
@@ -48,7 +48,7 @@
 									<i class="fas fa-file"></i>
 									Adjuntar imagen
 									<label for="filePrevia"></label>
-									<input type="file" id="filePrevia" required>
+									<input type="file" accept="image/png,image/jpeg" id="filePrevia" required>
 								</button>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Carrera</label>
 							<div class="col-sm-10">
-							<select class="select" id="carreras" disabled="">
+							<select class="select" id="carreras" disabled="" name="carrera">
 								<option selected>Selecciona una carrera</option>
 								<option value=""></option>
 							</select>
@@ -205,14 +205,17 @@
 
 	<div id="dropDownSelect1"></div>
 
+	<script src="js/jquery-3.6.1.js"></script>
+	<!--===============================================================================================-->
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<!--===============================================================================================-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<!--===============================================================================================-->
-	<script src="js/jquery-3.6.1.js"></script>
-	<script src="js/AjaxRegistro.js"></script> 
+	<script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
 	<!--===============================================================================================-->
+	<script src="js/AjaxRegistro.js"></script> 
 	<script src="js/main.js"></script>
 	<script src="js/jsimgPrevia.js"></script>
-	<!--===============================================================================================-->
-	<script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
+	
 	</body>
 </html>
