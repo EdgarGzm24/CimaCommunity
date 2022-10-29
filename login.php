@@ -48,35 +48,35 @@
 									<i class="fas fa-file"></i>
 									Adjuntar imagen
 									<label for="filePrevia"></label>
-									<input type="file" accept="image/png,image/jpeg" id="filePrevia" required>
+									<input type="file" accept="image/png,image/jpeg" id="filePrevia" name="image" required>
 								</button>
 							</div>
 						</div>
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Matricula</label>
 							<div class="col-sm-3">
-								<input type="number" class="inputDiseno" id="inputMatricula" required>
+								<input type="number" class="inputDiseno" id="inputMatricula" name="inputMatricula" required>
 							</div>
 						</div>
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Nombre</label>
 							<div class="col-sm-3">
-								<input type="text" class="inputDiseno" id="inputNombre" required>
+								<input type="text" class="inputDiseno" id="inputNombre" name="inputNombre" required>
 								<div id="textoAyuda1" class="form-text" style="color: white;">.</div>
 							</div>
 							<div class="col-sm-3">
-								<input type="text" class="inputDiseno" id="inputApellidoP" required>
+								<input type="text" class="inputDiseno" id="inputApellidoP" name="inputApellidoP" required>
 							<div id="textoAyuda1" class="form-text">Apellido Paterno</div>
 							</div>
 							<div class="col-sm-3">
-								<input type="text" class="inputDiseno" id="inputApellidoM" required>
+								<input type="text" class="inputDiseno" id="inputApellidoM" name="inputApellidoM" required>
 							<div id="textoAyuda2" class="form-text">Apellido Materno</div>
 							</div>
 						</div>
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Fecha de nacimiento</label>
 							<div class="col-sm-4">
-							<input type="date" class="inputDiseno" id="inputText" required>
+							<input type="date" class="inputDiseno" id="inputNacimiento" name="inputNacimiento" required>
 							</div>
 						</div>
 						<div class="mb-3 row">
@@ -112,13 +112,14 @@
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Correo</label>
 							<div class="col-sm-5">
-								<input type="email" class="inputDiseno" id="inputCorreo" required>
+								<input type="email" class="inputDiseno" id="inputCorreo" name="inputCorreo" required>
+								<div id="textoAyuda1" class="form-text">Solo correos institucionales.</div>
 							</div>
 						</div>
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Contraseña</label>
 							<div class="col-sm-3">
-								<input type="password" class="inputDiseno" id="inputContra" required>
+								<input type="password" class="inputDiseno" id="inputContra" name="inputContra" required>
 								<div id="textoAyuda1" class="form-text">Maximo 8 caracteres.</div>
 							</div>
 						</div>
