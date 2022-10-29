@@ -1,3 +1,9 @@
+<?php
+
+	//Conexion a la base de datos, select de facultad y carrera con if para los 2 select posible ajax
+	//Luego enviar a la validacion de creacion de perfil
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,10 +79,8 @@
 			<label class="col-sm-2 col-form-label">Facultad</label>
 			<div class="col-sm-10">
 			<select class="select" aria-label="Default select example">
-				<option selected>Selecciona una opcion</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+				<option selected>Selecciona una facultad</option>
+				<option value=""></option>
 			</select>
 			</div>
 		</div>
@@ -84,10 +88,8 @@
 			<label class="col-sm-2 col-form-label">Carrera</label>
 			<div class="col-sm-10">
 			<select class="select" aria-label="Default select example">
-				<option selected>Selecciona una opcion</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+				<option selected>Selecciona una carrera</option>
+				<option value=""></option>
 			</select>
 			</div>
 		</div>
@@ -119,13 +121,12 @@
 					<div class="wrap-input100 validate-input m-b-23" data-validate = "Correo requerido">
 						<span class="label-input100">Correo</span>
 						<input class="input100" type="email" name="username" placeholder="Escribe tu correo">
-						<span class="focus-input100"><i class="fa-solid fa-user"></i></span>
+						
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Contraseña requerida">
 						<span class="label-input100">Contraseña</span>
 						<input class="input100" type="password" name="pass" placeholder="Escribe tu contraseña">
-						<span class="focus-input100"><i class="fa-solid fa-lock"></i></span>
 					</div>
 					
 					<div class="text-right p-t-8 p-b-31">

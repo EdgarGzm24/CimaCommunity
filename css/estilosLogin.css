@@ -148,7 +148,7 @@ select {
   background-image: none;
   flex: 1;
   padding: 0 .5em;
-  color:#fff;
+  color:#6d6d6d;
   cursor:pointer;
   font-size: 1em;
   font-family: 'Open Sans', sans-serif;
@@ -162,15 +162,9 @@ select::-ms-expand {
   width: 20em;
   height: 3em;
   line-height: 3;
-  background: #3cb34b;
+  background: #e5e5e5;
   overflow: hidden;
   border-radius: .25em;
-}
-
-.select:before{
-  content: "\25be  or  \25bc  ?  ";
-  float:right;
-  color:gray;
 }
 
 .select::after {
@@ -440,18 +434,9 @@ hr{
   display: block;
   width: 100%;
   height: 100%;
-  top: 40px;
-  left: 5px;
   color: #fff;
 }
 
-.input100:focus + .focus-input100::before {
-  width: 100%;
-}
-
-.has-val.input100 + .focus-input100::before {
-  width: 100%;
-}
 
 
 /*------------------------------------------------------------------
