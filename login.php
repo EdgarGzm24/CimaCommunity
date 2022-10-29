@@ -1,7 +1,10 @@
 <?php
-
-	//Conexion a la base de datos, select de facultad y carrera con if para los 2 select posible ajax
-	//Luego enviar a la validacion de creacion de perfil
+	require_once  'conexion.php';
+	
+	$sql = "SELECT * FROM campus";
+	$query = mysqli_query($conexion, $sql);
+	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
+	mysqli_close($conexion);
 
 ?>
 <!DOCTYPE html>
@@ -22,90 +25,119 @@
 	<!--===============================================================================================-->
 </head>
 <body>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">REGISTRO DE CUENTA</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-	  	<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Vista previa</label>
-			<div class="col">
-				<img id="imgVista" src="https://via.placeholder.com/150" alt="Tu imagen" />
-			</div>
-	    </div>
-	  	<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Foto de perfil</label>
-			<div class="col">
-				<button class="contenedor-btn-file">
-					<i class="fas fa-file"></i>
-					Adjuntar imagen
-					<label for="filePrevia"></label>
-					<input type="file" id="filePrevia">
-				</button>
-			</div>
-	    </div>
-	  	<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Matricula</label>
-			<div class="col-sm-3">
-				<input type="text" class="inputDiseno" id="inputText">
-			</div>
-	    </div>
-		<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Nombre</label>
-			<div class="col-sm-3">
-				<input type="text" class="inputDiseno" id="inputNombre">
-				<div id="textoAyuda1" class="form-text" style="color: white;">.</div>
-			</div>
-			<div class="col-sm-3">
-				<input type="text" class="inputDiseno" id="inputApellidoP">
-			<div id="textoAyuda1" class="form-text">Apellido Paterno</div>
-			</div>
-			<div class="col-sm-3">
-				<input type="text" class="inputDiseno" id="inputApellidoM">
-			<div id="textoAyuda2" class="form-text">Apellido Materno</div>
+	<!---------- Modal ---------->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title">REGISTRO DE CUENTA</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<form action="validLogin.php" method="POST">
+					<div class="modal-body">
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Vista previa</label>
+							<div class="col">
+								<img id="imgVista" src="https://via.placeholder.com/150" alt="Tu imagen" />
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Foto de perfil</label>
+							<div class="col">
+								<button class="contenedor-btn-file">
+									<i class="fas fa-file"></i>
+									Adjuntar imagen
+									<label for="filePrevia"></label>
+									<input type="file" id="filePrevia" required>
+								</button>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Matricula</label>
+							<div class="col-sm-3">
+								<input type="number" class="inputDiseno" id="inputMatricula" required>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Nombre</label>
+							<div class="col-sm-3">
+								<input type="text" class="inputDiseno" id="inputNombre" required>
+								<div id="textoAyuda1" class="form-text" style="color: white;">.</div>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="inputDiseno" id="inputApellidoP" required>
+							<div id="textoAyuda1" class="form-text">Apellido Paterno</div>
+							</div>
+							<div class="col-sm-3">
+								<input type="text" class="inputDiseno" id="inputApellidoM" required>
+							<div id="textoAyuda2" class="form-text">Apellido Materno</div>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Fecha de nacimiento</label>
+							<div class="col-sm-4">
+							<input type="date" class="inputDiseno" id="inputText" required>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Campus</label>
+							<div class="col-sm-10">
+							<select class="select" id="campus">
+								<option selected>Selecciona tu campus</option>
+									<?php foreach ($filas as $op): //llenar las opciones del primer select ?>
+								<option value="<?= $op['idcampus'] ?>"><?= $op['tipo_campus'] ?></option>  
+									<?php endforeach; ?>
+							</select>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Facultad</label>
+							<div class="col-sm-10">
+							<select class="select" id="facultades" disabled="">
+								<option selected>Selecciona una facultad</option>
+								<option value=""></option>
+							</select>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Carrera</label>
+							<div class="col-sm-10">
+							<select class="select" id="carreras" disabled="">
+								<option selected>Selecciona una carrera</option>
+								<option value=""></option>
+							</select>
+							</div>
+						</div>
+						<hr>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Correo</label>
+							<div class="col-sm-5">
+								<input type="email" class="inputDiseno" id="inputCorreo" required>
+							</div>
+						</div>
+						<div class="mb-3 row">
+							<label class="col-sm-2 col-form-label">Contraseña</label>
+							<div class="col-sm-3">
+								<input type="password" class="inputDiseno" id="inputContra" required>
+								<div id="textoAyuda1" class="form-text">Maximo 8 caracteres.</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="submit" class="btn-modal"><i class="fa-solid fa-right-to-bracket"></i> Crear cuenta</button>
+					</div>
+				</form>
 			</div>
 		</div>
-		<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Fecha de nacimiento</label>
-			<div class="col-sm-4">
-			<input type="date" class="inputDiseno" id="inputText">
-			</div>
-		</div>
-		<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Facultad</label>
-			<div class="col-sm-10">
-			<select class="select" aria-label="Default select example">
-				<option selected>Selecciona una facultad</option>
-				<option value=""></option>
-			</select>
-			</div>
-		</div>
-		<div class="mb-3 row">
-			<label class="col-sm-2 col-form-label">Carrera</label>
-			<div class="col-sm-10">
-			<select class="select" aria-label="Default select example">
-				<option selected>Selecciona una carrera</option>
-				<option value=""></option>
-			</select>
-			</div>
-		</div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn-modal"><i class="fa-solid fa-right-to-bracket"></i> Crear cuenta</button>
-      </div>
 	</div>
-  </div>
-</div>
+	<!---------- Fin del Modal ---------->
+
 
 	<div class="limiter">
 		<div class="container-Logo">
 			<div class="container-LogoCentrado">
 				<div class="logoContainer">
-					<img src="images/logoSesion.png" alt="Logo CimaCommunity">
+					<img src="images/logoLogin.png" alt="Logo CimaCommunity">
 				</div>
 				<h1>Bienvenido a <br>CimaCommunity</h1><hr>
 				<p>Una pagina dedicada para cualquier cimarron <br> dispuesto a conocer a su gente.</p>
@@ -176,6 +208,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 	<!--===============================================================================================-->
 	<script src="js/jquery-3.6.1.js"></script>
+	<script src="js/AjaxRegistro.js"></script> 
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
 	<script src="js/jsimgPrevia.js"></script>
