@@ -3,11 +3,6 @@
 
 	if(isset($_POST['inputMatricula']) && isset($_POST['inputCorreo']) && isset($_POST['inputContra'])){
 
-		$directorio = "images/imgPerfiles/";
-		$imagenPerfil = $directorio . $_FILES['image']['name'];
-		
-
-
 		$matricula = $_POST['inputMatricula'];
 		$nombre = $_POST['inputNombre'];
 		$apPaterno = $_POST['inputApellidoP'];
@@ -16,6 +11,11 @@
 		$carrera = $_POST['carrera'];
 		$correo = $_POST['inputCorreo'];
 		$contrasena = $_POST['inputContra'];
+
+		$tamanio = ;
+		$directorio = "images/imgPerfiles/";
+		$imagenPerfil = $directorio . $_FILES['image']['name'];
+
 
 		$strMensaje="";
 		$insertBoleto = "INSERT INTO login VALUES (?,?,?)";
