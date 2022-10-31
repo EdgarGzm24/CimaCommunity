@@ -312,7 +312,11 @@ select::-ms-expand {
   background-color: #45b649;
   color: #fff;
 }
-
+.btn-close {
+  height: auto;
+  opacity: 1;
+  font-size: 18px;
+}
 /*//////////////////////////////////////////////////////////////////
 [ Utility ]*/
 .txt1 {

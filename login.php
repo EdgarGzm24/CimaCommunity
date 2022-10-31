@@ -31,7 +31,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title">REGISTRO DE CUENTA</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background:none;"><i class="fa-sharp fa-solid fa-xmark" style="color:white;"></i></button>
 				</div>
 				<form id="formRegistro" method="POST" enctype="multipart/form-data">
 					<div class="modal-body">
@@ -44,7 +44,7 @@
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Foto de perfil</label>
 							<div class="col">
-								<button class="contenedor-btn-file">
+								<button type="button" class="contenedor-btn-file">
 									<i class="fas fa-file"></i>
 									Adjuntar imagen
 									<label for="filePrevia"></label>
@@ -151,31 +151,32 @@
 						Inicio de sesion
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Correo requerido">
-						<span class="label-input100">Correo</span>
-						<input class="input100" type="email" name="username" placeholder="Escribe tu correo">
-						
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Contraseña requerida">
-						<span class="label-input100">Contraseña</span>
-						<input class="input100" type="password" name="pass" placeholder="Escribe tu contraseña">
-					</div>
-					
-					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Olvidaste tu Contraseña?
-						</a>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Iniciar sesion
-							</button>
+					<form action="validLogin.php" method="POST">
+						<div class="wrap-input100 validate-input m-b-23" data-validate = "Correo requerido">
+							<span class="label-input100">Correo</span>
+							<input class="input100" type="email" name="correoInst" placeholder="Escribe tu correo">
 						</div>
-					</div>
+
+						<div class="wrap-input100 validate-input" data-validate="Contraseña requerida">
+							<span class="label-input100">Contraseña</span>
+							<input class="input100" type="password" name="contrasena" placeholder="Escribe tu contraseña">
+						</div>
+						
+						<div class="text-right p-t-8 p-b-31">
+							<a href="#">
+								Olvidaste tu Contraseña?
+							</a>
+						</div>
+						
+						<div class="container-login100-form-btn">
+							<div class="wrap-login100-form-btn">
+								<div class="login100-form-bgbtn"></div>
+								<button class="login100-form-btn" type="submit">
+									Iniciar sesion
+								</button>
+							</div>
+						</div>
+					</form>
 
 					<div class="txt1 text-center p-t-54 p-b-20">
 						<span>
@@ -206,6 +207,7 @@
 
 	<div id="dropDownSelect1"></div>
 
+	<!--===============================================================================================-->
 	<script src="js/jquery-3.6.1.js"></script>
 	<!--===============================================================================================-->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -217,6 +219,5 @@
 	<script src="js/AjaxRegistro.js"></script> 
 	<script src="js/main.js"></script>
 	<script src="js/jsimgPrevia.js"></script>
-	
 	</body>
 </html>

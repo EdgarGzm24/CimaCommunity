@@ -62,9 +62,10 @@ $('#formRegistro').submit(function(e){
      
      $.ajax({
          type: 'POST' ,
-         url: 'validLogin.php' ,
-         dataType: 'html',
+         url: 'validRegistro.php',
          data: datos, 
+         contentType: false,
+         processData: false,
          success: function(){
           Swal.fire({
             position: 'center',
@@ -73,6 +74,7 @@ $('#formRegistro').submit(function(e){
             showConfirmButton: false,
             timer: 1500
           })
+          
         }
      })
  });
