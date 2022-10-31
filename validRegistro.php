@@ -20,14 +20,16 @@
 
 		$imagenPerfil = "images/imgPerfiles/" . $_FILES['image']['name'];
 
+		// No olvides hacer una funcion para cambiarle el nombre a cada foto que se suba al sistema
+
 		if(in_array($extension, $extPermitidas)){
 			if($_FILES['image']['size'] < $tamanio){
 				move_uploaded_file($_FILES['image']['tmp_name'], $imagenPerfil);
 			} else {
-				echo "No";
+				
 			}
 		} else {
-			echo "No";
+			
 			// Como estoy usando ajax pienso mandar una alerta html con js de que no se pudo mandar el archivo
 			// a la base asi que muestre en html lo que salio mal
 		}
