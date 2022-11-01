@@ -174,9 +174,6 @@ select::-ms-expand {
   pointer-events:none;
   transition:.25s all ease;
 }
-.select:hover::after {
-  color: #23b499;
-}
 
 /*---------------------MODAL - FILE INPUT------------------------*/
 .contenedor-btn-file input[type="file"] {
