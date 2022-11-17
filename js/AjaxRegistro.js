@@ -74,7 +74,7 @@ $('#formRegistro').submit(function(e){
             showConfirmButton: false,
             timer: 1500
           })
-          
+          $('#formRegistro')[0].reset();
         }
      })
  });

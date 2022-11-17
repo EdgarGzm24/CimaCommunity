@@ -112,7 +112,7 @@
 						<div class="mb-3 row">
 							<label class="col-sm-2 col-form-label">Correo</label>
 							<div class="col-sm-5">
-								<input type="email" class="inputDiseno" id="inputCorreo" name="inputCorreo" required>
+								<input type="email" class="inputDiseno" id="inputCorreo" name="inputCorreo" value="@uabc.edu.mx" required>
 								<div id="textoAyuda1" class="form-text">Solo correos institucionales.</div>
 							</div>
 						</div>
@@ -152,14 +152,14 @@
 					</span>
 
 					<form action="validLogin.php" method="POST">
-						<div class="wrap-input100 validate-input m-b-23" data-validate = "Correo requerido">
+						<div class="wrap-input100 m-b-23">
 							<span class="label-input100">Correo</span>
-							<input class="input100" type="email" name="correoInst" placeholder="Escribe tu correo">
+							<input class="input100" type="email" name="correoInst" placeholder="Escribe tu correo" value="@uabc.edu.mx" required>
 						</div>
 
-						<div class="wrap-input100 validate-input" data-validate="Contraseña requerida">
+						<div class="wrap-input100">
 							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="password" name="contrasena" placeholder="Escribe tu contraseña">
+							<input class="input100" type="password" name="contrasena" placeholder="Escribe tu contraseña" required>
 						</div>
 						
 						<div class="text-right p-t-8 p-b-31">
