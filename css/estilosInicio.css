@@ -2,6 +2,13 @@
 
 
 /* BASIC */
+.right{
+    margin-left: 7% ;
+}   
+.center{
+    margin: 16% ;
+}
+
 * {
     margin: 0px;
     padding: 0px;

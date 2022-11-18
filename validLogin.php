@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+
     require_once 'conexion.php';
 
     if($_POST['correoInst'] && $_POST['contrasena']){
