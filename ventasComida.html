@@ -19,11 +19,64 @@
     <title>Inicio | CimaCommunity</title>
 
     <style>
+            .right{
+        margin-left: 7% ;
+        }   
+        .center{
+            margin: 16% ;
+        }
+
         .size{
-            width: 1200px ;
+            width: 1800px ;
             padding-left: 400px;
         }
 
+        .fondo{
+            background: white;
+            padding: 30;
+        }
+        .fondo2{
+            background: green;   
+        }
+
+        h1{
+            padding: 5px;
+            text-align: center;
+            color: #024731;
+          
+        }
+
+        .textareaborde{
+            border: 0;
+            padding: 7px;
+            position: relative;
+            width: 350px;
+            font-size:large;
+        }
+        .padding{
+            padding: 5px;
+        }    
+        .letra{
+            font-size: 20px;
+        }
+
+        p{
+            font-size: 15px;
+        }
+
+        .right_row{
+          margin-right: 60px;
+          border: 0px;
+        }
+
+        .imgCaja img{
+            width: 100%;
+            height: 100%;
+        }
+
+    
+ 
+ 
     </style>
         
     
@@ -57,52 +110,53 @@
     </div>
 
     <div class="all">
-         <div class="left_row">
-            <div class="left_row_profile">
-                <img id="portada" src="images/portada.jpg" />
-                <div class="left_row_profile">
-                    <img id="profile_pic" src="images/user.jpg" />
-                    <span>Edgar Guzman<br><p>150k seguidores / 50 siguiendo</p></span>
+        
+        <div class="left_row border-radius fondo ">
+            <div >
+            <h1>Venta <br> comida</h1>
+            <hr>
+            <textarea class="textareaborde" type="text" placeholder="Crear publicacion" style="resize: none;"></textarea>
+            <hr>
+            <a></a><h1>Cafetería <br> UABC</h1></a>
+            </div>
+            <hr> 
+            <div class="padding">
+                <p class="letra">Filtros</p><br>
+                <div class="rowmenu letra2">
+                    <ul>
+                        <li><p >Precio</p></li>
+                        <li><p>Ubicación</p></li>
+                        <li><p>Tipo de Comida</p></li>
+                    </ul>
                 </div>
+            </div> 
+        </div>   
+        
+        <div class="right_row border-radius fondo">
+            <div >       
+            <textarea class="textareaborde" type="text" placeholder="Busqueda" style="resize: none;"></textarea>     
             </div>
-            <div class="rowmenu">
-                <ul>
-                    <li><a href="index.html" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
-                    <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
-                    <ul>
-                        <li style="border:none"><a href="#A">Actividad</a></li>
-                        <li style="border:none"><a href="#">Amigos</a></li>
-                        <li style="border:none"><a href="#">Comunidades</a></li>
-                        <li style="border:none"><a href="#">Guardados</a></li>
-                    </ul>
-                    <li class="primarymenu"><i class="fa fa-user"></i>Accesos directos</li>
-                    <ul>
-                        <li style="border:none"><a href="#">Perfil</a></li>
-                        <li style="border:none"><a href="#">Comunidades</a></li>
-                    </ul>
-                </ul>
-            </div>
+            <hr> 
+            <div>
+                <div class="card shadow-sm">
+                    <div class="imgCaja">
+                        <img src="images/logo.png">
+                    </div>
+                    <div class="card-body"> 
+
+                        <p class="sinborde">Tipo: </p>
+                        <p class="sinborde">Nombre: </p>
+                        <p class="sinborde">Cantidad: </p>
+                        <p class="sinborde">Precio:</p>                  
+
+                    </div>     
+                </div>  
+            </div> 
         </div>
 
-        <div class="right_row size">
-            
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/iconcima.png" alt="" />
-                        <span><b>CIMA COMMUNITY</b><br><p>Tu opiniones ayudan a mejorar nuestra página</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <a href="feed.html"><img src="images/opi.png" alt="" /></a>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>  
-        </div> 
+
+     
+
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
