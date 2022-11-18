@@ -1,9 +1,13 @@
 <?php
-
-    session_start();
-    include('conexion.php');
+	require_once  'conexion.php';
+	
+	$sql = "SELECT * FROM comunidades";
+	$query = mysqli_query($conexion, $sql);
+	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
+	mysqli_close($conexion);
 
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -47,9 +51,13 @@
             <img src="images/logo.png" alt="" />
         </div>
 
-        <div class="navbar_page">
-            <span>CimaCommunity</span>
+        <div class="navbar_search">
+            <form method="" action="/">
+                <input type="text" placeholder="Busca tu comunidad.." />
+                <button type="submit"> <a href="busqueda.html" class="fa fa-search"></a></button>
+            </form>
         </div>
+
 
         <div class="navbar_icons center">
             <ul>                
@@ -59,6 +67,9 @@
                 <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
             </ul>
         </div>
+
+
+
         <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
             <img src="images/user.jpg" alt="" />
             <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
@@ -75,6 +86,7 @@
                     <span>Edgar Guzman<br><p>150k seguidores / 50 siguiendo</p></span>
                 </div>
             </div>
+            
             <div class="rowmenu">
                 <ul>
                     <li><a href="index.html" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>

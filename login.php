@@ -85,7 +85,7 @@
 							<select class="select" id="campus">
 								<option selected>Selecciona tu campus</option>
 									<?php foreach ($filas as $op): //llenar las opciones del primer select ?>
-								<option value="<?= $op['idcampus'] ?>"><?= $op['tipo_campus'] ?></option>  
+								        <option value="<?= $op['idcampus'] ?>"><?= $op['tipo_campus'] ?></option>  
 									<?php endforeach; ?>
 							</select>
 							</div>
