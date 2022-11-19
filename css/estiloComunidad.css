@@ -1392,7 +1392,8 @@ section.buttons .container-fluid {
     display: -ms-flex;
     display: flex;
     position: relative;
-    background-image: url(https://i.ytimg.com/vi/sb4U3Zvfi6U/maxresdefault.jpg)
+    background-color: #000;
+    /*background-image: url(https://i.ytimg.com/vi/sb4U3Zvfi6U/maxresdefault.jpg)*/
     
     margin: -100px;
 }
