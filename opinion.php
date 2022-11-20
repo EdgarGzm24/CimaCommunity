@@ -1,3 +1,17 @@
+
+<?php
+	require_once  'conexion.php';
+	
+	$sql = "SELECT * FROM opiniones";
+	$query = mysqli_query($conexion, $sql);
+	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
+	mysqli_close($conexion);
+
+	if(isset($_GET['error'])){
+		
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -116,10 +130,14 @@
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Opinion</span>
 
                     </div>
-                    <form method="" action="/">
+                    <form method="post" action="/">
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="images/user.jpg" alt="" />
-                            <textarea type="text" placeholder="¡Publica tu opinión!" style="resize: none;"></textarea>
+                            <textarea type="text" name="titulo" placeholder="Titulo"  maxlength="30" style="resize: none;"></textarea>
+                            
+                        </div>
+                        <div class="publish_textarea">
+                            <textarea type="text" name="des" placeholder="¡Publica tu opinión!" maxlength="200" style="resize: none;"></textarea>
                         </div>
                         <div class="publish_icons">
                          
@@ -128,35 +146,33 @@
                     </form>
                 </div>
             </div>
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user-6.jpg" alt="" />
-                        <span><b>Aylin Regalado</b><p>21 de octubre - 11:45am</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <p> Me gustaría que en la Comunidad de UABC tengan una seccion  donde haya un mapa de la facultad entendible para los nuevos estudiantes<brp></p>
+            <?php
+            while($filas = mysqli_fetch_array($query)){
+            ?>
+                <div class="row border-radius">
+                    <div class="feed">
+                        <div class="feed_title">
+                            <img src="images/user-6.jpg" alt="" />
+                            <span><b><?php echo $filas['usuario_idusuario'] ?></b><p><?php echo $filas['fecha_creacion_op'] ?></p>
+                                     <p><?php echo $filas['calificación'] ?> estrellas</p>
+                            </span>
+                        </div>
+                        <div class="feed_content">
+                            <div class="feed_content_image">
+                                <p><?php echo $filas[' titulo'] ?><br></p>
+                            </div>
+                        </div>
+                        <div class="feed_content">
+                            <div class="feed_content_image">
+                                <p><?php echo $filas['descripcion_opinion'] ?><br></p>
+                            </div>
                         </div>
                     </div>
-            
                 </div>
-            </div>
+            <?php
+            }
+            ?>
 
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user-7.jpg" alt="" />
-                        <span><b>Kevin Jimenez</b><p>21 de octubre - 11:45am</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <p>Desde mi parece le falta un poco mas de diseño a la interfaz para que no se vea aburrida<brp></p>
-                        </div>
-                    </div>
-            
-                </div>                
-            </div>
         </div>
 
         <div class="suggestions_row">
