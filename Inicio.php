@@ -7,7 +7,6 @@
 	mysqli_close($conexion);
 
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,8 +50,6 @@
                 <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
             </ul>
         </div>
-
-
 
         <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
             <img src="images/user.jpg" alt="" />
@@ -147,7 +144,7 @@
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
-                            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/J4mFJqD7GIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube-nocookie.com/embed/J4mFJqD7GIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="feed_footer">
