@@ -146,25 +146,26 @@
                     </form>
                 </div>
             </div>
+
             <?php
-            while($filas = mysqli_fetch_array($query)){
+            while($row = mysqli_fetch_assoc($query)){
             ?>
                 <div class="row border-radius">
                     <div class="feed">
                         <div class="feed_title">
                             <img src="images/user-6.jpg" alt="" />
-                            <span><b><?php echo $filas['usuario_idusuario'] ?></b><p><?php echo $filas['fecha_creacion_op'] ?></p>
-                                     <p><?php echo $filas['calificación'] ?> estrellas</p>
+                            <span><b><?php echo $row['usuario_idusuario'] ?></b><p><?php echo $row['fecha_creacion_op'] ?></p>
+                                     <p><?php echo $row['calificación'] ?> estrellas</p>
                             </span>
                         </div>
                         <div class="feed_content">
                             <div class="feed_content_image">
-                                <p><?php echo $filas[' titulo'] ?><br></p>
+                                <p><?php echo $row[' titulo'] ?><br></p>
                             </div>
                         </div>
                         <div class="feed_content">
                             <div class="feed_content_image">
-                                <p><?php echo $filas['descripcion_opinion'] ?><br></p>
+                                <p><?php echo $row['descripcion_opinion'] ?><br></p>
                             </div>
                         </div>
                     </div>
