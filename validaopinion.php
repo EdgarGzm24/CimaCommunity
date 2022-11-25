@@ -2,7 +2,7 @@
    
     require_once 'conexion.php';
 
-    if($_POST['titulo'] && $_POST['des']){
+    if($_POST['titulo'] && $_POST['des']) {
   
 
    

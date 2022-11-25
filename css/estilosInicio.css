@@ -2,6 +2,11 @@
 
 
 /* BASIC */
+
+.fit{
+    object-fit:cover;
+    width: 20px;
+}
 .right{
     margin-left: 7% ;
 }   

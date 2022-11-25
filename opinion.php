@@ -2,15 +2,11 @@
 <?php
 	require_once  'conexion.php';
 	
-	$sql = "SELECT * FROM opiniones";
+	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, opiniones.fecha_creacion_op, 
+    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
-	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
-	mysqli_close($conexion);
-
-	if(isset($_GET['error'])){
-		
-	}
-?>
+	//$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); **
+?>                                      
 
 <!DOCTYPE html>
 <html lang="es">
@@ -25,6 +21,8 @@
     <link rel="shortcut icon" href="images/logoEscudo.png" type="image/x-icon">
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
+    <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="css/estiloOpinion.css">
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
@@ -134,13 +132,12 @@
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="images/user.jpg" alt="" />
                             <textarea type="text" name="titulo" placeholder="Titulo"  maxlength="30" style="resize: none;"></textarea>
-                            
+                              
                         </div>
                         <div class="publish_textarea">
                             <textarea type="text" name="des" placeholder="¡Publica tu opinión!" maxlength="200" style="resize: none;"></textarea>
                         </div>
                         <div class="publish_icons">
-                         
                             <button class="left">Publicar</button>
                         </div>
                     </form>
@@ -148,30 +145,27 @@
             </div>
 
             <?php
-            while($row = mysqli_fetch_assoc($query)){
+            while($row = mysqli_fetch_array($query)){
             ?>
                 <div class="row border-radius">
                     <div class="feed">
                         <div class="feed_title">
                             <img src="images/user-6.jpg" alt="" />
-                            <span><b><?php echo $row['usuario_idusuario'] ?></b><p><?php echo $row['fecha_creacion_op'] ?></p>
+                            <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b><p><?php echo $row['fecha_creacion_op'] ?></p>
                                      <p><?php echo $row['calificación'] ?> estrellas</p>
                             </span>
                         </div>
-                        <div class="feed_content">
-                            <div class="feed_content_image">
-                                <p><?php echo $row[' titulo'] ?><br></p>
-                            </div>
-                        </div>
-                        <div class="feed_content">
-                            <div class="feed_content_image">
+                        <div class="feed_content2">
+                                <p><b><?php echo $row['titulo'] ?></b></p>
+                                <div class="descripcion">
                                 <p><?php echo $row['descripcion_opinion'] ?><br></p>
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>
             <?php
             }
+            mysqli_close($conexion);
             ?>
 
         </div>
@@ -229,51 +223,6 @@
                     <button>+</button>
                 </div>
             </div>
-
-            <div class="row shadow">
-                <div class="row_title">
-                    <span>Actividad reciente</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-1.png" alt="" />
-                    <span>Ana comentó en la publicacion de Noberto <a href="" class="selected-orange">foto</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-7.png" alt="" />
-                    <span>Ana Uzi le gustó el video de Edgar <a href="" class="selected-orange">video</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-2.png" alt="" />
-                    <span>Noberto agregó 20 fotos en <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-6.jpg" alt="" />
-                    <span>Aylin Regalado publicó un estado en <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user.jpg" alt="" />
-                    <span>Edgar comentó en una publicacion de Aylin en <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-4.jpg" alt="" />
-                    <span> Julian ha ingreso a la plaforma, saludalo desde <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-5.jpg" alt="" />
-                    <span>Josue commentó en una publicacion de Noberto en <a href="" class="selected-orange"> Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-2.jpg" alt="" />
-                    <span>Kevin le gustó la publicación de Ana Uzi en <a href="" class="selected-orange">foto</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-7.jpg" alt="" />
-                    <span>Jeniffer le gustó el video de Edgar <a href="" class="selected-orange">video</a>..</span>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
