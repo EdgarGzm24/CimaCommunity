@@ -15,7 +15,7 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" href="css/estiloComunidad.css">     
     <!--===============================================================================================-->	
-    <title>Inicio | CimaCommunity</title>
+    <title>Comunidad | CimaCommunity</title>
 
 </head>
 <body>
@@ -28,8 +28,11 @@
             <img src="images/logo.png" alt="" />
         </div>
 
-        <div class="navbar_page">
-            <span>CimaCommunity</span>
+        <div class="navbar_search">
+            <form method="" action="/">
+                <input type="text" placeholder="Busca tu comunidad.." />
+                <button type="submit"> <a href="busqueda.html" class="fa fa-search"></a></button>
+            </form>
         </div>
 
         <div class="navbar_icons center">
@@ -40,22 +43,20 @@
                 <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
             </ul>
         </div>
+
         <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
             <img src="images/user.jpg" alt="" />
             <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
-    </div> 
-    
-    <div class="all">
-        <div class="rowfixed"></div>
-        <!-- Wrapper -->
-        <div class="left_row">
-            <div id="wrapper ">
-                <!-- Sidebar -->
-                <div id="sidebar all2">
+    </div>
 
+    <div class="all2">
+        <div class="rowfixed"></div>
+        <div class="left_row">
+            <div id="wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar">
                     <div class="inner">
-                    
                         <!-- Search Box -->
                         <section id="search" class="alt">
                             <form method="get" action="#">
@@ -64,45 +65,110 @@
                         </section>
                             
                         <!-- Menu -->
-                        <nav id="menu">
+                        <div id="menu">
                             <ul>
-                                <li><p class="titulo">descripción <p><br>
-                                    <p class="descripcion">
-                                    Bienvenidos al grupo dedidacado para cualquier que desee publicar su música, recomendancion o otros 
-                                    temas en relación. Aqui todos intentamos apoyarnos para el suceso!
-                                    </p></li>
-                                    <br>
-                                <li><p class="titulo">Reglas de la comunidad<p><br>
-                                    <p class="descripcion">
-                                        1. Ser amable y cordial: Para fomentar un entorno agradable debemos tratarnos con respeto. 
-                                        Puedes debatir sobre diversos temas siempre que seas cordial con los demás.
-                                        <br><br>
-                                        2.No publicar nada que no este relacionado a esta comunidad: Este grupo es exclusivo para música
-                                        <br><br>
-                                        3. Reportes: Si ve a alguien infringiendo las reglas, informe la publicación/comentario al personal, 
-                                        o simplemente etiquete al administrador.
-                                    </p>
-                                    <br>
-                                </li> 
+                                <p class="titulo">descripción <p><br>
+                                <p class="descripcion">
+                                Bienvenidos al grupo dedidacado para cualquier que desee publicar su música, recomendancion o otros 
+                                temas en relación. Aqui todos intentamos apoyarnos para el suceso!
+                                </p> 
+                                <br>                                   
                             </ul>
-                        </nav>  
+                        </div>  
                     </div>   
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="right_row2">
+            
+            <div class="feed">
+
+                <div class="row2 border-radius">
+                            <div class="feed_content_image">
+                                <img src="images/fondo.png" alt="" /></a>
+                </div>
+                <hr>                    
+                <div class="feed_title">
+                    <div class="right">
+                        <h4>Sinfonía sin generos</h4>
+                        <p>712 miembros</p>
+                    </div>
+
+                    <div class="left">
+                        <button class="button">Unirme</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="feed">
+                <div class="row2 border-radius">
+                    <div class="feed_title">
+                        <img src="images/user-2.jpg" alt="" />
+                        <span><b>Fernando Morales</b> compartio una <a href="feed.html">foto</a><br><p>26 de octubre - 6:05pm</p></span>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <img src="images/guitarra.jpg" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <p> AYUDA!!! <br>No se dónde comprar una buena guitarra, la mía se rompió al cambiarme de casa<br></p>
+                        </div>
+                    </div>
+                    <div class="feed_footer">
+                        <ul class="feed_footer_left ">                            
+                        </ul>                            
+                        <ul class="feed_footer_right ">
+                            <li >                                
+                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+      
+            </div>
+
+           
+
+           
+        </div>
 
         
-    <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/transition.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <!-- Menu movil -->
+    <div class="mobilemenu">        
+            <div id="wrapper">
+                <!-- Sidebar -->
+                <div id="sidebar">
+                    <div class="inner">
+                        <!-- Search Box -->
+                        <section id="search" class="alt">
+                            <form method="get" action="#">
+                            <input type="text" name="search" id="search" placeholder="Buscar..." />
+                            </form>
+                        </section>
+                            
+                        <!-- Menu -->
+                        <div id="menu">
+                            <ul>
+                                <p class="titulo">descripción <p><br>
+                                <p class="descripcion">
+                                Bienvenidos al grupo dedidacado para cualquier que desee publicar su música, recomendancion o otros 
+                                temas en relación. Aqui todos intentamos apoyarnos para el suceso!
+                                </p> 
+                                <br>                                   
+                            </ul>
+                        </div>  
+                    </div>   
+                </div>
+            </div>
+    </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -164,3 +230,9 @@
     <!--===============================================================================================-->
 </body>
 </html>
+
+
+
+
+
+
