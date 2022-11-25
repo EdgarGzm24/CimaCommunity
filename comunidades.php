@@ -1,3 +1,14 @@
+<?php
+	require_once  'conexion.php';
+	
+	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, 
+    opiniones.fecha_creacion_op, 
+    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones 
+    INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
+	$query = mysqli_query($conexion, $sql);
+	//$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); **
+?>   
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -101,7 +112,7 @@
 
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="publish">
                     <div class="row_title">
@@ -125,35 +136,42 @@
                 </div>
             </div>
 
-            <div class="feed">
-                <div class="row2 border-radius">
-                    <div class="feed_title">
-                        <img src="images/user-2.jpg" alt="" />
-                        <span><b>Fernando Morales</b> compartio una <a href="feed.php">foto</a><br><p>26 de octubre - 6:05pm</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <img src="images/guitarra.jpg" alt="" /></a>
+            <?php
+            while($row = mysqli_fetch_assoc($query)){
+            ?>
+
+                <div class="feed">
+                    <div class="row2 border-radius">
+                        <div class="feed_title">
+                            <img src="images/user-2.jpg" alt="" />
+                            <span><b>Fernando Morales</b> compartio una <a href="feed.php">foto</a><br><p>26 de octubre - 6:05pm</p></span>
                         </div>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <p> AYUDA!!! <br>No se dónde comprar una buena guitarra, la mía se rompió al cambiarme de casa<br></p>
+                        <div class="feed_content">
+                            <div class="feed_content_image">
+                                <img src="images/guitarra.jpg" alt="" /></a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="feed_footer">
-                        <ul class="feed_footer_left ">                            
-                        </ul>                            
-                        <ul class="feed_footer_right ">
-                            <li >                                
-                                <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
-                            </li>
-                        </ul>
+                        <div class="feed_content">
+                            <div class="feed_content_image">
+                                <p> <br></p>
+                            </div>
+                        </div>
+                        <div class="feed_footer">
+                            <ul class="feed_footer_left ">                            
+                            </ul>                            
+                            <ul class="feed_footer_right ">
+                                <li >                                
+                                    <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-      
-            </div>
 
+            <?php
+            }
+            mysqli_close($conexion);
+            ?>
            
 
            
