@@ -1,10 +1,13 @@
 <?php
 	require_once  'conexion.php';
 	
-	$sql = "SELECT * FROM comunidades";
+	$sql = "SELECT comunidades.nombre AS nombreCom, publicaciones.descripcion_publicacion, 
+    publicaciones.fecha_creacion, publicaciones.foto_publicacion, usuario.nombre, 
+    usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario FROM ((comunidades_has_publicaciones 
+    INNER JOIN publicaciones ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones) 
+    INNER JOIN comunidades ON comunidades.idcomunidad = 1) 
+    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
 	$query = mysqli_query($conexion, $sql);
-	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
-	mysqli_close($conexion);
 
 ?>
 <!DOCTYPE html>
@@ -113,21 +116,24 @@
                 </div>
             </div>
 
+            <?php
+            while($row = mysqli_fetch_assoc($query)){
+            ?>
             <div class="row border-radius">
                 <div class="feed">                    
                     <div class="feed_title">
-                        <img src="images/user-7.png" alt="" />
-                        <span><b>Ana Uzi</b> compartio una <a href="feed.html">foto</a><br><p>26 de octubre - 6:05pm</p></span>
+                        <img src="<?php echo $row['foto_usuario']?>" alt="" />
+                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.html">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
-                            <a href="feed.html"><img src="images/photo-1.jpg" alt="" /></a>
+                            <p><?php echo $row['descripcion_publicacion']?></p>
+                            <a href="feed.html"><img src="<?php echo $row['foto_publicacion']?>" alt=""/></a>
                         </div>
                     </div>
                     <div class="feed_footer">
-                        <ul class="feed_footer_left ">                            
-                        </ul>                            
-                        <ul class="feed_footer_right ">
+                        <ul class="feed_footer_left"></ul>                            
+                        <ul class="feed_footer_right">
                             <li >                                
                                 <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
                             </li>
@@ -135,52 +141,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user.jpg" alt="" />
-                        <span><b>Edgar Guzman</b> compartió un <a href="feed.html">video</a><br><p>25 de octubre - 12:51am</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <iframe src="https://www.youtube-nocookie.com/embed/J4mFJqD7GIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="feed_footer">
-                        <ul class="feed_footer_left">                        
-                        </ul>
-                        <ul class="feed_footer_right">
-                            <li>                                
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o"></i> 12 commentarios</li></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user-6.jpg" alt="" />
-                        <span><b>Aylin Regalado</b><p>20 de octubre - 15:27am</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <p> Buenos días comunidad UABC <br>Alguien sabe donde queda el edificio E55???, soy de nuevo ingreso y no me ubico muy bien en el plantel<brp></p>
-                        </div>
-                    </div>
-                    <div class="feed_footer">
-                        <ul class="feed_footer_left">
-                        </ul>
-                        <ul class="feed_footer_right">
-                            <li>
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o"></i> 54 comments</li></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+            mysqli_close($conexion);
+            ?>
         </div>
 
         <div class="suggestions_row">
