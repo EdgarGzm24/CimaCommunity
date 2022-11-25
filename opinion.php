@@ -2,8 +2,10 @@
 <?php
 	require_once  'conexion.php';
 	
-	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, opiniones.fecha_creacion_op, 
-    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
+	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, 
+    opiniones.fecha_creacion_op, 
+    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones 
+    INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
 	//$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); **
 ?>                                      
@@ -86,9 +88,9 @@
             </div>
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.html" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="index.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
                         <li style="border:none"><a href="#A">Actividad</a></li>
@@ -115,7 +117,7 @@
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
-                            <a href="feed.html"><img src="images/opi.png" alt="" /></a>
+                            <a href="feed.php"><img src="images/opi.png" alt="" /></a>
                         </div>
                     </div>
                     
@@ -205,7 +207,7 @@
             <div class="row shadow">
                 <div class="row_title">
                     <span>Sugerencias de amistad</span>
-                    <a href="friends.html">Ver mas...</a>
+                    <a href="friends.php">Ver mas...</a>
                 </div>
                 <div class="row_contain">
                     <img src="images/user-2.png" alt="" />
@@ -232,12 +234,12 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>TU CUENTA</span>
-             <a href="settings.html"><i class="fa fa-cogs"></i></a>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
         <div class="modal-content">
             <ul>
                 <li>
-                    <a href="settings.html">
+                    <a href="settings.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span><b>Perfil</b></span>
                     </a>
@@ -249,7 +251,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
                         <span><b>Cerrar tu sesión</b>></span>
                     </a>
@@ -268,10 +270,10 @@
             </div>
             <div class="mobilemenu_menu">
                 <ul>
-                    <li><a href="index.html" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
-                    <li><a href="messages.html"><i class="fa fa-comments-o"></i>Comunidades</a></li>
+                    <li><a href="index.php" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>Comunidades</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul class="mobilemenu_child">
                         <li style="border:none"><a href="#"><i class="fa fa-file"></i>Amigos</a></li>
@@ -291,7 +293,7 @@
                     <li><a href="#">Terminos & condiciones</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Contacto</a></li>
-                    <li><a href="login.html">Cerrar sesion</a></li>
+                    <li><a href="login.php">Cerrar sesion</a></li>
                 </ul>
             </div>
         </div>

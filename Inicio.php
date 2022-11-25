@@ -14,9 +14,9 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <!--===============================================================================================-	
+    <!--===============================================================================================->	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">	
-    -><!--===============================================================================================-->	
+    <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +41,7 @@
         <div class="navbar_search">
             <form method="" action="/">
                 <input type="text" placeholder="Busca tu comunidad.." />
-                <button type="submit"> <a href="busqueda.html" class="fa fa-search"></a></button>
+                <button type="submit"> <a href="busqueda.php" class="fa fa-search"></a></button>
             </form>
         </div>
 
@@ -73,9 +73,9 @@
             
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.html" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="index.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
                         <li style="border:none"><a href="#A">Actividad</a></li>
@@ -123,19 +123,19 @@
                 <div class="feed">                    
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
-                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.html">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
+                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
                             <p><?php echo $row['descripcion_publicacion']?></p>
-                            <a href="feed.html"><img src="<?php echo $row['foto_publicacion']?>" alt=""/></a>
+                            <a href="feed.php"><img src="<?php echo $row['foto_publicacion']?>" alt=""/></a>
                         </div>
                     </div>
                     <div class="feed_footer">
                         <ul class="feed_footer_left"></ul>                            
                         <ul class="feed_footer_right">
                             <li >                                
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
+                                <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
                             </li>
                         </ul>
                     </div>
@@ -182,7 +182,7 @@
             <div class="row shadow">
                 <div class="row_title">
                     <span>Sugerencias de amistad</span>
-                    <a href="friends.html">Ver mas...</a>
+                    <a href="friends.php">Ver mas...</a>
                 </div>
                 <div class="row_contain">
                     <img src="images/user-2.png" alt="" />
@@ -251,12 +251,12 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>TU CUENTA</span>
-             <a href="settings.html"><i class="fa fa-cogs"></i></a>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
         <div class="modal-content">
             <ul>
                 <li>
-                    <a href="settings.html">
+                    <a href="settings.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span><b>Perfil</b></span>
                     </a>
@@ -268,7 +268,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
                         <span><b>Cerrar tu sesión</b>></span>
                     </a>
@@ -287,10 +287,10 @@
             </div>
             <div class="mobilemenu_menu">
                 <ul>
-                    <li><a href="index.html" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
-                    <li><a href="messages.html"><i class="fa fa-comments-o"></i>Comunidades</a></li>
+                    <li><a href="index.php" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>Comunidades</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul class="mobilemenu_child">
                         <li style="border:none"><a href="#"><i class="fa fa-file"></i>Amigos</a></li>
@@ -310,7 +310,7 @@
                     <li><a href="#">Terminos & condiciones</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Contacto</a></li>
-                    <li><a href="login.html">Cerrar sesion</a></li>
+                    <li><a href="login.php">Cerrar sesion</a></li>
                 </ul>
             </div>
         </div>

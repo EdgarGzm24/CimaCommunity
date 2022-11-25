@@ -2,9 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--===============================================================================================-	
+    <!--===============================================================================================-->	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -60,9 +58,9 @@
             </div>
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.html" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="index.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
                         <li style="border:none"><a href="#A">Actividad</a></li>
@@ -148,7 +146,7 @@
             <div class="row shadow">
                 <div class="row_title">
                     <span>Sugerencias de amistad</span>
-                    <a href="friends.html">Ver mas...</a>
+                    <a href="friends.php">Ver mas...</a>
                 </div>
                 <div class="row_contain">
                     <img src="images/user-2.png" alt="" />

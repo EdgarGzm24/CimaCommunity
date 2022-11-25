@@ -24,7 +24,7 @@
             <img src="images/logo.png" alt="" />
         </div>
         <div class="navbar_page">
-            <span>> NEWSFEED</span>
+            <span> CimaCommunity</span>
         </div>
         <div class="navbar_search">
             <form method="" action="/">
@@ -41,163 +41,153 @@
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
             <img src="images/user.jpg" alt="" />
-            <span id="navbar_user_top">Jonh Hamstrong<br><p>User</p></span><i class="fa fa-angle-down"></i>
+            <span id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
 
     <div class="all">
-
         <div class="rowfixed"></div>
         <div class="left_row">
             <div class="left_row_profile">
                 <img id="portada" src="images/portada.jpg" />
                 <div class="left_row_profile">
                     <img id="profile_pic" src="images/user.jpg" />
-                    <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
+                    <span>Edgar Guzman<br><p>150k seguidores / 50 siguiendo</p></span>
                 </div>
             </div>
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.html" id="rowmenu-selected"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
-                    <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
+                    <li><a href="index.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
-                        <li style="border:none"><a href="#A">Activity</a></li>
-                        <li style="border:none"><a href="#">Friends</a></li>
-                        <li style="border:none"><a href="#">Groups</a></li>
-                        <li style="border:none"><a href="#">Pages</a></li>
-                        <li style="border:none"><a href="#">Saves</a></li>
+                        <li style="border:none"><a href="#A">Actividad</a></li>
+                        <li style="border:none"><a href="#">Amigos</a></li>
+                        <li style="border:none"><a href="#">Comunidades</a></li>
+                        <li style="border:none"><a href="#">Paginas</a></li>
+                        <li style="border:none"><a href="#">Guardados</a></li>
                     </ul>
-                    <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
+                    <li class="primarymenu"><i class="fa fa-user"></i>Accesos directos</li>
                     <ul>
-                        <li style="border:none"><a href="#">Your-Page.html</a></li>
-                        <li style="border:none"><a href="#">Your-Group.html</a></li>
+                        <li style="border:none"><a href="#">Perfil</a></li>
+                        <li style="border:none"><a href="#">Comunidades</a></li>
                     </ul>
                 </ul>
             </div>
         </div>
 
-
-
         <div class="right_row">
             <div class="row border-radius">
                 <div class="feed">
                     <div class="feed_title">
-                        <span><a href="profile.html" id="select_profile_menu"><b>Profile</b></a> | <a href="about.html"><b>About</b></a> | <a href="photos.html"><b>Photos</b></a></span>
+                        <span><a href="profile.php"><b>Perfil</b></a> | <a href="about.php" id="select_profile_menu"><b>Sobre ti</b></a> | <a href="photos.php"><b>Fotos</b></a></span>
                     </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="publish">
-                    <div class="row_title">
-                        <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Status</span>
-
-                    </div>
-                    <form method="" action="/">
-                        <div class="publish_textarea">
-                            <img class="border-radius-image" src="images/user.jpg" alt="" />
-                            <textarea type="text" placeholder="¿Whats up, Jonh?" style="resize: none;"></textarea>
-                        </div>
-                        <div class="publish_icons">
-                            <ul>
-                                <li><i class="fa fa-camera"></i></li>
-                                <li><i class="fa fa-video-camera"></i></li>
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
-                            </ul>
-                            <button>Publish</button>
-                        </div>
-                    </form>
                 </div>
             </div>
 
             <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user.jpg" alt="" />
-                        <span><b>Jonh Hamstrong</b> shared a <a href="feed.html">photo</a><br><p>March 2 at 6:05pm</p></span>
+                <div class="settings shadow">
+                    <div class="settings_title">
+                        <h3>Personal Info</h3>
                     </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <a href="feed.html"><img src="images/user.jpg" alt="" /></a>
-                        </div>
-                    </div>
-                    <div class="feed_footer">
-                        <ul class="feed_footer_left">
-                            <li class="hover-orange selected-orange"><i class="fa fa-heart"></i> 22k</li>
-                            <li><span><b>Jimmy, Andrea</b> and 47 more liked this</span></li>
-                        </ul>
-                        <ul class="feed_footer_right">
+                    <div class="settings_content">
+                        <style type="text/css">
+                            .settings_content ul li p {padding:5px;padding-left: 20px}
+                        </style>
+                        <ul>
                             <li>
-                                <li class="hover-orange selected-orange"><i class="fa fa-share"></i> 7k</li>
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o"></i> 74 comments</li></a>
+                                <p>
+                                    <b>About Me:</b>
+                                    <br>
+                                    Hi, I’m Jonh, I’m 36 and I work as a Digital Designer for the “Daydreams” Agency in Pier 56
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Birthday:</b>
+                                    <br>
+                                    December 14th, 1980
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Birthplace:</b>
+                                    <br>
+                                    Austin, Texas, USA
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Lives in:</b>
+                                    <br>
+                                    San Francisco, California, USA
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Occupation:</b>
+                                    <br>
+                                    UI/UX Designer
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Joined:</b>
+                                    <br>
+                                    April 31st, 2014
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Gender:</b>
+                                    <br>
+                                    Male
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Status:</b>
+                                    <br>
+                                    Married
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Email:</b>
+                                    <br>
+                                    Jonh@yourmail.com
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Website:</b>
+                                    <br>
+                                    Ferrule.space/
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Phone Number:</b>
+                                    <br>
+                                    (044) 555 - 4369 - 8957
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Website:</b>
+                                    <br>
+                                    Ferrule.space/
+                                </p>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user.jpg" alt="" />
-                        <span><b>Jonh Hamstrong</b> shared a <a href="feed.html">video</a><br><p>March 1 at 3:53pm</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <iframe src="https://www.youtube.com/embed/jR8L9UyExH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                    <div class="feed_footer">
-                        <ul class="feed_footer_left">
-                            <li class="hover-orange selected-orange"><i class="fa fa-heart"></i> 1k</li>
-                            <li><span><b>Jimmy, Andrea</b> and 47 more liked this</span></li>
-                        </ul>
-                        <ul class="feed_footer_right">
-                            <li>
-                                <li class="hover-orange selected-orange"><i class="fa fa-share"></i> 177</li>
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o"></i> 12 comments</li></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            
             
 
-            <div class="row border-radius">
-                <div class="feed">
-                    <div class="feed_title">
-                        <img src="images/user-6.jpg" alt="" />
-                        <span><b>Valentine Krashe</b> for <a href="profile.html">Jonh Hamstrong</a><br><p>April 1 at 7:01am</p></span>
-                    </div>
-                    <div class="feed_content">
-                        <div class="feed_content_image">
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.</p>
-                        </div>
-                    </div>
-                    <div class="feed_footer">
-                        <ul class="feed_footer_left">
-                            <li class="hover-orange selected-orange"><i class="fa fa-heart"></i> 159</li>
-                            <li><span><b>Jimmy, Andrea</b> and 157 more liked this</span></li>
-                        </ul>
-                        <ul class="feed_footer_right">
-                            <li>
-                                <li class="hover-orange selected-orange"><i class="fa fa-share"></i> 7k</li>
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o"></i> 14 comments</li></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-
-            <center>
-                <a href=""><div class="loadmorefeed">
-                    <i class="fa fa-ellipsis-h"></i>
-                </div></a>
-            </center>
         </div>
 
         <div class="suggestions_row">
@@ -230,7 +220,7 @@
             <div class="row shadow">
                 <div class="row_title">
                     <span>Friends in Common</span>
-                    <a href="friends.html">17 more..</a>
+                    <a href="friends.php">17 more..</a>
                 </div>
                 <div class="row_contain">
                     <img src="images/user-7.jpg" alt="" />
@@ -266,7 +256,7 @@
 
             <div class="row shadow">
                 <div class="row_title">
-                    <span>Recent Activity's</span>
+                    <span>Actividad reciente</span>
                 </div>
                 <div class="row_contain">
                     <img src="images/user.jpg" alt="" />
@@ -285,7 +275,7 @@
 
             <div class="row shadow">
                 <div class="row_title">
-                    <span>Favourite Pages</span>
+                    <span>Comunidades favoritas</span>
                     <a href="#">see all..</a>
                 </div>
                 <div class="row_contain">
@@ -313,7 +303,7 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>CHAT / MESSAGES</span>
-             <a href="messages.html"><i class="fa fa-ellipsis-h"></i></a>
+             <a href="messages.php"><i class="fa fa-ellipsis-h"></i></a>
         </div>
         <div class="modal-content">
             <ul>
@@ -343,7 +333,7 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>FRIEND REQUESTS</span>
-             <a href="friends.html"><i class="fa fa-ellipsis-h"></i></a>
+             <a href="friends.php"><i class="fa fa-ellipsis-h"></i></a>
         </div>
         <div class="modal-content">
             <ul>
@@ -375,27 +365,27 @@
     <div class="modal modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
-            <span>YOUR ACCOUNT</span>
-             <a href="settings.html"><i class="fa fa-cogs"></i></a>
+            <span>Tu cuenta</span>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
         <div class="modal-content">
             <ul>
                 <li>
-                    <a href="settings.html">
+                    <a href="settings.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
-                        <span><b>Profile Settings</b><br>Yours profile settings</span>
+                        <span><b>Configuracion de cuenta</b><br>Mira y edita tus configuraciones</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <span><b>Create a page</b><br>Create your page</span>
+                        <span><b>Crea una comnunidad</b><br>Decide cual sera la proxima comunidad</span>
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
-                        <span><b>Log Out</b><br>Close your session</span>
+                        <span><b>Cerrar sesion</b><br>Cierra sesion de tu cuenta</span>
                     </a>
                 </li>
             </ul>
@@ -404,39 +394,38 @@
     
     <!-- NavMobile -->
     <div class="mobilemenu">
-        
         <div class="mobilemenu_profile">
             <img id="mobilemenu_portada" src="images/portada.jpg" />
             <div class="mobilemenu_profile">
                 <img id="mobilemenu_profile_pic" src="images/user.jpg" /><br>
-                <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
+                <span>Edgar Guzman<br><p>150k seguidores / 50 seguidos</p></span>
             </div>
             <div class="mobilemenu_menu">
                 <ul>
-                    <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.html" id="mobilemenu-selected"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
-                    <li><a href="messages.html"><i class="fa fa-comments-o"></i>messages</a></li>
-                    <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
+                    <li><a href="index.php" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>Comunidades</a></li>
+                    <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul class="mobilemenu_child">
-                        <li style="border:none"><a href="#"><i class="fa fa-globe"></i>Activity</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Friends</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Groups</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Pages</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Saves</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Amigos</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Comunidades</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Eventos</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Guardados</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-globe"></i>Actividades</a></li>
                     </ul>
-                    <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
+                    <li class="primarymenu"><i class="fa fa-user"></i>Accesos rapidos</li>
                     <ul class="mobilemenu_child">
-                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Page.html</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Group.html</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Comunidades</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Eventos</a></li>
                     </ul>
                 </ul>
                     <hr>
                 <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="login.html">Logout</a></li>
+                    <li><a href="#">Terminos & condiciones</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="login.php">Cerrar sesion</a></li>
                 </ul>
             </div>
         </div>

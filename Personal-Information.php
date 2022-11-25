@@ -58,9 +58,9 @@
             </div>
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
+                    <li><a href="index.php"><i class="fa fa-globe"></i>Newsfeed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Friends</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
                     <ul>
                         <li style="border:none"><a href="#A">Activity</a></li>
@@ -71,8 +71,8 @@
                     </ul>
                     <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
                     <ul>
-                        <li style="border:none"><a href="#">Your-Page.html</a></li>
-                        <li style="border:none"><a href="#">Your-Group.html</a></li>
+                        <li style="border:none"><a href="#">Your-Page.php</a></li>
+                        <li style="border:none"><a href="#">Your-Group.php</a></li>
                     </ul>
                 </ul>
             </div>
@@ -170,13 +170,13 @@
                 <div class="menusetting_contain">
                     <ul>
                         <li>
-                            <a href="Personal-Information.html" id="settings-select">Personal Information</a>
+                            <a href="Personal-Information.php" id="settings-select">Personal Information</a>
                         </li>
                         <li>
-                            <a href="settings.html">Account Settings</a>
+                            <a href="settings.php">Account Settings</a>
                         </li>
                         <li>
-                            <a href="Change-Password.html">Change Password</a>
+                            <a href="Change-Password.php">Change Password</a>
                         </li>
                         <li>
                             <a href="#">Hobbies and Interests</a>
@@ -231,7 +231,7 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>CHAT / MESSAGES</span>
-             <a href="messages.html"><i class="fa fa-ellipsis-h"></i></a>
+             <a href="messages.php"><i class="fa fa-ellipsis-h"></i></a>
         </div>
         <div class="modal-content">
             <ul>
@@ -261,7 +261,7 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>FRIEND REQUESTS</span>
-             <a href="friends.html"><i class="fa fa-ellipsis-h"></i></a>
+             <a href="friends.php"><i class="fa fa-ellipsis-h"></i></a>
         </div>
         <div class="modal-content">
             <ul>
@@ -294,12 +294,12 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>YOUR ACCOUNT</span>
-             <a href="settings.html"><i class="fa fa-cogs"></i></a>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
         <div class="modal-content">
             <ul>
                 <li>
-                    <a href="settings.html">
+                    <a href="settings.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span><b>Profile Settings</b><br>Yours profile settings</span>
                     </a>
@@ -311,7 +311,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
                         <span><b>Log Out</b><br>Close your session</span>
                     </a>
@@ -331,10 +331,10 @@
             </div>
             <div class="mobilemenu_menu">
                 <ul>
-                    <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
-                    <li><a href="messages.html"><i class="fa fa-comments-o"></i>messages</a></li>
+                    <li><a href="index.php"><i class="fa fa-globe"></i>Newsfeed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Friends</a></li>
+                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>messages</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
                     <ul class="mobilemenu_child">
                         <li style="border:none"><a href="#"><i class="fa fa-globe"></i>Activity</a></li>
@@ -345,8 +345,8 @@
                     </ul>
                     <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
                     <ul class="mobilemenu_child">
-                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Page.html</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Group.html</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Page.php</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Group.php</a></li>
                     </ul>
                 </ul>
                     <hr>
@@ -354,7 +354,7 @@
                     <li><a href="#">Terms & Conditions</a></li>
                     <li><a href="#">FAQ's</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href="login.html">Logout</a></li>
+                    <li><a href="login.php">Logout</a></li>
                 </ul>
             </div>
         </div>

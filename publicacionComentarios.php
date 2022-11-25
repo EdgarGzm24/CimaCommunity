@@ -58,9 +58,9 @@
             </div>
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.html"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Friends</a></li>
+                    <li><a href="index.php"><i class="fa fa-globe"></i>Newsfeed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Friends</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
                     <ul>
                         <li style="border:none"><a href="#A">Activity</a></li>
@@ -71,8 +71,8 @@
                     </ul>
                     <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
                     <ul>
-                        <li style="border:none"><a href="#">Your-Page.html</a></li>
-                        <li style="border:none"><a href="#">Your-Group.html</a></li>
+                        <li style="border:none"><a href="#">Your-Page.php</a></li>
+                        <li style="border:none"><a href="#">Your-Group.php</a></li>
                     </ul>
                 </ul>
             </div>
@@ -152,7 +152,7 @@
             <div class="row shadow">
                 <div class="row_title">
                     <span>Friend Suggestions</span>
-                    <a href="friends.html">see more..</a>
+                    <a href="friends.php">see more..</a>
                 </div>
                 <div class="row_contain">
                     <img src="images/user-7.jpg" alt="" />
@@ -255,7 +255,7 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>CHAT / MESSAGES</span>
-             <a href="messages.html"><i class="fa fa-ellipsis-h"></i></a>
+             <a href="messages.php"><i class="fa fa-ellipsis-h"></i></a>
         </div>
         <div class="modal-content">
             <ul>
@@ -285,7 +285,7 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>FRIEND REQUESTS</span>
-             <a href="friends.html"><i class="fa fa-ellipsis-h"></i></a>
+             <a href="friends.php"><i class="fa fa-ellipsis-h"></i></a>
         </div>
         <div class="modal-content">
             <ul>
@@ -318,12 +318,12 @@
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>YOUR ACCOUNT</span>
-             <a href="settings.html"><i class="fa fa-cogs"></i></a>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
         <div class="modal-content">
             <ul>
                 <li>
-                    <a href="settings.html">
+                    <a href="settings.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span><b>Profile Settings</b><br>Yours profile settings</span>
                     </a>
@@ -335,7 +335,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
                         <span><b>Log Out</b><br>Close your session</span>
                     </a>
@@ -354,10 +354,10 @@
             </div>
             <div class="mobilemenu_menu">
                 <ul>
-                    <li><a href="index.html" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.html"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.html"><i class="fa fa-users"></i>Amigos</a></li>
-                    <li><a href="messages.html"><i class="fa fa-comments-o"></i>Comunidades</a></li>
+                    <li><a href="index.php" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>Comunidades</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul class="mobilemenu_child">
                         <li style="border:none"><a href="#"><i class="fa fa-file"></i>Amigos</a></li>
@@ -377,7 +377,7 @@
                     <li><a href="#">Terminos & condiciones</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Contacto</a></li>
-                    <li><a href="login.html">Cerrar sesion</a></li>
+                    <li><a href="login.php">Cerrar sesion</a></li>
                 </ul>
             </div>
         </div>

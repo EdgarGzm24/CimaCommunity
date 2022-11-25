@@ -31,7 +31,7 @@
         <div class="navbar_search">
             <form method="" action="/">
                 <input type="text" placeholder="Busca tu comunidad.." />
-                <button type="submit"> <a href="busqueda.html" class="fa fa-search"></a></button>
+                <button type="submit"> <a href="busqueda.php" class="fa fa-search"></a></button>
             </form>
         </div>
 
@@ -106,7 +106,7 @@
                 <div class="row2 border-radius">
                     <div class="feed_title">
                         <img src="images/user-2.jpg" alt="" />
-                        <span><b>Fernando Morales</b> compartio una <a href="feed.html">foto</a><br><p>26 de octubre - 6:05pm</p></span>
+                        <span><b>Fernando Morales</b> compartio una <a href="feed.php">foto</a><br><p>26 de octubre - 6:05pm</p></span>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
@@ -123,7 +123,7 @@
                         </ul>                            
                         <ul class="feed_footer_right ">
                             <li >                                
-                                <a href="feed.html" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
+                                <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
                             </li>
                         </ul>
                     </div>
