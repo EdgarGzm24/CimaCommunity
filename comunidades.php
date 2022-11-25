@@ -101,6 +101,29 @@
 
                 </div>
             </div>
+            
+            <div class="row">
+                <div class="publish">
+                    <div class="row_title">
+                        <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
+
+                    </div>
+                    <form method="" action="/">
+                        <div class="publish_textarea">
+                            <img class="border-radius-image" src="images/user.jpg" alt="" />
+                            <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
+                        </div>
+                        <div class="publish_icons">
+                            <ul>
+                                <li><i class="fa fa-camera"></i></li>
+                                <li><i class="fa fa-video-camera"></i></li>
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
+                            </ul>
+                            <button>Publicar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
             <div class="feed">
                 <div class="row2 border-radius">
