@@ -16,7 +16,7 @@
 
             if(mysqli_stmt_num_rows($stmt) == 1){
                 $_SESSION['nombre'] = $nombre;
-                header('location:Inicio.html');
+                header('location:Inicio.php');
             } else {
                 header('location:Login.php?error=1');
             }

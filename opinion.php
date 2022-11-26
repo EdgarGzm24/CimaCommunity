@@ -2,7 +2,7 @@
 <?php
 	require_once  'conexion.php';
 	
-	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, 
+	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
     FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
@@ -29,7 +29,7 @@
     <!--===============================================================================================-->	
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
-    <title>Inicio | CimaCommunity</title>
+    <title>Opiniones | CimaCommunity</title>
 
     <style>
     .right{
@@ -129,7 +129,7 @@
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Opinion</span>
 
                     </div>
-                    <form method="post" action="/">
+                    <form method="post" action="validaopinion.php">
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="images/user.jpg" alt="" />
                             <textarea type="text" name="titulo" placeholder="Titulo"  maxlength="30" style="resize: none;"></textarea>
@@ -139,7 +139,7 @@
                             <textarea type="text" name="des" placeholder="¡Publica tu opinión!" maxlength="200" style="resize: none;"></textarea>
                         </div>
                         <div class="publish_icons">
-                            <button class="left">Publicar</button>
+                            <button type="submit" class="left">Publicar</button>
                         </div>
                     </form>
                 </div>
@@ -153,7 +153,7 @@
                         <div class="feed_title">
                             <img src="<?php echo $row['foto_usuario'] ?>" alt="" />
                             <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b><p><?php echo $row['fecha_creacion_op'] ?></p>
-                                     <p><?php echo $row['calificación'] ?> estrellas</p>
+                                     <p><?php echo $row['calificacion'] ?> estrellas</p>
                             </span>
                         </div>
                         <div class="feed_content2">
