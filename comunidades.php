@@ -1,3 +1,21 @@
+<?php
+	require_once  'conexion.php';
+	
+	/*$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, 
+    opiniones.fecha_creacion_op, 
+    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones 
+    INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';*/
+
+    $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, 
+    usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
+    FROM (comunidades_has_publicaciones INNER JOIN publicaciones
+          ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones INNER JOIN comunidades 
+          ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
+    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario WHERE comunidades.idcomunidad = 2';
+	$query = mysqli_query($conexion, $sql);
+	
+?>   
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +37,7 @@
 
 </head>
 <body>
+
     <div class="navbar">
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
@@ -49,7 +68,11 @@
             <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
+    <?php
+        while($row = mysqli_fetch_assoc($query)){
+    ?>
 
+  
     <div class="all2">
         <div class="rowfixed"></div>
         <div class="left_row">
@@ -69,8 +92,7 @@
                             <ul>
                                 <p class="titulo">descripción <p><br>
                                 <p class="descripcion">
-                                Bienvenidos al grupo dedidacado para cualquier que desee publicar su música, recomendancion o otros 
-                                temas en relación. Aqui todos intentamos apoyarnos para el suceso!
+                                <?php echo $row['descripcion_comunidad']?>
                                 </p> 
                                 <br>                                   
                             </ul>
@@ -79,6 +101,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="right_row2">
             
@@ -91,7 +114,7 @@
                 <hr>                    
                 <div class="feed_title">
                     <div class="right">
-                        <h4>Sinfonía sin generos</h4>
+                        <h4><?php echo $row['nombreCom']?></h4>
                         <p>712 miembros</p>
                     </div>
 
@@ -101,7 +124,7 @@
 
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="publish">
                     <div class="row_title">
@@ -128,17 +151,17 @@
             <div class="feed">
                 <div class="row2 border-radius">
                     <div class="feed_title">
-                        <img src="images/user-2.jpg" alt="" />
-                        <span><b>Fernando Morales</b> compartio una <a href="feed.php">foto</a><br><p>26 de octubre - 6:05pm</p></span>
+                        <img src="<?php echo $row['foto_usuario']?>" alt="" />
+                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion'] ?></p></span>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
-                            <img src="images/guitarra.jpg" alt="" /></a>
+                            <img src="<?php echo $row['foto_publicacion']?>" alt="" /></a>
                         </div>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
-                            <p> AYUDA!!! <br>No se dónde comprar una buena guitarra, la mía se rompió al cambiarme de casa<br></p>
+                            <p><?php echo $row['descripcion_publicacion']?> <br></p>
                         </div>
                     </div>
                     <div class="feed_footer">
@@ -151,16 +174,14 @@
                         </ul>
                     </div>
                 </div>
-      
-            </div>
-
-           
-
-           
+            </div>        
         </div>
-
-        
     </div>
+    <?php
+        }
+        mysqli_close($conexion);
+        ?>
+
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <!-- Menu movil -->
