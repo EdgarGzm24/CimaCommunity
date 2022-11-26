@@ -1,28 +1,20 @@
-$(obtener_registros());
-
-function obtener_registros(comunidades)
-{
-	$.ajax({
-		url : 'consultaSearch.php',
-		type : 'POST',
-		dataType : 'html',
-		data : { comunidades: comunidades},
+aData = {}
+$("#buscarComunidad").autocomplete({
+	source: function(request,response){
+		$.ajax({
+			url: 'http://localhost/GitHub/CimaCommunity/conexionBusqueda.php',
+			type:'GET',
+			dataType: 'json',	
+			success: function(data){
+				aData = $.map(data,function(value,key){
+					return{
+						idcomunidad:value.idcomunidad,
+						nombre:value.nombre,
+					};
+				});
+				var results = $.ui.autocomplete.filter(aData,request.term);
+				response(results);
+			}
 		})
-
-	.done(function(resultado){
-		$("#tabla_resultado").html(resultado);
-	})
-}
-
-$(document).on('keyup', '#busqueda', function()
-{
-	var valorBusqueda=$(this).val();
-	if (valorBusqueda!="")
-	{
-		obtener_registros(valorBusqueda);
 	}
-	else
-		{
-			obtener_registros();
-		}
 });
