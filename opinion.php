@@ -3,9 +3,8 @@
 	require_once  'conexion.php';
 	
 	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, 
-    opiniones.fecha_creacion_op, 
-    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones 
-    INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
+    opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
+    FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
 	//$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); **
 ?>                                      
@@ -152,7 +151,7 @@
                 <div class="row border-radius">
                     <div class="feed">
                         <div class="feed_title">
-                            <img src="images/user-6.jpg" alt="" />
+                            <img src="<?php echo $row['foto_usuario'] ?>" alt="" />
                             <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b><p><?php echo $row['fecha_creacion_op'] ?></p>
                                      <p><?php echo $row['calificación'] ?> estrellas</p>
                             </span>

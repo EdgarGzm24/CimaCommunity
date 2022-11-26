@@ -5,7 +5,7 @@
     publicaciones.fecha_creacion, publicaciones.foto_publicacion, usuario.nombre, 
     usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario FROM ((comunidades_has_publicaciones 
     INNER JOIN publicaciones ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones) 
-    INNER JOIN comunidades ON comunidades.idcomunidad = 1) 
+    INNER JOIN comunidades ON comunidades.idcomunidad) 
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
 	$query = mysqli_query($conexion, $sql);
 
