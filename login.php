@@ -150,7 +150,7 @@
 		</div>
 		<div class="container-login100">
 			<div class="wrap-login100 p-l-40 p-r-40 p-t-55 p-b-35">
-				<form class="login100-form validate-form" method="POST" action="validLogin.php" autocomplete="off">
+				<form class="login100-form validate-form" method="POST" action="validLogin.php">
 					<span class="login100-form-title p-b-35">
 						Inicio de sesion
 					</span>
@@ -158,12 +158,12 @@
 					<form action="validLogin.php" method="POST">
 						<div class="wrap-input100 m-b-23">
 							<span class="label-input100">Correo</span>
-							<input class="input100" type="email" name="correoInst" placeholder="Escribe tu correo" value="@uabc.edu.mx" required>
+							<input class="input100" type="email" name="correoInst" placeholder="Escribe tu correo" value="@uabc.edu.mx" required autocomplete="off">
 						</div>
 
 						<div class="wrap-input100">
 							<span class="label-input100">Contraseña</span>
-							<input class="input100" type="password" name="contrasena" placeholder="Escribe tu contraseña" required>
+							<input class="input100" type="password" name="contrasena" placeholder="Escribe tu contraseña" required autocomplete="off">
 						</div>
 						
 						<div class="text-right p-t-8 p-b-31">

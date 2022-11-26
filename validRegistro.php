@@ -60,7 +60,5 @@
 
 		}
 		mysqli_close($conexion);
-
-		echo "<script>console.log('Console: " . $strMensaje . "' );</script>";
 	}
 ?>
