@@ -1,11 +1,5 @@
 <?php
 	require_once  'conexion.php';
-	
-	/*$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificación, 
-    opiniones.fecha_creacion_op, 
-    usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones 
-    INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';*/
-
     $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, 
     usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones INNER JOIN publicaciones

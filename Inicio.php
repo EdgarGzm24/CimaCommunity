@@ -1,12 +1,12 @@
 <?php
 	require_once  'conexion.php';
-    /* No modifique tu sentencia, pero cuando agregue una nueva publicacion esta no se veia 
-    $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad, publicaciones.descripcion_publicacion, 
+   
+    /*$sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad, publicaciones.descripcion_publicacion, 
     publicaciones.fecha_creacion, publicaciones.foto_publicacion, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
     FROM ((comunidades_has_publicaciones 
     INNER JOIN publicaciones ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones) 
     INNER JOIN comunidades ON comunidades.idcomunidad = 1) 
-    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario'*/
+    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario';*/
 
 	$sql = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones INNER JOIN publicaciones
