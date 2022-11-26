@@ -6,12 +6,12 @@
     usuario.nombre, usuario.apellido_p, usuario.apellido_m FROM opiniones 
     INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';*/
 
-    $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad, publicaciones.descripcion_publicacion, 
-    publicaciones.fecha_creacion, publicaciones.foto_publicacion, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
-    FROM ((comunidades_has_publicaciones 
-    INNER JOIN publicaciones ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones) 
-    INNER JOIN comunidades ON comunidades.idcomunidad = 2) 
-    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario';
+    $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, 
+    usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
+    FROM (comunidades_has_publicaciones INNER JOIN publicaciones
+          ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones INNER JOIN comunidades 
+          ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
+    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario WHERE comunidades.idcomunidad = 2';
 	$query = mysqli_query($conexion, $sql);
 	
 ?>   
@@ -68,7 +68,9 @@
             <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
-    
+    <?php
+        while($row = mysqli_fetch_assoc($query)){
+    ?>
 
   
     <div class="all2">
@@ -99,6 +101,7 @@
                 </div>
             </div>
         </div>
+
 
         <div class="right_row2">
             
@@ -144,14 +147,12 @@
                     </form>
                 </div>
             </div>
-            <?php
-                while($row = mysqli_fetch_assoc($query)){
-            ?>
+
             <div class="feed">
                 <div class="row2 border-radius">
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
-                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion_op'] ?></p></span>
+                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion'] ?></p></span>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
@@ -179,7 +180,8 @@
     <?php
         }
         mysqli_close($conexion);
-    ?>
+        ?>
+
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <!-- Menu movil -->
