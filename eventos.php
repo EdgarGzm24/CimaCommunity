@@ -1,3 +1,13 @@
+<?php
+	require_once  'conexion.php';
+	
+	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
+    opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
+    FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
+	$query = mysqli_query($conexion, $sql);
+	
+?> 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,9 +23,11 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
     <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="css/estiloEventos.css">
+    <!--===============================================================================================-->	
     <!--<link rel="stylesheet" href="css/estiloComunidad.css">   -->  
     <!--===============================================================================================-->		
-    <title>Inicio | CimaCommunity</title>
+    <title>Eventos | CimaCommunity</title>
 
 </head>
 <body>
@@ -78,20 +90,22 @@
         </div>
 
         <div class="right_row">
-
             <div class="row">
                 <div class="publish">
                     <div class="row_title">
-                        <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Opinion</span>
+                        <span><i class="fa fa-newspaper-o" aria-hidden="true"></i>Eventos</span>
 
                     </div>
-                    <form method="post" action="/">                   
+                    <form method="" action="/">
                         <div class="publish_textarea">
-                            <textarea type="text" name="des" placeholder="Publicar evento" maxlength="200" style="resize: none;"></textarea>
+                            <img class="border-radius-image" src="images/user.jpg" alt="" />
+                            <textarea type="text" placeholder="Publica un evento" style="resize: none;"></textarea>
                         </div>
                         <div class="publish_icons">
-                         
-                            <button class="left">Publicar</button>
+                            <ul>
+                                <li><i class="fa fa-camera"></i></li>
+                            </ul>
+                            <button>Publicar</button>
                         </div>
                     </form>
                 </div>
@@ -106,39 +120,8 @@
                     <a href="#">&emsp;  &emsp; Ver mas...</a>
                 </div>
                 <div>
-                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                          <li data-target="#myCarousel" data-slide-to="1"></li>
-                          <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                      
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
-                          <div class="item active">
-                            <img src="images/portada.jpg" alt="Los Angeles">
-                          </div>
-                      
-                          <div class="item">
-                            <img src="images/portada.jpg" alt="Chicago">
-                          </div>
-                      
-                          <div class="item">
-                            <img src="images/portada.jpg" alt="New York">
-                          </div>
-                        </div>
-                      
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                          <span class="glyphicon glyphicon-chevron-left"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                          <span class="glyphicon glyphicon-chevron-right"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
+                    <!--<input type="date"  />-->
+                    <div id="demo-mobile-month-view"></div>
                 </div>
                 
             </div>

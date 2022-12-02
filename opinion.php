@@ -30,22 +30,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
     <title>Opiniones | CimaCommunity</title>
-
-    <style>
-    .right{
-        margin-left: 7% ;
-    }   
-    
-    .center{
-        margin: 16% ;
-    }
-
-    .left{
-        margin-left: 80%;
-    }
-    </style>
-        
-    
 </head>
 <body>
     <div class="navbar">
