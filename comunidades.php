@@ -1,11 +1,15 @@
 <?php
 	require_once  'conexion.php';
+
     $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, 
     usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
-    FROM (comunidades_has_publicaciones INNER JOIN publicaciones
-          ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones INNER JOIN comunidades 
-          ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
-    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario WHERE comunidades.idcomunidad = 2';
+    FROM (comunidades_has_publicaciones 
+    INNER JOIN publicaciones
+        ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
+    INNER JOIN comunidades 
+        ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
+    INNER JOIN usuario 
+        ON publicaciones.usuario_idusuario = usuario.idusuario WHERE comunidades.idcomunidad = 2';
 	$query = mysqli_query($conexion, $sql);
 	
 ?>   

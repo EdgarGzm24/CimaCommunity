@@ -37,26 +37,26 @@
 		$strMensaje="";
 		$insertRegistro = "INSERT INTO login(idLogin, correo, contrasenia) VALUES (?,?,?)";
 
-		if ($stmt = mysqli_prepare($conexion, $insertRegistro)) {
-			mysqli_stmt_bind_param($stmt, "iss", $idInsert, $correo, $contrasena);
-			mysqli_stmt_execute($stmt);
-			$strMensaje.="La inserción en login fue exitosa. Filas insertadas: ".mysqli_stmt_affected_rows($stmt).PHP_EOL;
+		if ($sentencia = mysqli_prepare($conexion, $insertRegistro)) {
+			mysqli_stmt_bind_param($sentencia, "iss", $idInsert, $correo, $contrasena);
+			mysqli_stmt_execute($sentencia);
+			$strMensaje.="La inserción en login fue exitosa. Filas insertadas: ".mysqli_stmt_affected_rows($sentencia).PHP_EOL;
 
 			$sql = "SELECT idLogin FROM login WHERE correo = '$correo'";
 			$consulta = mysqli_query($conexion, $sql);
 			$idLogin = mysqli_fetch_row($consulta);
 		}else{
-			$strMensaje.="La inserción en login fue errónea. Error: ".mysqli_stmt_error($stmt).PHP_EOL;
+			$strMensaje.="La inserción en login fue errónea. Error: ".mysqli_stmt_error($sentencia).PHP_EOL;
 
 		}
 
 		$insertUsuario = "INSERT INTO usuario (idusuario, matricula, nombre, apellido_p, apellido_m, fechaNacimiento, foto_usuario, carrera_idcarrera, login_idlogin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
-		if ($stmt = mysqli_prepare($conexion, $insertUsuario)) {
-			mysqli_stmt_bind_param($stmt, "iisssssii", $idInsert, $matricula, $nombre, $apPaterno, $apMaterno, $fechaNac, $imagenPerfil, $carrera, $idLogin[0]);
-			mysqli_stmt_execute($stmt);
-			$strMensaje.="La inserción en usuario fue exitosa. Filas insertadas: ".mysqli_stmt_affected_rows($stmt).PHP_EOL;
+		if ($sentencia = mysqli_prepare($conexion, $insertUsuario)) {
+			mysqli_stmt_bind_param($sentencia, "iisssssii", $idInsert, $matricula, $nombre, $apPaterno, $apMaterno, $fechaNac, $imagenPerfil, $carrera, $idLogin[0]);
+			mysqli_stmt_execute($sentencia);
+			$strMensaje.="La inserción en usuario fue exitosa. Filas insertadas: ".mysqli_stmt_affected_rows($sentencia).PHP_EOL;
 		}else{
-			$strMensaje.="La inserción en usuario fue errónea. Error: ".mysqli_stmt_error($stmt).PHP_EOL;
+			$strMensaje.="La inserción en usuario fue errónea. Error: ".mysqli_stmt_error($sentencia).PHP_EOL;
 
 		}
 		mysqli_close($conexion);

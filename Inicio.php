@@ -1,16 +1,11 @@
 <?php
 	require_once  'conexion.php';
-   
-    /*$sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad, publicaciones.descripcion_publicacion, 
-    publicaciones.fecha_creacion, publicaciones.foto_publicacion, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
-    FROM ((comunidades_has_publicaciones 
-    INNER JOIN publicaciones ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones) 
-    INNER JOIN comunidades ON comunidades.idcomunidad = 1) 
-    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario';*/
 
 	$sql = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
-    FROM (comunidades_has_publicaciones INNER JOIN publicaciones
-          ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones INNER JOIN comunidades 
+    FROM (comunidades_has_publicaciones 
+    INNER JOIN publicaciones
+          ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
+    INNER JOIN comunidades 
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario;";
 	$query = mysqli_query($conexion, $sql);
@@ -32,6 +27,7 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
     <!--===============================================================================================-->	
     <title>Inicio | CimaCommunity</title>
 
@@ -379,10 +375,12 @@
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://ajax.googleleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--===============================================================================================-->
     <script type="text/javascript" src="js/SearchComunidad.js"></script>
     <script src="https://code.jquery.com/1.13.2/jquery-ui.js"></script>
+    <!--===============================================================================================-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
