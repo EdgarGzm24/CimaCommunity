@@ -11,9 +11,9 @@
         $dateOp = date("Y-m-d H:i:s"); 
         $insertOpinion = "INSERT INTO opiniones(idopiniones,titulo, descripcion_opinion, calificacion, fecha_creacion_op,usuario_idusuario ) VALUES (?,?,?,?,?,?)";
 
-        if ($stmt = mysqli_prepare($conexion, $insertOpinion)) {
-			mysqli_stmt_bind_param($stmt,"issisi", $idOp, $title, $review, $grade, $dateOp ,$usser);
-			mysqli_stmt_execute($stmt);
+        if ($sentencia = mysqli_prepare($conexion, $insertOpinion)) {
+			mysqli_stmt_bind_param($sentencia,"issisi", $idOp, $title, $review, $grade, $dateOp ,$usser);
+			mysqli_stmt_execute($sentencia);
 		}
         mysqli_close($conexion);
 		
