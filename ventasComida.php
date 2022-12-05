@@ -5,81 +5,17 @@
     <!--===============================================================================================-->	
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
-    <!--===============================================================================================-->	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->	
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
+    <link rel="stylesheet" type="text/css" href="css/estilosVentaComida.css">
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
     <title>Inicio | CimaCommunity</title>
-
-    <style>
-            .right{
-        margin-left: 7% ;
-        }   
-        .center{
-            margin: 16% ;
-        }
-
-        .size{
-            width: 1800px ;
-            padding-left: 400px;
-        }
-
-        .fondo{
-            background: white;
-            padding: 30;
-        }
-        .fondo2{
-            background: green;   
-        }
-
-        h1{
-            padding: 5px;
-            text-align: center;
-            color: #024731;
-          
-        }
-
-        .textareaborde{
-            border: 0;
-            padding: 7px;
-            position: relative;
-            width: 350px;
-            font-size:large;
-        }
-        .padding{
-            padding: 5px;
-        }    
-        .letra{
-            font-size: 20px;
-        }
-
-        p{
-            font-size: 15px;
-        }
-
-        .right_row{
-          margin-right: 60px;
-          border: 0px;
-        }
-
-        .imgCaja img{
-            width: 100%;
-            height: 100%;
-        }
-
-    
- 
- 
-    </style>
-        
-    
 </head>
 <body>
     <div class="navbar">
@@ -110,7 +46,6 @@
     </div>
 
     <div class="all">
-        
         <div class="left_row border-radius fondo ">
             <div >
             <h1>Venta <br> comida</h1>
@@ -153,14 +88,9 @@
                 </div>  
             </div> 
         </div>
-
-
-     
-
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
 
- 
 </body>
 </html>

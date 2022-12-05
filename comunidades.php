@@ -18,7 +18,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <!--===============================================================================================-	
+    <!--===============================================================================================--	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -29,7 +29,7 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" href="css/estiloComunidad.css">     
+    <link rel="stylesheet" href="css/estilosComunidad.css">     
     <!--===============================================================================================-->	
     <title>Comunidad | CimaCommunity</title>
 
@@ -146,8 +146,8 @@
                 </div>
             </div>
 
-            <div class="feed">
-                <div class="row2 border-radius">
+            <div class="row2 border-radius">
+                <div class="feed">
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
                         <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion'] ?></p></span>

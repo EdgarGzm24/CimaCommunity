@@ -7,7 +7,7 @@
     <!--===============================================================================================-->	
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
+    <link rel="stylesheet" type="text/css" href="css/estilosPerfilSobre.css">
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	

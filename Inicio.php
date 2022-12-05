@@ -107,12 +107,17 @@
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="images/user.jpg" alt="" />
                             <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
+                            <img id="imgVista" src=""/>
                         </div>
                         <div class="publish_icons">
                             <ul>
-                                <li><i class="fa fa-camera"></i></li>
-                                <li><i class="fa fa-video-camera"></i></li>
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
+                                <li>
+                                    <button type="button" class="contenedor-btn-file">
+                                        <i class="fa fa-camera"></i>
+                                        <label for="filePrevia"></label>
+                                        <input type="file" accept="image/png,image/jpeg" id="filePrevia" name="image" required>
+								    </button>
+                                </li>
                             </ul>
                             <button>Publicar</button>
                         </div>
@@ -377,6 +382,7 @@
     <!--===============================================================================================-->
     <script src="https://ajax.googleleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--===============================================================================================-->
+    <script src="js/jsimgPrevia.js"></script>
     <script type="text/javascript" src="js/SearchComunidad.js"></script>
     <script src="https://code.jquery.com/1.13.2/jquery-ui.js"></script>
     <!--===============================================================================================-->

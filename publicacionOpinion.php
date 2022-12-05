@@ -23,7 +23,7 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="css/estiloOpinion.css">
+    <link rel="stylesheet" type="text/css" href="css/estilosOpinion.css">
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
