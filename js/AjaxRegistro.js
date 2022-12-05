@@ -12,7 +12,7 @@ $(document).ready(function(){
           data: {campus_id:campus_id}, //variables o parametros a enviar, formato => nombre_de_variable:contenido
           dataType: 'html', //tipo de datos que esperamos de regreso
           type: 'POST', //mandar variables como post o get
-          url: 'get_facultad.php' //url que recibe las variables
+          url: 'funciones/get_facultad.php' //url que recibe las variables
         }).done(function(data){ //metodo que se ejecuta cuando ajax ha completado su ejecucion             
 
           facultades.html(data); //establecemos el contenido html de discos con la informacion que regresa ajax             
@@ -41,7 +41,7 @@ $(document).ready(function(){
           data: {facultad_id:facultad_id}, //variables o parametros a enviar, formato => nombre_de_variable:contenido
           dataType: 'html', //tipo de datos que esperamos de regreso
           type: 'POST', //mandar variables como post o get
-          url: 'get_carrera.php' //url que recibe las variables
+          url: 'funciones/get_carrera.php' //url que recibe las variables
         }).done(function(data){ //metodo que se ejecuta cuando ajax ha completado su ejecucion             
 
           carreras.html(data); //establecemos el contenido html de discos con la informacion que regresa ajax             
@@ -62,7 +62,7 @@ $('#formRegistro').submit(function(e){
      
      $.ajax({
          type: 'POST' ,
-         url: 'validRegistro.php',
+         url: 'funciones/validRegistro.php',
          data: datos, 
          contentType: false,
          processData: false,

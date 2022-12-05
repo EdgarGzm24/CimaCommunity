@@ -176,7 +176,7 @@
     <?php
         }
         mysqli_close($conexion);
-        ?>
+    ?>
 
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
