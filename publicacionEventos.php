@@ -1,9 +1,9 @@
 <?php
-	require_once  'conexion.php';
+	require_once  'funciones/conexion.php';
 	
-	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
-    opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
-    FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
+	$sql = 'SELECT usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario, eventos.descripcion_evento,
+    eventos.fecha_evento,eventos.fecha_publicacion_evento, eventos.foto_evento 
+    FROM eventos INNER JOIN usuario ON eventos.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
 	
 ?> 
@@ -29,12 +29,6 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-  
-
-
-
-
-
     <title>Eventos | CimaCommunity</title>
 
 </head>
@@ -97,6 +91,7 @@
             </div>
         </div>
 
+        
         <div class="right_row">
             <div class="row">
                 <div class="publish">
@@ -118,7 +113,44 @@
                     </form>
                 </div>
             </div>
+            
+            <?php
+             while($row = mysqli_fetch_assoc($query)){
+            ?>
+            <div class="row border-radius">
+                <div class="feed">
+                    <div class="feed_title">
+                        <img src="<?php echo $row['foto_usuario']?>" alt="" />
+                        <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b> compartio una <a href="feed.php">foto</a>
+                        <br><p><?php echo $row['fecha_publicacion_evento'] ?></p><p>Fecha del evento: <?php echo $row['fecha_evento'] ?></p></span>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <img src="<?php echo $row['foto_evento']?>" alt="" /></a>
+                        </div>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <p><?php echo $row['descripcion_evento']?> <br></p>
+                        </div>
+                    </div>
+                    <div class="feed_footer">
+                        <ul class="feed_footer_left ">                            
+                        </ul>                            
+                        <ul class="feed_footer_right ">
+                            <li >                                
+                                <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <?php
+            }
+            mysqli_close($conexion);
+            ?>  
         </div>
+
 
         <div class="suggestions_row">
             
