@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <!--===============================================================================================-->	
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"-->
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
@@ -26,7 +26,12 @@
     <link rel="stylesheet" type="text/css" href="css/estiloEventos.css">
     <!--===============================================================================================-->	
     <!--<link rel="stylesheet" href="css/estiloComunidad.css">   -->  
-    <!--===============================================================================================-->		
+    <!--===============================================================================================-->	
+    <!-- include the jQuery UI style sheet -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    
+    
     <title>Eventos | CimaCommunity</title>
 
 </head>
@@ -116,13 +121,13 @@
             
             <div class="row shadow">
                 <div class="row_title">
-                    <span> Calendario UABC</span>
+                    <span> Calendario </span>
                     <a href="#">&emsp;  &emsp; Ver mas...</a>
                 </div>
-                <div>
-                    <!--<input type="date"  />-->
-                    <div id="demo-mobile-month-view"></div>
+                <div>  
+                    <div id="Datepicker1"></div>
                 </div>
+
                 
             </div>
 
@@ -158,16 +163,28 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/transition.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/custom.js"></script>     
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>  
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <script type="text/javascript">
+      $(function() {
+        $("#Datepicker1").datepicker({
+         numberOfMonths: 3
+        }); 
+      });
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
     // Modals
+
+
     $(document).ready(function(){
 
         $("#messagesmodal").hover(function(){
