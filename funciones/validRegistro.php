@@ -18,7 +18,7 @@
 		$extension = strtolower(end($arregloImagen));
 		$extPermitidas = array('png', 'jpg', 'jpeg');
 
-		$imagenPerfil = "images/imgPerfiles/" . $_FILES['image']['name'];
+		$imagenPerfil = "../images/imgPerfiles/" . $_FILES['image']['name'];
 
 		// No olvides hacer una funcion para cambiarle el nombre a cada foto que se suba al sistema
 
