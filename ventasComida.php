@@ -26,9 +26,12 @@
         <div class="navbar_logo">
             <img src="images/logo.png" alt="" />
         </div>
-
-        <div class="navbar_page">
-            <span>CimaCommunity</span>
+        
+        <div class="navbar_search">
+            <form method="" action="/">
+                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
+                <button type="submit"> <a href="busqueda.php" class="fa fa-search"></a></button>
+            </form>
         </div>
 
         <div class="navbar_icons center">

@@ -1,5 +1,5 @@
 <?php
-	require_once  'conexion.php';
+	require_once  'funciones/conexion.php';
 
     $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, 
     usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 

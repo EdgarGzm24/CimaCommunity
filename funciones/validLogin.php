@@ -16,9 +16,7 @@
             //resultado = mysqli_stmt_get_result($sentencia);
             //$_SESSION['idusuario'] = $resultado['idLogin'];
             header('location:Inicio.php');
-        } else{
-            echo "Hubo un error";
-        }
+        } 
         mysqli_close($conexion);
     } 
 
