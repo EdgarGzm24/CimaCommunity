@@ -9,10 +9,8 @@
     <!--===============================================================================================-->	
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="css/estiloVentasC.css">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="css/estiloComunidades.css">
-    <!--===============================================================================================-->		
+    <link rel="stylesheet" type="text/css" href="css/estilosVentaComida.css">
+    <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
