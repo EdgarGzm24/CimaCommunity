@@ -18,15 +18,15 @@
     INNER JOIN comunidades 
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
-    
-	$query = mysqli_query($conexion, $sql);
+    $ConsultaPublica = mysqli_query($conexion, $SelectPublicaciones);
+    	
     $ConsultaC = mysqli_query($conexion,"SELECT * FROM comunidades");
     $arreglo = array();
     while($row = mysqli_fetch_array($ConsultaC)){
           $comunidades = $row['nombre'];
           array_push($arreglo,$comunidades);
      }
-	$ConsultaPublica = mysqli_query($conexion, $SelectPublicaciones);
+	
 ?>
 
 <!DOCTYPE html>
