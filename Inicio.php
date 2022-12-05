@@ -15,7 +15,12 @@
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
 	$query = mysqli_query($conexion, $sql);
-
+    $ConsultaC = mysqli_query($conexion,"SELECT * FROM comunidades");
+    $arreglo = array();
+    while($row = mysqli_fetch_array($ConsultaC)){
+          $comunidades = $row['nombre'];
+          array_push($arreglo,$comunidades);
+     }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -51,7 +56,7 @@
         <div class="navbar_search">
             <form method="" action="/">
                 <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
-                <button type="submit"> <a href="busqueda.php" class="fa fa-search"></a></button>
+                              
             </form>
         </div>
 
@@ -331,8 +336,17 @@
         </div>
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var items = <?= json_encode($arreglo) ?>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            $("#buscarComunidad").autocomplete({
+                source: items
+            }); 
+        });
+    </script>
+    
     <script>
     // Modals
     $(document).ready(function(){
@@ -389,12 +403,9 @@
     <script src="https://ajax.googleleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--===============================================================================================-->
     <script src="js/jsimgPrevia.js"></script>
-    <script type="text/javascript" src="js/SearchComunidad.js"></script>
-    <script src="https://code.jquery.com/1.13.2/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>        
     <!--===============================================================================================-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-    <!--===============================================================================================-->
+
 </body>
 </html>
