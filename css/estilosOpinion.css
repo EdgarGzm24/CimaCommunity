@@ -7,3 +7,18 @@
 .descripcion{
     padding: 8px 0;
 }
+
+
+<style>
+.right{
+    margin-left: 7% ;
+}   
+
+.center{
+    margin: 16% ;
+}
+
+.left{
+    margin-left: 80%;
+}
+</style>

@@ -73,8 +73,8 @@
   
     <div class="all2">
         <div class="rowfixed"></div>
-        <div class="left_row">
-            <div id="wrapper">
+        <div class="left_row border-radius fondo ">
+            <div>
                 <!-- Sidebar -->
                 <div id="sidebar">
                     <div class="inner">
