@@ -23,12 +23,9 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosEventos.css">
     <!--===============================================================================================-->	
-<<<<<<< HEAD
-=======
-	
->>>>>>> 3c9a676d99bcb1cdabbeccedab7bbf0318a9df2d
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+  <!--===============================================================================================-->	
     <title>Eventos | CimaCommunity</title>
 
 </head>
@@ -91,7 +88,6 @@
             </div>
         </div>
 
-        
         <div class="right_row">
             <div class="row">
                 <div class="publish">
@@ -113,7 +109,7 @@
                     </form>
                 </div>
             </div>
-            
+                        
             <?php
              while($row = mysqli_fetch_assoc($query)){
             ?>
@@ -150,7 +146,6 @@
             mysqli_close($conexion);
             ?>  
         </div>
-
 
         <div class="suggestions_row">
             
