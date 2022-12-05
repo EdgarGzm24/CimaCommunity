@@ -8,12 +8,12 @@
 
         $selectLogin = "SELECT * FROM login WHERE correo = '$correo' AND contrasenia = '$contra'";
         $consulta = mysqli_query($conexion, $selectLogin);
+        $columna = mysqli_fetch_array($consulta);
         
-        
-        if(mysqli_stmt_num_rows($sentencia) == 1){
+        if(mysqli_num_rows($consulta) == 1){
             
-            $_SESSION['usuario'] = $resultado['idLogin'];
-            header('location:Inicio.php');
+            $_SESSION['usuario'] = $columna['idLogin'];
+            header('location:../Inicio.php');
         } 
         mysqli_close($conexion);
     } 
