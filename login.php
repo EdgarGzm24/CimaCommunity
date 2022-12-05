@@ -6,10 +6,6 @@
 	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
 	mysqli_close($conexion);
 
-	if(isset($_GET['error'])){
-		
-	}
-
 ?>
 <!DOCTYPE html>
 <html lang="es">

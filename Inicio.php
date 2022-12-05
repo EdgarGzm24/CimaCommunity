@@ -7,16 +7,20 @@
         header("location: login.php");
     }
 
-	$sql = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
+    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE login_idLogin = '$usuario'";
+    $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
+    $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
+
+	$SelectPublicaciones = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones 
     INNER JOIN publicaciones
           ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
     INNER JOIN comunidades 
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
-	$query = mysqli_query($conexion, $sql);
-
+	$ConsultaPublica = mysqli_query($conexion, $SelectPublicaciones);
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -65,8 +69,8 @@
         </div>
 
         <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
-            <img src="images/user.jpg" alt="" />
-            <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
+            <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+            <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
 
@@ -74,10 +78,10 @@
         <div class="rowfixed"></div>
         <div class="left_row">
             <div class="left_row_profile">
-                <img id="portada" src="images/portada.jpg" />
+                <img id="portada" src="<?php echo $columnaPerfil['foto_portadaUsuario'];?>" />
                 <div class="left_row_profile">
-                    <img id="profile_pic" src="images/user.jpg" />
-                    <span>Edgar Guzman<br><p>150k seguidores / 50 siguiendo</p></span>
+                    <img id="profile_pic" src="<?php echo $columnaPerfil['foto_usuario'];?>" />
+                    <span><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>150k seguidores / 50 siguiendo</p></span>
                 </div>
             </div>
             
@@ -132,7 +136,7 @@
             </div>
 
             <?php
-            while($row = mysqli_fetch_assoc($query)){
+            while($row = mysqli_fetch_assoc($ConsultaPublica)){
             ?>
             <div class="row border-radius">
                 <div class="feed">                    
