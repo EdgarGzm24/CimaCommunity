@@ -1,5 +1,11 @@
 <?php
 	require_once  'funciones/conexion.php';
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if(!isset($usuario)){
+        header("location: login.php");
+    }
 
 	$sql = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones 
@@ -7,7 +13,7 @@
           ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
     INNER JOIN comunidades 
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
-    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario;";
+    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
 	$query = mysqli_query($conexion, $sql);
 
 ?>
@@ -107,7 +113,7 @@
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="images/user.jpg" alt="" />
                             <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
-                            <img id="imgVista" src=""/>
+                            
                         </div>
                         <div class="publish_icons">
                             <ul>
