@@ -118,9 +118,8 @@
                     </div>
                     <form method="" action="/">
                         <div class="publish_textarea">
-                            <img class="border-radius-image" src="images/user.jpg" alt="" />
+                            <img class="border-radius-image" src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
                             <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
-                            
                         </div>
                         <div class="publish_icons">
                             <ul>
@@ -320,10 +319,10 @@
     <!-- Menu movil -->
     <div class="mobilemenu">
         <div class="mobilemenu_profile">
-            <img id="mobilemenu_portada" src="images/portada.jpg" />
+            <img id="mobilemenu_portada" src="<?php echo $columnaPerfil['foto_portadaUsuario'];?>" />
             <div class="mobilemenu_profile">
-                <img id="mobilemenu_profile_pic" src="images/user.jpg" /><br>
-                <span>Edgar Guzman<br><p>150k seguidores / 50 seguidos</p></span>
+                <img id="mobilemenu_profile_pic" src="<?php echo $columnaPerfil['foto_usuario'];?>" /><br>
+                <span><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>150k seguidores / 50 seguidos</p></span>
             </div>
             <div class="mobilemenu_menu">
                 <ul>
