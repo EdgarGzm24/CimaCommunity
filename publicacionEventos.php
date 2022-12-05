@@ -1,5 +1,5 @@
 <?php
-	require_once  'conexion.php';
+	require_once  'funciones/conexion.php';
 	
 	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
@@ -29,12 +29,7 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-  
-
-
-
-
-
+    <!--===============================================================================================-->	
     <title>Eventos | CimaCommunity</title>
 
 </head>
