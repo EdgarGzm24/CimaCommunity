@@ -9,13 +9,16 @@
     <!--===============================================================================================-->	
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="css/estilosVentaComida.css">
-    <!--===============================================================================================-->	
+    <link rel="stylesheet" type="text/css" href="css/estiloVentasC.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/estiloComunidades.css">
+    <!--===============================================================================================-->		
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
-    <title>Inicio | CimaCommunity</title>
+    <title>Ventas | CimaCommunity</title>
+
 </head>
 <body>
     <div class="navbar">
@@ -51,46 +54,49 @@
     <div class="all">
         <div class="left_row border-radius fondo ">
             <div >
-            <h1>Venta <br> comida</h1>
-            <hr>
-            <textarea class="textareaborde" type="text" placeholder="Crear publicacion" style="resize: none;"></textarea>
-            <hr>
-            <a></a><h1>Cafetería <br> UABC</h1></a>
+            <h1>Venta comida</h1>
             </div>
             <hr> 
             <div class="padding">
                 <p class="letra">Filtros</p><br>
                 <div class="rowmenu letra2">
                     <ul>
-                        <li><p >Precio</p></li>
+                        <li><p>Precio</p></li>
                         <li><p>Ubicación</p></li>
                         <li><p>Tipo de Comida</p></li>
                     </ul>
                 </div>
-            </div> 
-        </div>   
-        
-        <div class="right_row border-radius fondo">
-            <div >       
-            <textarea class="textareaborde" type="text" placeholder="Busqueda" style="resize: none;"></textarea>     
             </div>
-            <hr> 
-            <div>
-                <div class="card shadow-sm">
-                    <div class="imgCaja">
-                        <img src="images/logo.png">
+            <hr>           
+            <a></a><h1>Cafetería  UABC</h1></a> 
+        </div> 
+        
+        <div class="right_row">
+        <div class="row">
+                <div class="publish">
+                    <div class="row_title">
+                        <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
+
                     </div>
-                    <div class="card-body"> 
+                    <form method="" action="/">
+                        <div class="publish_textarea">
+                            <img class="border-radius-image" src="images/user.jpg" alt="" />
+                            <textarea type="text" placeholder=" Crear publición de venta" style="resize: none;"></textarea>
+                        </div>
+                        <div class="publish_icons">
+                            <ul>
+                                <li><i class="fa fa-camera"></i></li>                        
+                            </ul>
+                            <button>Publicar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-                        <p class="sinborde">Tipo: </p>
-                        <p class="sinborde">Nombre: </p>
-                        <p class="sinborde">Cantidad: </p>
-                        <p class="sinborde">Precio:</p>                  
-
-                    </div>     
-                </div>  
-            </div> 
         </div>
+        
+             
+
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 

@@ -132,13 +132,11 @@
                     <form method="" action="/">
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="images/user.jpg" alt="" />
-                            <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
+                            <textarea type="text" placeholder="Crear Publicación" style="resize: none;"></textarea>
                         </div>
                         <div class="publish_icons">
                             <ul>
-                                <li><i class="fa fa-camera"></i></li>
-                                <li><i class="fa fa-video-camera"></i></li>
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-camera"></i></li>                        
                             </ul>
                             <button>Publicar</button>
                         </div>
