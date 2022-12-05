@@ -1,38 +1,26 @@
-mobiscroll.setOptions({
-    locale: mobiscroll.localeEs,
-    theme: 'ios',
-    themeVariant: 'light',
-    clickToCreate: false,
-    dragToCreate: false,
-    dragToMove: false,
-    dragToResize: false,
-    eventDelete: false
+webshim.setOptions('forms-ext', {
+    replaceUI: 'auto',
+    types: 'date',
+    date: {
+        startView: 2,
+        inlinePicker: true,
+        classes: 'hide-inputbtns'
+    }
 });
+webshim.setOptions('forms', {
+    lazyCustomMessages: true
+});
+//start polyfilling
+webshim.polyfill('forms forms-ext');
 
+//only last example using format display
 $(function () {
-
-    var inst = $('#demo-desktop-month-view').mobiscroll().eventcalendar({
-        view: {
-            calendar: { labels: true }
-        },
-        onEventClick: function (event, inst) {
-            mobiscroll.toast({
-                message: event.event.title
-            });
-        }
-    }).mobiscroll('getInst');
-
-    $.getJSON('https://trial.mobiscroll.com/events/?vers=5&callback=?', function (events) {
-        inst.setEvents(events);
-    }, 'jsonp');
-
-});
-
-
-var inst = $('#mycalendar').mobiscroll().eventcalendar({
-    modules: [mobiscroll.print]
-}).mobiscroll('getInst');
-                                     
-$('#print-button').on('click', function () {
-    inst.print();
+    $('.format-date').each(function () {
+        var $display = $('.date-display', this);
+        $(this).on('change', function (e) {
+            //webshim.format will automatically format date to according to webshim.activeLang or the browsers locale
+            var localizedDate = webshim.format.date($.prop(e.target, 'value'));
+            $display.html(localizedDate);
+        });
+    });
 });
