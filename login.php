@@ -214,7 +214,6 @@
 	<script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
 	<!--===============================================================================================-->
 	<script src="js/AjaxRegistro.js"></script> 
-	<script src="js/main.js"></script>
 	<script src="js/jsimgPrevia.js"></script>
 	</body>
 </html>

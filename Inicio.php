@@ -121,22 +121,23 @@
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
 
                     </div>
-                    <form method="" action="/">
+                    <form method="POST" action="#">
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
                             <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
+                            <img src="images/iconcima.png" alt="">
                         </div>
                         <div class="publish_icons">
                             <ul>
                                 <li>
-                                    <button type="button" class="contenedor-btn-file">
+                                    <div class="contenedor-btn-file">
                                         <i class="fa fa-camera"></i>
                                         <label for="filePrevia"></label>
                                         <input type="file" accept="image/png,image/jpeg" id="filePrevia" name="image" required>
-								    </button>
+                                    </div>
                                 </li>
                             </ul>
-                            <button>Publicar</button>
+                            <button type="submit">Publicar</button>
                         </div>
                     </form>
                 </div>
@@ -270,7 +271,6 @@
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <!-- Modal Profile -->
     <div class="modal modal-profile">
@@ -296,7 +296,7 @@
                 <li>
                     <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
-                        <span><b>Cerrar tu sesión</b>></span>
+                        <span><b>Cerrar tu sesión</b></span>
                     </a>
                 </li>
             </ul>
@@ -341,8 +341,8 @@
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
     
+    <script src="js/jquery-3.6.1.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             var items = <?= json_encode($arreglo) ?>
@@ -351,57 +351,26 @@
                 source: items
             }); 
         });
-    </script>
-    
-    <script>
-    // Modals
-    $(document).ready(function(){
 
-        $("#messagesmodal").hover(function(){
-            $(".modal-comments").toggle();
-        });
+        // Modals
+        $(document).ready(function(){
 
-        $(".modal-comments").hover(function(){
-            $(".modal-comments").toggle();
-        });
+            $("#profilemodal").hover(function(){
+                $(".modal-profile").toggle();
+            });
+            $(".modal-profile").hover(function(){
+                $(".modal-profile").toggle();
+            });
 
-        $("#friendsmodal").hover(function(){
-            $(".modal-friends").toggle();
-        });
-        $(".modal-friends").hover(function(){
-            $(".modal-friends").toggle();
+            $("#navicon").click(function(){
+                $(".mobilemenu").fadeIn();
+            });
+            $(".all").click(function(){
+                $(".mobilemenu").fadeOut();
+            });
         });
 
-        $("#profilemodal").hover(function(){
-            $(".modal-profile").toggle();
-        });
-        $(".modal-profile").hover(function(){
-            $(".modal-profile").toggle();
-        });
 
-        $("#navicon").click(function(){
-            $(".mobilemenu").fadeIn();
-        });
-        $(".all").click(function(){
-            $(".mobilemenu").fadeOut();
-        });
-    });
-    </script>
-    <script>
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("myBtn").style.display = "block";
-            } else {
-                document.getElementById("myBtn").style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
     </script>
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
@@ -409,7 +378,6 @@
     <script src="https://ajax.googleleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--===============================================================================================-->
     <script src="js/jsimgPrevia.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>        
     <!--===============================================================================================-->
 
