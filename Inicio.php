@@ -19,13 +19,7 @@
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
     $ConsultaPublica = mysqli_query($conexion, $SelectPublicaciones);
-    	
-    $ConsultaC = mysqli_query($conexion,"SELECT * FROM comunidades");
-    $arreglo = array();
-    while($row = mysqli_fetch_array($ConsultaC)){
-          $comunidades = $row['nombre'];
-          array_push($arreglo,$comunidades);
-     }
+
 	
 ?>
 
@@ -63,8 +57,9 @@
         <div class="navbar_search">
             <form method="" action="/">
                 <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
-                              
+                <button type="submit"> <a href="#" class="fa fa-search"></a></button>
             </form>
+            <div id="show-list"></div>
         </div>
 
         <div class="navbar_icons center">
@@ -151,6 +146,24 @@
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
                         <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
+                        
+                        <div class="dropdown">
+                        <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        
+                        <div class="menu">
+                            <div>
+                            <ul>
+                                <li><a href="#" class="link">Option one</a></li>
+                                <li><a href="#" class="link">Option two</a></li>
+                                <li><a href="#" class="link">Option three</a></li>
+                            </ul>
+                            </div>
+                        </div>
+
+
+
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
@@ -345,13 +358,41 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
     
     <script type="text/javascript">
-        $(document).ready(function(){
-            var items = <?= json_encode($arreglo) ?>
-
-            $("#buscarComunidad").autocomplete({
-                source: items
-            }); 
+        $(document).ready(function () {
+        // Send Search Text to the server
+        $("#buscarComunidad").keyup(function () {
+            let searchText = $(this).val();
+            if (searchText != "") {
+            $.ajax({
+                url: "funciones/action.php",
+                method: "post",
+                data: {
+                query: searchText,
+                },
+                success: function (response) {
+                $("#show-list").html(response);
+                },
+            });
+            } else {
+            $("#show-list").html("");
+            }
         });
+        // Set searched text in input field on click of search button
+        $(document).on("click", "a", function () {
+            $("#buscarComunidad").val($(this).text());
+            $("#show-list").html("");
+        });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+        var tableContextMenu = new ContextMenu("context-menu-items", menuItemClickListener);
+        });
+
+        function menuItemClickListener(menu_item, parent) {
+        alert("Menu Item Clicked: " + menu_item.text() + "\nRecord ID: " + parent.attr("data-row-id"));
+        }
     </script>
     
     <script>
