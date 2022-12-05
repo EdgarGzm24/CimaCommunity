@@ -70,7 +70,7 @@
         </div> 
         
         <div class="right_row">
-        <div class="row">
+            <div class="row">
                 <div class="publish">
                     <div class="row_title">
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
@@ -90,7 +90,6 @@
                     </form>
                 </div>
             </div>
-
         </div>
         
              
