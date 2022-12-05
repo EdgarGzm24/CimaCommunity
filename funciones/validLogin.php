@@ -11,7 +11,6 @@
         $columna = mysqli_fetch_array($consulta);
         
         if(mysqli_num_rows($consulta) == 1){
-            
             $_SESSION['usuario'] = $columna['idLogin'];
             header('location:../Inicio.php');
         } 
