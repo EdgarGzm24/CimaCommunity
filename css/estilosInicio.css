@@ -1,8 +1,4 @@
-/* Created by for themeforest.com. You can buy in www.themeforest.com/ */
-
-
 /* BASIC */
-
 .fit{
     object-fit:cover;
     width: 20px;
@@ -13,7 +9,6 @@
 .center{
     margin-left: 11% ;
 }
-
 
 * {
     margin: 0px;
