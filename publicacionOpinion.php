@@ -1,6 +1,6 @@
 
 <?php
-	require_once  'conexion.php';
+	require_once  'funciones/conexion.php';
 	
 	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
@@ -23,7 +23,7 @@
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
     <!--===============================================================================================-->	
-    <link rel="stylesheet" type="text/css" href="css/estiloOpinion.css">
+    <link rel="stylesheet" type="text/css" href="css/estilosOpinion.css">
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	

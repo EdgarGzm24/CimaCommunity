@@ -1,5 +1,5 @@
 <?php
-	require_once  'conexion.php';
+	require_once  'funciones/conexion.php';
 	
 	$sql = "SELECT * FROM campus";
 	$query = mysqli_query($conexion, $sql);

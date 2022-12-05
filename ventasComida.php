@@ -5,7 +5,6 @@
     <!--===============================================================================================-->	
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
-    <!--===============================================================================================-->	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->	
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
@@ -30,9 +29,12 @@
         <div class="navbar_logo">
             <img src="images/logo.png" alt="" />
         </div>
-
-        <div class="navbar_page">
-            <span>CimaCommunity</span>
+        
+        <div class="navbar_search">
+            <form method="" action="/">
+                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
+                <button type="submit"> <a href="busqueda.php" class="fa fa-search"></a></button>
+            </form>
         </div>
 
         <div class="navbar_icons center">
@@ -50,7 +52,6 @@
     </div>
 
     <div class="all">
-        
         <div class="left_row border-radius fondo ">
             <div >
             <h1>Venta comida</h1>
@@ -100,6 +101,5 @@
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
 
- 
 </body>
 </html>

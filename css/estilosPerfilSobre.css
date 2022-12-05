@@ -73,63 +73,7 @@ body {
     box-shadow: 3px 4px 5px rgba(209, 209, 209, 0.5);
 }
 
-/*--------------------------------------------------------------------------*/
-.right{
-    margin-left: 7% ;
-    }   
-    .center{
-        margin: 16% ;
-    }
 
-    .size{
-        width: 1800px ;
-        padding-left: 400px;
-    }
-
-    .fondo{
-        background: white;
-        padding: 30;
-    }
-    .fondo2{
-        background: green;   
-    }
-
-    h1{
-        padding: 5px;
-        text-align: center;
-        color: #024731;
-      
-    }
-
-    .textareaborde{
-        border: 0;
-        padding: 7px;
-        position: relative;
-        width: 350px;
-        font-size:large;
-    }
-    .padding{
-        padding: 5px;
-    }    
-    .letra{
-        font-size: 20px;
-    }
-
-    p{
-        font-size: 15px;
-    }
-
-    .right_row{
-      margin-right: 60px;
-      border: 0px;
-    }
-
-    .imgCaja img{
-        width: 100%;
-        height: 100%;
-    }
-
-/*--------------------------------------------------------------------------*/
 /* Nav */
 .navbar {
     height: 50px;
