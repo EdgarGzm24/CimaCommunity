@@ -39,7 +39,6 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
-    <link rel="stylesheet" type="text/css" href="css/util.css">
     <!--===============================================================================================-->	
     <title>Inicio | CimaCommunity</title>
 
@@ -116,23 +115,23 @@
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
 
                     </div>
-                    <form method="POST" action="#">
+                    <form method="" action="/">
                         <div class="publish_textarea">
-                            <img class="border-radius-image" src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+                            <img class="border-radius-image" src="images/user.jpg" alt="" />
                             <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
-                            <img src="images/iconcima.png" alt="">
+                            
                         </div>
                         <div class="publish_icons">
                             <ul>
                                 <li>
-                                    <div class="contenedor-btn-file">
+                                    <button type="button" class="contenedor-btn-file">
                                         <i class="fa fa-camera"></i>
                                         <label for="filePrevia"></label>
                                         <input type="file" accept="image/png,image/jpeg" id="filePrevia" name="image" required>
-                                    </div>
+								    </button>
                                 </li>
                             </ul>
-                            <button type="submit">Publicar</button>
+                            <button>Publicar</button>
                         </div>
                     </form>
                 </div>
@@ -142,7 +141,7 @@
             while($row = mysqli_fetch_assoc($ConsultaPublica)){
             ?>
             <div class="row border-radius">
-                <div class="feed">                    
+                <div class="feed">                              
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
                         <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
@@ -151,19 +150,6 @@
                         <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-ellipsis-v"></i>
                         </button>
-                        
-                        <div class="menu">
-                            <div>
-                            <ul>
-                                <li><a href="#" class="link">Option one</a></li>
-                                <li><a href="#" class="link">Option two</a></li>
-                                <li><a href="#" class="link">Option three</a></li>
-                            </ul>
-                            </div>
-                        </div>
-
-
-
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
@@ -284,6 +270,7 @@
             </div>
         </div>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <!-- Modal Profile -->
     <div class="modal modal-profile">
@@ -309,7 +296,7 @@
                 <li>
                     <a href="login.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
-                        <span><b>Cerrar tu sesión</b></span>
+                        <span><b>Cerrar tu sesión</b>></span>
                     </a>
                 </li>
             </ul>
@@ -319,10 +306,10 @@
     <!-- Menu movil -->
     <div class="mobilemenu">
         <div class="mobilemenu_profile">
-            <img id="mobilemenu_portada" src="<?php echo $columnaPerfil['foto_portadaUsuario'];?>" />
+            <img id="mobilemenu_portada" src="images/portada.jpg" />
             <div class="mobilemenu_profile">
-                <img id="mobilemenu_profile_pic" src="<?php echo $columnaPerfil['foto_usuario'];?>" /><br>
-                <span><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>150k seguidores / 50 seguidos</p></span>
+                <img id="mobilemenu_profile_pic" src="images/user.jpg" /><br>
+                <span>Edgar Guzman<br><p>150k seguidores / 50 seguidos</p></span>
             </div>
             <div class="mobilemenu_menu">
                 <ul>
@@ -354,8 +341,8 @@
             </div>
         </div>
     </div>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
     
-    <script src="js/jquery-3.6.1.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
         // Send Search Text to the server
@@ -395,26 +382,54 @@
     </script>
     
     <script>
+    // Modals
+    $(document).ready(function(){
 
-        // Modals
-        $(document).ready(function(){
-
-            $("#profilemodal").hover(function(){
-                $(".modal-profile").toggle();
-            });
-            $(".modal-profile").hover(function(){
-                $(".modal-profile").toggle();
-            });
-
-            $("#navicon").click(function(){
-                $(".mobilemenu").fadeIn();
-            });
-            $(".all").click(function(){
-                $(".mobilemenu").fadeOut();
-            });
+        $("#messagesmodal").hover(function(){
+            $(".modal-comments").toggle();
         });
 
+        $(".modal-comments").hover(function(){
+            $(".modal-comments").toggle();
+        });
 
+        $("#friendsmodal").hover(function(){
+            $(".modal-friends").toggle();
+        });
+        $(".modal-friends").hover(function(){
+            $(".modal-friends").toggle();
+        });
+
+        $("#profilemodal").hover(function(){
+            $(".modal-profile").toggle();
+        });
+        $(".modal-profile").hover(function(){
+            $(".modal-profile").toggle();
+        });
+
+        $("#navicon").click(function(){
+            $(".mobilemenu").fadeIn();
+        });
+        $(".all").click(function(){
+            $(".mobilemenu").fadeOut();
+        });
+    });
+    </script>
+    <script>
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("myBtn").style.display = "block";
+            } else {
+                document.getElementById("myBtn").style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
@@ -422,6 +437,7 @@
     <script src="https://ajax.googleleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--===============================================================================================-->
     <script src="js/jsimgPrevia.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>        
     <!--===============================================================================================-->
 

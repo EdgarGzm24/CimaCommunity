@@ -2,7 +2,7 @@
 <?php
 	require_once  'funciones/conexion.php';
 	
-	$sql = 'SELECT opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
+	$sql = 'SELECT opiniones.idopiniones, opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
     FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
@@ -30,6 +30,244 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
     <title>Opiniones | CimaCommunity</title>
+    
+    <style>
+      
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+        * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+
+      
+        #container {
+      
+        background-color: #fff;      
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;      
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        margin-left: 55%;
+        }
+
+        #container .text {
+        border: none;
+        background: none;
+        font-size: 18px;
+        font-weight: 400;
+        }
+
+        #container #menu-wrap {
+        position: relative;
+        height: 25px;
+        width: 25px;
+        }
+
+        #container #menu-wrap .dots {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: left;
+        z-index: 1;
+        }
+
+        #container #menu-wrap .dots > div,
+        #container #menu-wrap .dots > div:after,
+        #container #menu-wrap .dots > div:before {
+        height: 6px;
+        width: 6px;
+        background-color: rgba(49, 49, 49, 0.8);
+        border-radius: 50%;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        }
+
+        #container #menu-wrap .dots > div {
+        position: relative;
+        }
+
+        #container #menu-wrap .dots > div:after {
+        content: "";
+        position: absolute;
+        bottom: calc((25px / 2) - (6px / 2));
+        left: 0;
+        }
+
+        #container #menu-wrap .dots > div:before {
+        content: "";
+        position: absolute;
+        top: calc((25px / 2) - (6px / 2));
+        left: 0;
+        }
+
+        #container #menu-wrap .menu {
+        position: absolute;
+        right: -10px;
+        top: calc(-12px + 50px);
+        width: 0;
+        height: 0;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px 15px;
+        -webkit-box-shadow: 2px 4px 6px rgba(49, 49, 49, 0.2);
+        box-shadow: 2px 4px 6px rgba(49, 49, 49, 0.2);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        }
+
+        #container #menu-wrap .menu ul {
+        list-style: none;
+        }
+
+        #container #menu-wrap .menu ul li {
+        margin: 15px 0;
+        }
+
+        #container #menu-wrap .menu ul li .link {
+        text-decoration: none;
+        color: rgba(49, 49, 49, 0.85);
+        opacity: 0;
+        visibility: hidden;
+        }
+
+        #container #menu-wrap .toggler {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+        z-index: 2;
+        }
+
+        #container #menu-wrap .toggler:hover + .dots > div,
+        #container #menu-wrap .toggler:hover + .dots > div:after,
+        #container #menu-wrap .toggler:hover + .dots > div:before {
+        background-color: rgba(49, 49, 49, 0.6);
+        }
+
+        #container #menu-wrap .toggler:checked + .dots > div {
+        -webkit-transform: translateX(calc(((25px / 2) - (6px / 2)) * -0.7071067812))
+          translateY(calc(((25px / 2) - (6px / 2)) * -0.7071067812));
+        -ms-transform: translateX(calc(((25px / 2) - (6px / 2)) * -0.7071067812))
+          translateY(calc(((25px / 2) - (6px / 2)) * -0.7071067812));
+        transform: translateX(calc(((25px / 2) - (6px / 2)) * -0.7071067812))
+          translateY(calc(((25px / 2) - (6px / 2)) * -0.7071067812));
+        }
+
+        #container #menu-wrap .toggler:checked + .dots > div:after {
+        -webkit-transform: translateX(calc(((25px / 2) - (6px / 2)) * 0.7071067812))
+          translateY(calc((2 * (25px / 2) - (6px / 2)) * 0.7071067812));
+        -ms-transform: translateX(calc(((25px / 2) - (6px / 2)) * 0.7071067812))
+          translateY(calc((2 * (25px / 2) - (6px / 2)) * 0.7071067812));
+        transform: translateX(calc(((25px / 2) - (6px / 2)) * 0.7071067812))
+          translateY(calc((2 * (25px / 2) - (6px / 2)) * 0.7071067812));
+        }
+
+        #container #menu-wrap .toggler:checked + .dots > div:before {
+        -webkit-transform: translateX(
+            calc(2 * (((25px / 2) - (6px / 2)) * 0.7071067812))
+          )
+          translateY(
+            calc(((25px / 2) - (6px / 2)) - (((25px / 2) - (6px / 2)) * 0.7071067812))
+          );
+        -ms-transform: translateX(calc(2 * (((25px / 2) - (6px / 2)) * 0.7071067812)))
+          translateY(
+            calc(((25px / 2) - (6px / 2)) - (((25px / 2) - (6px / 2)) * 0.7071067812))
+          );
+        transform: translateX(calc(2 * (((25px / 2) - (6px / 2)) * 0.7071067812)))
+          translateY(
+            calc(((25px / 2) - (6px / 2)) - (((25px / 2) - (6px / 2)) * 0.7071067812))
+          );
+        }
+
+
+
+        #container #menu-wrap .toggler:checked ~ .menu {
+        opacity: 1;
+        visibility: visible;
+        width: 100px;
+        height: 100px;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        }
+
+        #container #menu-wrap .toggler:checked ~ .menu ul .link {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transition: 0.5s ease 0.3s;
+        -o-transition: 0.5s ease 0.3s;
+        transition: 0.5s ease 0.3s;
+        }
+
+        #container #menu-wrap .toggler:checked ~ .menu ul .link:hover {
+        color: #2980b9;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        }
+
+        #container #menu-wrap .toggler:not(:checked) ~ .menu {
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
+        transition: 0.5s;
+        }
+
+        #container #menu-wrap .toggler:not(:checked) ~ .menu ul .link {
+        opacity: 0;
+        visibility: hidden;
+        -webkit-transition: 0.1s;
+        -o-transition: 0.1s;
+        transition: 0.1s;
+        }
+
+        @media (max-width: 600px) {
+        #container {
+          position: absolute;
+          top: 50px;
+          width: calc(100% - 40px);
+          margin: 0;
+        }      
+        
+      }
+    </style>
 </head>
 <body>
     <div class="navbar">
@@ -139,6 +377,22 @@
                             <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m'] ?></b><p><?php echo $row['fecha_creacion_op'] ?></p>
                                      <p><?php echo $row['calificacion'] ?> estrellas</p>
                             </span>
+                            <div id="container" class="right2">        
+                                <div id="menu-wrap">
+                                    <input type="checkbox" class="toggler" />
+                                    <div class="dots">
+                                        <div></div>
+                                    </div>
+                                    <div class="menu">
+                                        <div>
+                                        <ul>
+                                            <li><a href="#" class="link">Editar</a></li>
+                                            <li><a href="funciones/eliminarOpinion.php?id=<?php echo $row['idopiniones']?>" class="link">Eliminar</a></li>                                        
+                                        </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="feed_content2">
                                 <p><b><?php echo $row['titulo'] ?></b></p>
