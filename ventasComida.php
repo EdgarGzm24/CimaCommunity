@@ -49,12 +49,23 @@
         </div>
     </div>
 
+ 
+
     <div class="all">
-        <div class="left_row border-radius fondo ">
-            <div >
-            <h1>Venta comida</h1>
-            </div>
+        <div class="left_row border-radius fondo ">  
+                <div class="container-login100-form-btn">
+						    <div class="wrap-login100-form-btn">
+								    <div class="login100-form-bgbtn">
+								        <h1>
+									        Venta Comida
+                                        </h1>
+                                    </div>
+                            </div>
+		        </div>
+            <hr>           
+            <a></a><h1>Cafetería  UABC</h1></a> 
             <hr> 
+
             <div class="padding">
                 <p class="letra">Filtros</p><br>
                 <div class="rowmenu letra2">
@@ -64,13 +75,12 @@
                         <li><p>Tipo de Comida</p></li>
                     </ul>
                 </div>
-            </div>
-            <hr>           
-            <a></a><h1>Cafetería  UABC</h1></a> 
-        </div> 
-        
-        <div class="right_row">
-            <div class="row">
+            </div>   
+        </div>
+    </div> 
+
+    <div class="right_row3">
+        <div class="row">
                 <div class="publish">
                     <div class="row_title">
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
@@ -90,10 +100,83 @@
                     </form>
                 </div>
             </div>
-        </div>
         
-             
 
+            <div class="row border-radius">
+                <div class="feed">
+                    <div class="feed_title">
+                        <span><b>Luffy</b> shared a <a href="">photo of food</a><br><p>January 2 at 6:05pm</p></span>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <img src="images/tacos.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="feed_footer">
+                        <ul class="feed_footer_left">
+                            <li class="hover-orange selected-orange"><i class="fa fa-heart"></i> 10</li>
+                            <li><span><b>Zoro</b> and 9 more liked this</span></li>
+                        </ul>
+                        <ul class="feed_footer_right">
+                            <li>
+                                <li class="hover-orange selected-orange"><i class="fa fa-share"></i> 5</li>
+                                <li class="hover-orange"><i class="fa fa-comments-o"></i> 8 comments</li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row border-radius">
+                <div class="feed">
+                    <div class="feed_title">
+                        <span><b>Gon</b> shared a <a href="">photo of food</a><br><p>July 3 at 10:00am</p></span>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <img src="images/empanadas.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="feed_footer">
+                        <ul class="feed_footer_left">
+                            <li class="hover-orange selected-orange"><i class="fa fa-heart"></i> 15</li>
+                            <li><span><b>Killua</b> and 14 more liked this</span></li>
+                        </ul>
+                        <ul class="feed_footer_right">
+                            <li>
+                                <li class="hover-orange selected-orange"><i class="fa fa-share"></i> 3</li>
+                                <li class="hover-orange"><i class="fa fa-comments-o"></i> 15 comments</li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row border-radius">
+                <div class="feed">
+                    <div class="feed_title">
+                        <span><b>Goku</b> shared a <a href="">photo of food</a><br><p>December 2 at 9:00am</p></span>
+                    </div>
+                    <div class="feed_content">
+                        <div class="feed_content_image">
+                            <img src="images/burritos.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="feed_footer">
+                        <ul class="feed_footer_left">
+                            <li class="hover-orange selected-orange"><i class="fa fa-heart"></i> 19</li>
+                            <li><span><b>Vegeta</b> and 18 more liked this</span></li>
+                        </ul>
+                        <ul class="feed_footer_right">
+                            <li>
+                                <li class="hover-orange selected-orange"><i class="fa fa-share"></i> 10</li>
+                                <li class="hover-orange"><i class="fa fa-comments-o"></i> 17 comments</li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
