@@ -19,8 +19,6 @@
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
     INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
     $ConsultaPublica = mysqli_query($conexion, $SelectPublicaciones);
-
-	
 ?>
 
 <!DOCTYPE html>
@@ -41,18 +39,15 @@
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
     <!--===============================================================================================-->	
     <title>Inicio | CimaCommunity</title>
-
 </head>
 <body>
     <div class="navbar">
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
         </div>
-
         <div class="navbar_logo">
             <img src="images/logo.png" alt="" />
         </div>
-
         <div class="navbar_search">
             <form method="" action="/">
                 <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
@@ -60,7 +55,6 @@
             </form>
             <div id="show-list"></div>
         </div>
-
         <div class="navbar_icons center">
             <ul>                
                 <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
@@ -69,7 +63,6 @@
                 <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
             </ul>
         </div>
-
         <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
             <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
             <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
@@ -147,9 +140,10 @@
                         <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
                         
                         <div class="dropdown">
-                        <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </button>
+                            <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                        </div>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
@@ -172,7 +166,6 @@
             mysqli_close($conexion);
             ?>
         </div>
-
         <div class="suggestions_row">
             <div class="row shadow">
                 <div class="row_title">
@@ -270,7 +263,6 @@
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
     <!-- Modal Profile -->
     <div class="modal modal-profile">
@@ -341,7 +333,6 @@
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
     
     <script type="text/javascript">
         $(document).ready(function () {
