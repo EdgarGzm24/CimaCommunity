@@ -75,6 +75,24 @@ $('#formRegistro').submit(function(e){
             timer: 1500
           })
           $('#formRegistro')[0].reset();
+          $('#imgVista').attr('src', "https://via.placeholder.com/150");
         }
      })
  });
+
+ $('#formPublicacion').submit(function(e){
+  e.preventDefault();
+   let datos = new FormData(this);
+   
+   $.ajax({
+       type: 'POST' ,
+       url: 'funciones/validPublicacion.php',
+       data: datos, 
+       contentType: false,
+       processData: false,
+       success: function(){
+        $('#formPublicacion')[0].reset();
+        $('#imgPrevia').html("");
+      }
+   })
+});

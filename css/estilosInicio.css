@@ -566,13 +566,14 @@ body {
     font-size: .675rem;
 }
 
-.feed_content_image {
+.feed_content_image, #imgPrevia {
     width: 95%;
+    height: 50%;
     margin: 10px auto;
     display: block;
 }
 
-.feed_content_image img {
+.feed_content_image img, #imgPrevia img {
     width: 100%;
 }
 

@@ -7,7 +7,7 @@
         header("location: login.php");
     }
 
-    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE login_idLogin = '$usuario'";
+    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
     $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
     $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
 
@@ -108,23 +108,23 @@
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
 
                     </div>
-                    <form method="" action="/">
+                    <form method="POST" id="formPublicacion">
                         <div class="publish_textarea">
-                            <img class="border-radius-image" src="images/user.jpg" alt="" />
-                            <textarea type="text" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
-                            
+                            <img class="border-radius-image" src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+                            <textarea type="text" name="descripcionPubli" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
                         </div>
+                        <div id="imgPrevia"></div>
                         <div class="publish_icons">
                             <ul>
                                 <li>
-                                    <button type="button" class="contenedor-btn-file">
+                                    <div class="contenedor-btn-file">
                                         <i class="fa fa-camera"></i>
                                         <label for="filePrevia"></label>
-                                        <input type="file" accept="image/png,image/jpeg" id="filePrevia" name="image" required>
-								    </button>
+                                        <input type="file" accept="image/png,image/jpeg" id="filePrevia" name="image">
+                                    </div>
                                 </li>
                             </ul>
-                            <button>Publicar</button>
+                            <button type="submit">Publicar</button>
                         </div>
                     </form>
                 </div>
@@ -170,7 +170,7 @@
             <div class="row shadow">
                 <div class="row_title">
                     <span>Comunidades que te puedan gustar</span>
-                    <a href="#">&emsp;  &emsp; Ver mas...</a>
+                    <a href="#">Ver mas...</a>
                 </div>
                 <div class="row_contain">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Toyota_Robot_at_Toyota_Kaikan.jpg/330px-Toyota_Robot_at_Toyota_Kaikan.jpg" alt="" />
@@ -195,28 +195,6 @@
                 <div class="row_contain">
                     <img src="https://www.laguiadelvaron.com/wp-content/uploads/2017/02/nintchdbpict000297124102.jpg" alt="" />
                     <span><a href=""><b>Deleite de cocinar</b></a><br>Gastronomía</span>
-                </div>
-            </div>
-
-            <div class="row shadow">
-                <div class="row_title">
-                    <span>Sugerencias de amistad</span>
-                    <a href="friends.php">Ver mas...</a>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-2.png" alt="" />
-                    <span><b>Norberto Aguilar</b><br>8 amigos en comun</span>
-                    <button>+</button>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-1.png" alt="" />
-                    <span><b>Ana Robles</b><br>6 amigos en comun</span>
-                    <button>+</button>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-6.jpg" alt="" />
-                    <span><b>Aylin Regalado</b><br>6 amigos en comun</span>
-                    <button>+</button>
                 </div>
             </div>
 
@@ -280,15 +258,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <span><b>Crear una comunidad</b></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="login.php">
+                    <a href="funciones/logout.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
-                        <span><b>Cerrar tu sesión</b>></span>
+                        <span><b>Cerrar sesión</b></span>
                     </a>
                 </li>
             </ul>
@@ -328,69 +300,51 @@
                     <li><a href="#">Terminos & condiciones</a></li>
                     <li><a href="#">Preguntas frecuentes</a></li>
                     <li><a href="#">Contacto</a></li>
-                    <li><a href="login.php">Cerrar sesion</a></li>
+                    <li><a href="funciones/logout.php">Cerrar tu sesión</a></li>
                 </ul>
             </div>
         </div>
     </div>
     
+    <script src="js/jquery-3.6.1.js"></script>
+    <!--===============================================================================================-->
     <script type="text/javascript">
-        $(document).ready(function () {
-        // Send Search Text to the server
-        $("#buscarComunidad").keyup(function () {
-            let searchText = $(this).val();
-            if (searchText != "") {
-            $.ajax({
-                url: "funciones/action.php",
-                method: "post",
-                data: {
-                query: searchText,
-                },
-                success: function (response) {
-                $("#show-list").html(response);
-                },
-            });
-            } else {
-            $("#show-list").html("");
-            }
+    $(document).ready(function () {
+    // Send Search Text to the server
+    $("#buscarComunidad").keyup(function () {
+        let searchText = $(this).val();
+        if (searchText != "") {
+        $.ajax({
+            url: "funciones/action.php",
+            method: "post",
+            data: {
+            query: searchText,
+            },
+            success: function (response) {
+            $("#show-list").html(response);
+            },
         });
-        // Set searched text in input field on click of search button
-        $(document).on("click", "a", function () {
-            $("#buscarComunidad").val($(this).text());
-            $("#show-list").html("");
-        });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-        var tableContextMenu = new ContextMenu("context-menu-items", menuItemClickListener);
-        });
-
-        function menuItemClickListener(menu_item, parent) {
-        alert("Menu Item Clicked: " + menu_item.text() + "\nRecord ID: " + parent.attr("data-row-id"));
+        } else {
+        $("#show-list").html("");
         }
-    </script>
-    
-    <script>
+    });
+    // Set searched text in input field on click of search button
+    $(document).on("click", "a", function () {
+        $("#buscarComunidad").val($(this).text());
+        $("#show-list").html("");
+    });
+    });
+
+    $(document).ready(function() {
+    var tableContextMenu = new ContextMenu("context-menu-items", menuItemClickListener);
+    });
+
+    function menuItemClickListener(menu_item, parent) {
+    alert("Menu Item Clicked: " + menu_item.text() + "\nRecord ID: " + parent.attr("data-row-id"));
+    }
+
     // Modals
     $(document).ready(function(){
-
-        $("#messagesmodal").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-        $(".modal-comments").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-        $("#friendsmodal").hover(function(){
-            $(".modal-friends").toggle();
-        });
-        $(".modal-friends").hover(function(){
-            $(".modal-friends").toggle();
-        });
-
         $("#profilemodal").hover(function(){
             $(".modal-profile").toggle();
         });
@@ -405,32 +359,31 @@
             $(".mobilemenu").fadeOut();
         });
     });
-    </script>
-    <script>
-        window.onscroll = function() {scrollFunction()};
 
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("myBtn").style.display = "block";
-            } else {
-                document.getElementById("myBtn").style.display = "none";
-            }
+    function readImage (input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#imgPrevia').html("<img src='" + e.target.result + "'/>"); // Renderizamos la imagen
         }
+        reader.readAsDataURL(input.files[0]);
+        } else {
+            $('#imgPrevia').html("");
+        }
+    }
 
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+    $("#filePrevia").change(function () {
+        // Código a ejecutar cuando se detecta un cambio de archivo
+        readImage(this);
+    });
     </script>
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
     <script src="https://ajax.googleleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!--===============================================================================================-->
-    <script src="js/jsimgPrevia.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>        
     <!--===============================================================================================-->
-
+    <script src="js/funcionesAjax.js"></script>
 </body>
 </html>

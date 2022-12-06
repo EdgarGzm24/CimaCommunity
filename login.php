@@ -39,6 +39,7 @@
 							<label class="col-sm-2 col-form-label">Vista previa</label>
 							<div class="col">
 								<img id="imgVista" src="https://via.placeholder.com/150" alt="Tu imagen" />
+								<div id="textoAyuda0" class="form-text">Maximo 2 Mb</div>
 							</div>
 						</div>
 						<div class="mb-3 row">
@@ -213,7 +214,7 @@
 	<!--===============================================================================================-->
 	<script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
 	<!--===============================================================================================-->
-	<script src="js/AjaxRegistro.js"></script> 
+	<script src="js/funcionesAjax.js"></script> 
 	<script src="js/jsimgPrevia.js"></script>
 	</body>
 </html>

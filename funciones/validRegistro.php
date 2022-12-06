@@ -4,6 +4,7 @@
 	if(isset($_POST['inputMatricula']) && isset($_POST['inputCorreo']) && isset($_POST['inputContra'])){
 
 		$idInsert = 0;
+		$alumno = 1;
 		$matricula = $_POST['inputMatricula'];
 		$nombre = $_POST['inputNombre'];
 		$apPaterno = $_POST['inputApellidoP'];
@@ -18,13 +19,12 @@
 		$extension = strtolower(end($arregloImagen));
 		$extPermitidas = array('png', 'jpg', 'jpeg');
 
-		$imagenPerfil = "../images/imgPerfiles/" . $_FILES['image']['name'];
-
+		$imagenPerfil = "images/imgPerfiles/" . $_FILES['image']['name'];
 		// No olvides hacer una funcion para cambiarle el nombre a cada foto que se suba al sistema
 
 		if(in_array($extension, $extPermitidas)){
 			if($_FILES['image']['size'] < $tamanio){
-				move_uploaded_file($_FILES['image']['tmp_name'], $imagenPerfil);
+				move_uploaded_file($_FILES['image']['tmp_name'], "../".$imagenPerfil);
 			} else {
 				
 			}
@@ -34,30 +34,25 @@
 			// a la base asi que muestre en html lo que salio mal
 		}
 
-		$strMensaje="";
 		$insertRegistro = "INSERT INTO login(idLogin, correo, contrasenia) VALUES (?,?,?)";
 
 		if ($sentencia = mysqli_prepare($conexion, $insertRegistro)) {
 			mysqli_stmt_bind_param($sentencia, "iss", $idInsert, $correo, $contrasena);
 			mysqli_stmt_execute($sentencia);
-			$strMensaje.="La inserción en login fue exitosa. Filas insertadas: ".mysqli_stmt_affected_rows($sentencia).PHP_EOL;
-
-			$sql = "SELECT idLogin FROM login WHERE correo = '$correo'";
-			$consulta = mysqli_query($conexion, $sql);
-			$idLogin = mysqli_fetch_row($consulta);
-		}else{
-			$strMensaje.="La inserción en login fue errónea. Error: ".mysqli_stmt_error($sentencia).PHP_EOL;
-
+			$idLogin = mysqli_stmt_insert_id($sentencia);
 		}
 
 		$insertUsuario = "INSERT INTO usuario (idusuario, matricula, nombre, apellido_p, apellido_m, fechaNacimiento, foto_usuario, carrera_idcarrera, login_idlogin) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"; 
 		if ($sentencia = mysqli_prepare($conexion, $insertUsuario)) {
-			mysqli_stmt_bind_param($sentencia, "iisssssii", $idInsert, $matricula, $nombre, $apPaterno, $apMaterno, $fechaNac, $imagenPerfil, $carrera, $idLogin[0]);
+			mysqli_stmt_bind_param($sentencia, "iisssssii", $idInsert, $matricula, $nombre, $apPaterno, $apMaterno, $fechaNac, $imagenPerfil, $carrera, $idLogin);
 			mysqli_stmt_execute($sentencia);
-			$strMensaje.="La inserción en usuario fue exitosa. Filas insertadas: ".mysqli_stmt_affected_rows($sentencia).PHP_EOL;
-		}else{
-			$strMensaje.="La inserción en usuario fue errónea. Error: ".mysqli_stmt_error($sentencia).PHP_EOL;
+			$idUsuario = mysqli_stmt_insert_id($sentencia);
+		}
 
+		$insertTipoUser = "INSERT INTO usuario_has_tipo_usuario VALUES (?, ?)"; 
+		if ($sentencia = mysqli_prepare($conexion, $insertTipoUser)) {
+			mysqli_stmt_bind_param($sentencia, "ii", $idUsuario, $alumno);
+			mysqli_stmt_execute($sentencia);
 		}
 		mysqli_close($conexion);
 	}
