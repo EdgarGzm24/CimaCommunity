@@ -49,10 +49,10 @@
             <img src="images/logo.png" alt="" />
         </div>
         <div class="navbar_search">
-            <form method="" action="/">
+            <form method="POST" action="funciones/validaComunidades.php">
                 <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." autocomplete="off"/>
                 <button type="submit"> <a href="#" class="fa fa-search"></a></button>
-            </form>
+            </form>            
             <div id="show-list"></div>
         </div>
         <div class="navbar_icons">

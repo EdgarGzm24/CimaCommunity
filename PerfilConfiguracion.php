@@ -16,6 +16,7 @@
     <title>Configuracion Perfil | CimaCommunity</title>
 </head>
 <body>
+
     <div class="navbar">
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
@@ -23,157 +24,30 @@
         <div class="navbar_logo">
             <img src="images/logo.png" alt="" />
         </div>
-        <div class="navbar_page">
-            <span>> PROFILE</span>
-        </div>
         <div class="navbar_search">
-            <form method="" action="/">
-                <input type="text" placeholder="Search people.." />
-                <button><i class="fa fa-search"></i></button>
-            </form>
+            <form method="POST" action="funciones/validaComunidades.php">
+                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." autocomplete="off"/>
+                <button type="submit"> <a href="#" class="fa fa-search"></a></button>
+            </form>            
+            <div id="show-list"></div>
         </div>
         <div class="navbar_icons">
-            <ul>
-                <li id="friendsmodal"><i class="fa fa-user-o"></i><span id="notification">5</span></li>
-                <li id="messagesmodal"><i class="fa fa-comments-o"></i><span id="notification">2</span></li>
-                <a href="" style="color:white"><li><i class="fa fa-globe"></i></li></a>
+            <ul>                
+                <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
+                <li id="marketmodal"><i class="fa-solid fa-shop"></i><span id="notification">2</span></li>
+                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></i><span id="notification">1</span></li>
+                <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
             </ul>
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
-            <img src="images/user.jpg" alt="" />
-            <span id="navbar_user_top">Jonh Hamstrong<br><p>User</p></span><i class="fa fa-angle-down"></i>
+            <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+            <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
 
     <div class="all">
-
-        <div class="rowfixed"></div>
-        <div class="left_row">
-            <div class="left_row_profile">
-                <img id="portada" src="images/portada.jpg" />
-                <div class="left_row_profile">
-                    <img id="profile_pic" src="images/user.jpg" />
-                    <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
-                </div>
-            </div>
-            <div class="rowmenu">
-                <ul>
-                    <li><a href="index.php"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.php"><i class="fa fa-users"></i>Friends</a></li>
-                    <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
-                    <ul>
-                        <li style="border:none"><a href="#A">Activity</a></li>
-                        <li style="border:none"><a href="#">Friends</a></li>
-                        <li style="border:none"><a href="#">Groups</a></li>
-                        <li style="border:none"><a href="#">Pages</a></li>
-                        <li style="border:none"><a href="#">Saves</a></li>
-                    </ul>
-                    <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
-                    <ul>
-                        <li style="border:none"><a href="#">Your-Page.php</a></li>
-                        <li style="border:none"><a href="#">Your-Group.php</a></li>
-                    </ul>
-                </ul>
-            </div>
-        </div>
-
-
-
-        
-
-        <div class="right_row">
-
-            <div class="row border-radius">
-                <div class="settings shadow">
-                    <div class="settings_title">
-                        <h3>Account Settings</h3>
-                    </div>
-                    <div class="settings_content">
-                        <ul>
-                            <li>
-                                <p><b>Notifications Sound</b><br>A sound will be played each time you receive a new activity notification</p>
-                                <label class="switch"><input type="checkbox" class="primary"><span class="slider round"></span></label>
-                            </li>
-                            <li>
-                                <p><b>Notifications Email</b><br>We’ll send you an email to your account each time you receive a new activity notification</p>
-                                <label class="switch"><input type="checkbox" class="primary" checked><span class="slider round"></span></label>
-                            </li>
-                            <li>
-                                <p><b>Friend’s Birthdays</b><br>Choose wheather or not receive notifications about your friend’s birthdays on your newsfeed</p>
-                                <label class="switch"><input type="checkbox" class="primary" checked><span class="slider round"></span></label>
-                            </li>
-                            <li>
-                                <p><b>Chat Message Sound</b><br>A sound will be played each time you receive a new message on an inactive chat window</p>
-                                <label class="switch"><input type="checkbox" class="primary"><span class="slider round"></span></label>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="suggestions_row">
-            <div class="row shadow">
-                <div class="row_title">
-                    <span>Profile Settings</span>
-                </div>
-                <div class="menusetting_contain">
-                    <ul>
-                        <li>
-                            <a href="Personal-Information.php">Personal Information</a>
-                        </li>
-                        <li>
-                            <a href="settings.php" id="settings-select">Account Settings</a>
-                        </li>
-                        <li>
-                            <a href="Change-Password.php">Change Password</a>
-                        </li>
-                        <li>
-                            <a href="#">Hobbies and Interests</a>
-                        </li>
-                        <li>
-                            <a href="#">Education and Employement</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="row shadow">
-                <div class="row_title">
-                    <span>Pages You May Like</span>
-                    <a href="#">see more..</a>
-                </div>
-                <div class="row_contain">
-                    <img src="images/group-1.png" alt="" />
-                    <span><a href=""><b>The Marina Bar</b></a><br>Restaurant / Bar</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/group-2.jpg" alt="" />
-                    <span><a href=""><b>Caverna Roch</b></a><br>Rock / Band</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/group-3.png" alt="" />
-                    <span><a href=""><b>Pixel Digital Design</b></a><br>Company</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/group-1.png" alt="" />
-                    <span><a href=""><b>The Marina Bar</b></a><br>Restaurant / Bar</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/group-2.jpg" alt="" />
-                    <span><a href=""><b>Caverna Roch</b></a><br>Rock / Band</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/group-3.png" alt="" />
-                    <span><a href=""><b>Pixel Digital Design</b></a><br>Company</span>
-                </div>
-            </div>
-        </div>
     </div>
-    </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+   
 
 
     <!-- Modal Profile -->
