@@ -59,12 +59,29 @@
         </div>
     </div>
 
-    <div class="all">
-        <div class="fondo">
-
+    
+    <section class="perfil-usuario">
+        <div class="contenedor-perfil">
+            <div class="portada-perfil" style="background-image: url('http://localhost/multimedia/relleno/fondo-9.png');">
+                <div class="sombra"></div>
+                <div class="avatar-perfil">
+                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img">
+                    <a href="#" class="cambiar-foto">
+                        <i class="fas fa-camera"></i> 
+                        <span>Cambiar foto</span>
+                    </a>
+                </div>
+                <div class="datos-perfil">
+                    <h4 class="titulo-usuario">Nombre de usuario</h4>             
+                </div>
+                <div class="opcciones-perfil">
+                    <button type="">Cambiar portada</button>             
+                </div>
+            </div>      
         </div>
+    </section>
 
-    </div>
+    
    
 
 
