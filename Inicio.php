@@ -11,13 +11,16 @@
     $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
     $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
 
+    $selectComunidad = "SELECT idcomunidad, nombre FROM comunidades";
+    $ConsultaComunidad = mysqli_query($conexion, $selectComunidad);
+
 	$SelectPublicaciones = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones 
     INNER JOIN publicaciones
           ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
     INNER JOIN comunidades 
           ON comunidades_has_publicaciones.comunidades_idcomunidad = comunidades.idcomunidad)
-    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario";
+    INNER JOIN usuario ON publicaciones.usuario_idusuario = usuario.idusuario ORDER BY publicaciones.idPublicaciones DESC";
     $ConsultaPublica = mysqli_query($conexion, $SelectPublicaciones);
 ?>
 
@@ -57,10 +60,10 @@
         </div>
         <div class="navbar_icons">
             <ul>                
-                <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
-                <li id="marketmodal"><i class="fa-solid fa-shop"></i><span id="notification">2</span></li>
-                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></i><span id="notification">1</span></li>
-                <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
+                <li id="homemodal"><i class="fa-solid fa-house"></i></li>
+                <li id="marketmodal"><i class="fa-solid fa-shop"></i></li>
+                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></li>
+                <li id="opinionsmodal"><i class="fa-solid fa-message"></i></li>
             </ul>
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
@@ -109,9 +112,19 @@
 
                     </div>
                     <form method="POST" id="formPublicacion">
+                    <select class="form-select" aria-label="Default select example" name="Comunidad" required>
+                        <option selected>Elige la comunidad para publicar</option>
+                        <?php
+                        while($columComunidad = mysqli_fetch_assoc($ConsultaComunidad)){
+                        ?>
+                        <option value="<?php echo $columComunidad['idcomunidad'];?>"><?php echo $columComunidad['nombre'];?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
                         <div class="publish_textarea">
                             <img class="border-radius-image" src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
-                            <textarea type="text" name="descripcionPubli" placeholder="Que estas haciendo ahora?" style="resize: none;"></textarea>
+                            <textarea type="text" name="descripcionPubli" placeholder="Que estas haciendo ahora?" style="resize: none;" required></textarea>
                         </div>
                         <div id="imgPrevia"></div>
                         <div class="publish_icons">
@@ -158,7 +171,7 @@
                         <ul class="feed_footer_left"></ul>                            
                         <ul class="feed_footer_right">
                             <li >                                
-                                <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 commentarios</li></a>
+                                <a href="feed.php" style="color:#515365;"><li class="hover-orange"><i class="fa fa-comments-o "></i> 74 comentarios</li></a>
                             </li>
                         </ul>
                     </div>

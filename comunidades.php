@@ -1,5 +1,11 @@
 <?php
 	require_once  'funciones/conexion.php';
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if(!isset($usuario)){
+        header("location: login.php");
+    }
 
     $sql = 'SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, 
     usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
