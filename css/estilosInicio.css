@@ -1,27 +1,63 @@
 /* BASIC */
+ /* styling search bar */
+ .navbar_search{
+    width: 15%;  
+     
+ }
 
-.icon-search {
-    position: relative;
-    top: 5px;
-    left: 8px;
-    width: 50%;
-    height: 50%;
-    opacity: 1;
-    border-radius: 50%;
-    border: 3px solid mix($cornflower-blue, white, 35%);
-    transition: opacity 0.25s ease, transform 0.43s $snappy;
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: -9px;
-      right: -2px;
-      width: 4px;
-      border-radius: 3px;
-      transform: rotate(-45deg);
-      height: 10px;
-      background-color: mix($cornflower-blue, white, 35%);
-    }
-  }
+ .search input[type=text]{
+    width:80%;
+    height:25px;
+    border-radius:25px;
+    border: none;
+    color: white;
+    background-color: #363636;
+   
+       
+}
+      
+.search{
+    float:right;
+    margin:7px;
+    
+}
+
+.search button a{
+    color: white;
+
+}
+
+#show-list{
+    position: absolute;
+    top: 40px;  
+    border-radius:5px;
+    width:15%;
+    height:15%;
+    font-size: 80%;
+}
+
+.list-group-item:hover{
+    background-color: white;  
+    color: black;
+}
+
+.list-group-item{
+    padding: 2%;
+    background-color: white;  
+    color: black; 
+}
+
+      
+.search button{
+    background-color: #242526;
+    color: #f2f2f2;
+    float: right;
+    padding: 5px 10px;   
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    
+} 
 
 .fit{
     object-fit:cover;
@@ -211,9 +247,9 @@ body {
 }
 
 .navbar_icons {
-    height: 50px;
+    height: 60px;
     text-align: center;
-    width: 65%;
+    width: 60%;
     display: inline-block;
 }
 

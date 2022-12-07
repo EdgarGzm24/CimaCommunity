@@ -40,7 +40,8 @@
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <!--===============================================================================================-->	
     <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
-    <!--===============================================================================================-->	
+    <!--===============================================================================================-->
+  
     <title>Inicio | CimaCommunity</title>
 </head>
 <body>
@@ -53,10 +54,10 @@
         </div>
         <div class="navbar_search">
             <form method="POST" action="funciones/validaComunidades.php">
-                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." autocomplete="off"/>
-                
-                <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
-                
+                <div class="search">
+                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad..." autocomplete="off"/>                
+                    <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
+                </div>                
             </form>            
             <div id="show-list"></div>
         </div>
