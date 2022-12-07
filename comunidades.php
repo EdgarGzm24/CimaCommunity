@@ -35,7 +35,6 @@
 
 </head>
 <body>
-
     <div class="navbar">
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
@@ -70,8 +69,7 @@
         while($row = mysqli_fetch_assoc($query)){
     ?>
 
-  
-    <div class="all2">
+    <div class="all">
         <div class="rowfixed"></div>
         <div class="left_row border-radius fondo ">
             <div>
@@ -144,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="row2 border-radius">
+            <div class="row border-radius">
                 <div class="feed">
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
@@ -178,8 +176,6 @@
         mysqli_close($conexion);
     ?>
 
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-
     <!-- Menu movil -->
     <div class="mobilemenu">        
             <div id="wrapper">
@@ -208,28 +204,12 @@
                 </div>
             </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
     // Modals
     $(document).ready(function(){
-
-        $("#messagesmodal").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-        $(".modal-comments").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-        $("#friendsmodal").hover(function(){
-            $(".modal-friends").toggle();
-        });
-        $(".modal-friends").hover(function(){
-            $(".modal-friends").toggle();
-        });
-
         $("#profilemodal").hover(function(){
             $(".modal-profile").toggle();
         });
@@ -244,8 +224,7 @@
             $(".mobilemenu").fadeOut();
         });
     });
-    </script>
-    <script>
+
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
@@ -264,7 +243,7 @@
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>ipt src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
 </body>
 </html>

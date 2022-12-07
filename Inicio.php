@@ -50,7 +50,7 @@
         </div>
         <div class="navbar_search">
             <form method="" action="/">
-                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
+                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." autocomplete="off"/>
                 <button type="submit"> <a href="#" class="fa fa-search"></a></button>
             </form>
             <div id="show-list"></div>
