@@ -59,7 +59,7 @@ $(document).ready(function(){
 $('#formRegistro').submit(function(e){
     e.preventDefault();
      let datos = new FormData(this);
-     
+
      $.ajax({
          type: 'POST' ,
          url: 'funciones/validRegistro.php',
@@ -84,6 +84,7 @@ $('#formRegistro').submit(function(e){
   e.preventDefault();
    let datos = new FormData(this);
    
+   
    $.ajax({
        type: 'POST' ,
        url: 'funciones/validPublicacion.php',
@@ -103,10 +104,10 @@ $(document).ready(function () {
       let searchText = $(this).val();
       if (searchText != "") {
       $.ajax({
-          url: "funciones/action.php",
+          url: "funciones/consultaComunidad.php",
           method: "post",
           data: {
-          query: searchText,
+          nombreComunidad: searchText,
           },
           success: function (response) {
           $("#show-list").html(response);

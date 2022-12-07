@@ -18,72 +18,68 @@
     <title>Feed | CimaCommunity</title>
 </head>
 <body>
-    <div class="navbar">
+<div class="navbar">
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
         </div>
         <div class="navbar_logo">
-            <img src="images/logo.png" alt="" />
-        </div>
-        <div class="navbar_page">
-            <span>> FEED</span>
+            <a href="Inicio.php"><img src="images/logo.png" alt="LogoUABC" /></a>
         </div>
         <div class="navbar_search">
-            <form method="" action="/">
-                <input type="text" placeholder="Search people.." />
-                <button><i class="fa fa-search"></i></button>
-            </form>
+            <form method="POST" action="funciones/validaComunidades.php">
+                <div class="search">
+                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Buscar comunidad" autocomplete="off"/>                
+                    <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
+                </div>                
+            </form>            
+            <div id="show-list"></div>
         </div>
         <div class="navbar_icons">
-            <ul>
-                <li id="friendsmodal"><i class="fa fa-user-o"></i><span id="notification">5</span></li>
-                <li id="messagesmodal"><i class="fa fa-comments-o"></i><span id="notification">2</span></li>
-                <a href="" style="color:white"><li><i class="fa fa-globe"></i></li></a>
+            <ul>                
+                <li id="homemodal"><a href="Inicio.php"><i class="fa-solid fa-house"></i></a></li>
+                <li id="marketmodal"><a href="ventasComida.php"><i class="fa-solid fa-shop"></i></a></li>
+                <li id="eventmodal"><a href="publicacionEventos.php"><i class="fa-solid fa-calendar-days"></i></a></li>
+                <li id="opinionsmodal"><a href="publicacionOpinion.php"><i class="fa-solid fa-message"></i></a></li>
             </ul>
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
-            <img src="images/user.jpg" alt="" />
-            <span id="navbar_user_top">Jonh Hamstrong<br><p>User</p></span><i class="fa fa-angle-down"></i>
+            <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+            <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
 
     <div class="all">
-
         <div class="rowfixed"></div>
         <div class="left_row">
             <div class="left_row_profile">
-                <img id="portada" src="images/portada.jpg" />
+                <img id="portada" src="<?php echo $columnaPerfil['foto_portadaUsuario'];?>" />
                 <div class="left_row_profile">
-                    <img id="profile_pic" src="images/user.jpg" />
-                    <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
+                    <img id="profile_pic" src="<?php echo $columnaPerfil['foto_usuario'];?>" />
+                    <span><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>150k seguidores / 50 siguiendo</p></span>
                 </div>
             </div>
+            
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.php"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.php"><i class="fa fa-users"></i>Friends</a></li>
-                    <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
+                    <li><a href="Inicio.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="PerfilConfiguracion.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
-                        <li style="border:none"><a href="#A">Activity</a></li>
-                        <li style="border:none"><a href="#">Friends</a></li>
-                        <li style="border:none"><a href="#">Groups</a></li>
-                        <li style="border:none"><a href="#">Pages</a></li>
-                        <li style="border:none"><a href="#">Saves</a></li>
+                        <li style="border:none"><a href="#A">Actividad</a></li>
+                        <li style="border:none"><a href="#">Amigos</a></li>
+                        <li style="border:none"><a href="#">Comunidades</a></li>
+                        <li style="border:none"><a href="#">Guardados</a></li>
                     </ul>
-                    <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
+                    <li class="primarymenu"><i class="fa fa-user"></i>Accesos directos</li>
                     <ul>
-                        <li style="border:none"><a href="#">Your-Page.php</a></li>
-                        <li style="border:none"><a href="#">Your-Group.php</a></li>
+                        <li style="border:none"><a href="#">Perfil</a></li>
+                        <li style="border:none"><a href="#">Comunidades</a></li>
                     </ul>
                 </ul>
             </div>
         </div>
 
-
-
         <div class="right_row">
-
             <div class="row border-radius">
                 <div class="feed">
                     <div class="feed_title">
@@ -141,37 +137,10 @@
                     </ul>
                 </div>
             </div>
-
-            <center>
-                <a href=""><div class="loadmorefeed">
-                    <i class="fa fa-ellipsis-h"></i>
-                </div></a>
-            </center>
         </div>
 
 
         <div class="suggestions_row">
-            <div class="row shadow">
-                <div class="row_title">
-                    <span>Friend Suggestions</span>
-                    <a href="friends.php">see more..</a>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-7.jpg" alt="" />
-                    <span><b>Francine Smith</b><br>8 Friends in Common</span>
-                    <button>+</button>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-2.jpg" alt="" />
-                    <span><b>Hugh Wilson</b><br>6 Friends in Common</span>
-                    <button>+</button>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-6.jpg" alt="" />
-                    <span><b>Karen Masters</b><br>6 Friends in Common</span>
-                    <button>+</button>
-                </div>
-            </div>
 
             <div class="row shadow">
                 <div class="row_title">
@@ -248,98 +217,26 @@
             </div>
         </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
-
-
-
-    <!-- Modal Messages -->
-    <div class="modal modal-comments">
-        <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
-        <div class="modal-title">
-            <span>CHAT / MESSAGES</span>
-             <a href="messages.php"><i class="fa fa-ellipsis-h"></i></a>
-        </div>
-        <div class="modal-content">
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="images/user-7.jpg" alt="" />
-                        <span><b>Diana Jameson</b><br>Hi James! It’s Diana, I just wanted to let you know that we have to reschedule...<p>4 hours ago</p></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/user-6.jpg" alt="" />
-                        <span><b>Elaine Dreyfuss</b><br>We’ll have to check that at the office and see if the client is on board with...<p>Yesterday at 9:56pm</p></span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/user-3.jpg" alt="" />
-                        <span><b>Jake Parker</b><br>Great, I’ll see you tomorrow!.<p>4 hours ago</p></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Modal Friends -->
-    <div class="modal modal-friends">
-        <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
-        <div class="modal-title">
-            <span>FRIEND REQUESTS</span>
-             <a href="friends.php"><i class="fa fa-ellipsis-h"></i></a>
-        </div>
-        <div class="modal-content">
-            <ul>
-                <li>
-                    <a href="#">
-                        <img src="images/user-2.jpg" alt="" />
-                        <span><b>Tony Stevens</b><br>4 Friends in Common</span>
-                        <button class="modal-content-accept">Accept</button><button class="modal-content-decline">Decline</button>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/user-6.jpg" alt="" />
-                        <span><b>Tamara Romanoff</b><br>2 Friends in Common</span>
-                        <button class="modal-content-accept">Accept</button><button class="modal-content-decline">Decline</button>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/user-4.jpg" alt="" />
-                        <span><b>Nicholas Grissom</b><br>1 Friend in Common</span>
-                        <button class="modal-content-accept">Accept</button><button class="modal-content-decline">Decline</button>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    
     <!-- Modal Profile -->
-    <div class="modal modal-profile">
+    <div class="modalFisico modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
-        <div class="modal-title">
-            <span>YOUR ACCOUNT</span>
+        <div class="modal-titleFisico">
+            <span>TU CUENTA</span>
              <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
-        <div class="modal-content">
+        <div class="modal-contentFisico">
             <ul>
                 <li>
-                    <a href="settings.php">
+                    <a href="PerfilConfiguracion.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
-                        <span><b>Profile Settings</b><br>Yours profile settings</span>
+                        <span><b>Perfil</b></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <span><b>Create a page</b><br>Create your page</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="login.php">
+                    <a href="funciones/logout.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
-                        <span><b>Log Out</b><br>Close your session</span>
+                        <span><b>Cerrar sesión</b></span>
                     </a>
                 </li>
             </ul>

@@ -3,10 +3,17 @@
     session_start();
     $usuario = $_SESSION['usuario'];
 
+	if(isset($_POST['Comunidad'])){
+		$comunidad = $_POST['Comunidad'];
+	}
+
+	if(isset($_POST['idComunidad'])){
+		$comunidad = $_POST['idComunidad'];
+	}
+
     if(isset($_POST['descripcionPubli'])){
 
         $id = 0;
-        $comunidad = $_POST['Comunidad'];
         $descripcion = $_POST['descripcionPubli'];
         $dateOp = date("Y-m-d H:i:s");
 		$imagenPerfil = "";

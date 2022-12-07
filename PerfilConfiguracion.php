@@ -34,21 +34,23 @@
             <i class="fa fa-navicon"></i>
         </div>
         <div class="navbar_logo">
-            <img src="images/logo.png" alt="" />
+            <a href="Inicio.php"><img src="images/logo.png" alt="LogoUABC" /></a>
         </div>
         <div class="navbar_search">
             <form method="POST" action="funciones/validaComunidades.php">
-                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." autocomplete="off"/>
-                <button type="submit"><a href="#" class="fa fa-search"></a></button>
+                <div class="search">
+                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Buscar comunidad" autocomplete="off"/>                
+                    <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
+                </div>                
             </form>            
             <div id="show-list"></div>
         </div>
         <div class="navbar_icons">
             <ul>                
-                <li id="homemodal"><i class="fa-solid fa-house"></i></li>
-                <li id="marketmodal"><i class="fa-solid fa-shop"></i></li>
-                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></li>
-                <li id="opinionsmodal"><i class="fa-solid fa-message"></i></li>
+                <li id="homemodal"><a href="Inicio.php"><i class="fa-solid fa-house"></i></a></li>
+                <li id="marketmodal"><a href="ventasComida.php"><i class="fa-solid fa-shop"></i></a></li>
+                <li id="eventmodal"><a href="publicacionEventos.php"><i class="fa-solid fa-calendar-days"></i></a></li>
+                <li id="opinionsmodal"><a href="publicacionOpinion.php"><i class="fa-solid fa-message"></i></a></li>
             </ul>
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
@@ -81,28 +83,22 @@
     <!-- Modal Profile -->
     <div class="modalFisico modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
-        <div class="modal-title">
-            <span>YOUR ACCOUNT</span>
+        <div class="modal-titleFisico">
+            <span>TU CUENTA</span>
              <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
-        <div class="modal-content">
+        <div class="modal-contentFisico">
             <ul>
                 <li>
-                    <a href="settings.php">
+                    <a href="PerfilConfiguracion.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
-                        <span><b>Profile Settings</b><br>Yours profile settings</span>
+                        <span><b>Perfil</b></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fa fa-star-o" aria-hidden="true"></i>
-                        <span><b>Create a page</b><br>Create your page</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="login.php">
+                    <a href="funciones/logout.php">
                         <i class="fa fa-power-off" aria-hidden="true"></i>
-                        <span><b>Log Out</b><br>Close your session</span>
+                        <span><b>Cerrar sesión</b></span>
                     </a>
                 </li>
             </ul>

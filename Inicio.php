@@ -53,12 +53,12 @@
             <i class="fa fa-navicon"></i>
         </div>
         <div class="navbar_logo">
-            <img src="images/logo.png" alt="" />
+            <a href="Inicio.php"><img src="images/logo.png" alt="LogoUABC" /></a>
         </div>
         <div class="navbar_search">
             <form method="POST" action="funciones/validaComunidades.php">
                 <div class="search">
-                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad..." autocomplete="off"/>                
+                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Buscar comunidad" autocomplete="off"/>                
                     <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
                 </div>                
             </form>            
@@ -66,10 +66,10 @@
         </div>
         <div class="navbar_icons">
             <ul>                
-                <li id="homemodal"><i class="fa-solid fa-house"></i></li>
-                <li id="marketmodal"><i class="fa-solid fa-shop"></i></li>
-                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></li>
-                <li id="opinionsmodal"><i class="fa-solid fa-message"></i></li>
+                <li id="homemodal"><a href="Inicio.php"><i class="fa-solid fa-house"></i></a></li>
+                <li id="marketmodal"><a href="ventasComida.php"><i class="fa-solid fa-shop"></i></a></li>
+                <li id="eventmodal"><a href="publicacionEventos.php"><i class="fa-solid fa-calendar-days"></i></a></li>
+                <li id="opinionsmodal"><a href="publicacionOpinion.php"><i class="fa-solid fa-message"></i></a></li>
             </ul>
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
@@ -91,9 +91,8 @@
             
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="Inicio.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="PerfilConfiguracion.php"><i class="fa fa-user"></i>Perfil</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
                         <li style="border:none"><a href="#A">Actividad</a></li>
@@ -115,7 +114,6 @@
                 <div class="publish">
                     <div class="row_title">
                         <span><i class="fa fa-newspaper-o" aria-hidden="true"></i> Estado</span>
-
                     </div>
                     <form method="POST" id="formPublicacion">
                     <select class="form-select" aria-label="Default select example" name="Comunidad" required>
@@ -299,7 +297,7 @@
         <div class="modal-contentFisico">
             <ul>
                 <li>
-                    <a href="settings.php">
+                    <a href="PerfilConfiguracion.php">
                         <i class="fa fa-tasks" aria-hidden="true"></i>
                         <span><b>Perfil</b></span>
                     </a>

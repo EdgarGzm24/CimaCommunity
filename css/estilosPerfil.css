@@ -204,7 +204,57 @@ body {
         display: inline-block;
     }
 }
-/* BASIC */
+ /* styling search bar */
+ .navbar_search{
+    width: 15%;  
+ }
+
+ .search input[type=text]{
+    width:80%;
+    border-radius:25px;
+    border: none;
+    color: white;
+    background-color: #363636;
+    padding: 3%;     
+}
+.search input[type=text]:hover{
+    background-color: #2f2f2f;
+}
+      
+.search button a{
+    color: white;
+}
+
+#show-list{
+    position: absolute;
+    top: 45px;  
+    border-radius:5px;
+    width:11%;
+    height:15%;
+    font-size: 80%;
+}
+
+.list-group-item:hover{
+    background-color:#2d2d2d;  
+    color: white;
+}
+
+.list-group-item{
+    padding: 3%;
+    background-color: #363636;
+    color: white; 
+}
+
+      
+.search button{
+    background-color: #242526;
+    color: #f2f2f2;
+    padding: 5px 10px;   
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    
+} 
 
 .fit{
     object-fit:cover;
@@ -218,6 +268,10 @@ body {
 
 a {
     text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: white;
 }
 p {
     margin-bottom: 0rem;
@@ -394,9 +448,9 @@ body {
 }
 
 .navbar_icons {
-    height: 50px;
+    height: 45px;
     text-align: center;
-    width: 65%;
+    width: 60%;
     display: inline-block;
 }
 
@@ -415,11 +469,11 @@ body {
 }
 
 .navbar_icons ul li:hover {
-    background-color: #303347;
+    background-color: #363636;
 }
 
 .navbar_user {
-    width: auto;
+    width: 15%;
     display: flex;
     align-items: center;
     margin-right: 2%;
@@ -864,7 +918,7 @@ body {
     padding-right: 20px
 }
 
-.modal-title {
+.modal-titleFisico {
     padding: 7px;
     border-bottom: 1px solid #e6ecf5;
     display: flex;
@@ -875,59 +929,59 @@ body {
     border-radius: 5px 5px 0px 0px;
 }
 
-.modal-title span {
+.modal-titleFisico span {
     width: 90%;
 }
 
-.modal-title a i {
+.modal-titleFisico a i {
     float: right;
     color: #9a9fbf;
 }
 
-.modal-content {
+.modal-contentFisico {
     width: 100%;
     background-color: white;
     border-bottom: 5px solid #45B649;
 }
 
-.modal-content ul li a {
+.modal-contentFisico ul li a {
     display: flex;
     align-items: center;
     padding: 20px;
 }
 
-.modal-content ul li a img {
+.modal-contentFisico ul li a img {
     width: 40px;
     height: 40px;
     border-radius: 100%;
 }
 
-.modal-content ul li a span {
+.modal-contentFisico ul li a span {
     font-size: 10px;
     padding-left: 20px;
     color: #9a9fbf;
     width: 60%
 }
 
-.modal-content i {
+.modal-contentFisico i {
     color: #9a9fbf;
 }
 
-.modal-content ul li a span b {
+.modal-contentFisico ul li a span b {
     font-size: 14px;
     color: #515365;
 }
 
-.modal-content ul li a span p {
+.modal-contentFisico ul li a span p {
     font-size: 9px;
     color: #515365;
 }
 
-.modal-content ul li a:hover {
+.modal-contentFisico ul li a:hover {
     background-color: #EDF2F6;
 }
 
-.modal-content ul li button {
+.modal-contentFisico ul li button {
     padding: 5px 10px;
     border: none;
     color: white;
@@ -938,19 +992,19 @@ body {
     font-weight: 700;
 }
 
-.modal-content-accept:hover {
+.modal-contentFisico-accept:hover {
     background-color: #38A9FF;
 }
 
-.modal-content-decline:hover {
+.modal-contentFisico-decline:hover {
     background-color: #45B649;
 }
 
-.modal-content-accept {
+.modal-contentFisico-accept {
     background-color: #47BCFF;
 }
 
-.modal-content-decline {
+.modal-contentFisico-decline {
     background-color: #e6ecf5;
 }
 

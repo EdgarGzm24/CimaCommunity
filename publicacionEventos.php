@@ -7,6 +7,10 @@
         header("location: login.php");
     }
 
+    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
+    $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
+    $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
+
 	$sql = 'SELECT usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario, eventos.descripcion_evento,
     eventos.fecha_evento,eventos.fecha_publicacion_evento, eventos.foto_evento 
     FROM eventos INNER JOIN usuario ON eventos.usuario_idusuario = usuario.idusuario';
@@ -40,44 +44,47 @@
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
         </div>
-
         <div class="navbar_logo">
-            <img src="images/logo.png" alt="" />
+            <a href="Inicio.php"><img src="images/logo.png" alt="LogoUABC" /></a>
         </div>
-
-        <div class="navbar_page">
-            <span>CimaCommunity</span>
+        <div class="navbar_search">
+            <form method="POST" action="funciones/validaComunidades.php">
+                <div class="search">
+                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Buscar comunidad" autocomplete="off"/>                
+                    <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
+                </div>                
+            </form>            
+            <div id="show-list"></div>
         </div>
-
-        <div class="navbar_icons center">
+        <div class="navbar_icons">
             <ul>                
-                <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
-                <li id="marketmodal"><i class="fa-solid fa-shop"></i><span id="notification">2</span></li>
-                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></i><span id="notification">1</span></li>
-                <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
+                <li id="homemodal"><a href="Inicio.php"><i class="fa-solid fa-house"></i></a></li>
+                <li id="marketmodal"><a href="ventasComida.php"><i class="fa-solid fa-shop"></i></a></li>
+                <li id="eventmodal"><a href="publicacionEventos.php"><i class="fa-solid fa-calendar-days"></i></a></li>
+                <li id="opinionsmodal"><a href="publicacionOpinion.php"><i class="fa-solid fa-message"></i></a></li>
             </ul>
         </div>
-        <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
-            <img src="images/user.jpg" alt="" />
-            <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
+        <div class="navbar_user" id="profilemodal" style="cursor:pointer">
+            <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+            <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
-    </div> 
+    </div>
     
     <div class="all">
         <div class="rowfixed"></div>
         <div class="left_row">
             <div class="left_row_profile">
-                <img id="portada" src="images/portada.jpg" />
+                <img id="portada" src="<?php echo $columnaPerfil['foto_portadaUsuario'];?>" />
                 <div class="left_row_profile">
-                    <img id="profile_pic" src="images/user.jpg" />
-                    <span>Edgar Guzman<br><p>150k seguidores / 50 siguiendo</p></span>
+                    <img id="profile_pic" src="<?php echo $columnaPerfil['foto_usuario'];?>" />
+                    <span><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>150k seguidores / 50 siguiendo</p></span>
                 </div>
             </div>
+            
             <div class="rowmenu">
                 <ul>
-                    <li><a href="index.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
-                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
-                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="Inicio.php" id="rowmenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="PerfilConfiguracion.php"><i class="fa fa-user"></i>Perfil</a></li>
                     <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul>
                         <li style="border:none"><a href="#A">Actividad</a></li>
@@ -188,12 +195,33 @@
 
         </div>
     </div>
-       
-    </div>
 
+    <!-- Modal Profile -->
+    <div class="modalFisico modal-profile">
+        <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+        <div class="modal-titleFisico">
+            <span>TU CUENTA</span>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
+        </div>
+        <div class="modal-contentFisico">
+            <ul>
+                <li>
+                    <a href="PerfilConfiguracion.php">
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                        <span><b>Perfil</b></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="funciones/logout.php">
+                        <i class="fa fa-power-off" aria-hidden="true"></i>
+                        <span><b>Cerrar sesión</b></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
         
     <!-- Scripts -->
-    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -216,22 +244,6 @@
 
     <script>
     $(document).ready(function(){
-        // Modals
-        $("#messagesmodal").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-        $(".modal-comments").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-        $("#friendsmodal").hover(function(){
-            $(".modal-friends").toggle();
-        });
-        $(".modal-friends").hover(function(){
-            $(".modal-friends").toggle();
-        });
-
         $("#profilemodal").hover(function(){
             $(".modal-profile").toggle();
         });
@@ -247,27 +259,11 @@
         });
     });
     </script>
-    <script>
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("myBtn").style.display = "block";
-            } else {
-                document.getElementById("myBtn").style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
     <script src="js/funcionesAjax.js"></script>
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>ript src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
 </body>
 </html>

@@ -1,3 +1,16 @@
+<?php
+	require_once  'funciones/conexion.php';
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if(!isset($usuario)){
+        header("location: login.php");
+    }
+
+    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
+    $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
+    $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,29 +36,29 @@
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
         </div>
-
         <div class="navbar_logo">
-            <img src="images/logo.png" alt="" />
+            <a href="Inicio.php"><img src="images/logo.png" alt="LogoUABC" /></a>
         </div>
-        
         <div class="navbar_search">
-            <form method="" action="/">
-                <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." />
-                <button type="submit"> <a href="busqueda.php" class="fa fa-search"></a></button>
-            </form>
+            <form method="POST" action="funciones/validaComunidades.php">
+                <div class="search">
+                    <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Buscar comunidad" autocomplete="off"/>                
+                    <button type="submit"> <a href="#" class="fa fa-search icon-search"></a></button>
+                </div>                
+            </form>            
+            <div id="show-list"></div>
         </div>
-
-        <div class="navbar_icons center">
+        <div class="navbar_icons">
             <ul>                
-                <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
-                <li id="marketmodal"><i class="fa-solid fa-shop"></i><span id="notification">2</span></li>
-                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></i><span id="notification">1</span></li>
-                <li id="opinionsmodal"><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
+                <li id="homemodal"><a href="Inicio.php"><i class="fa-solid fa-house"></i></a></li>
+                <li id="marketmodal"><a href="ventasComida.php"><i class="fa-solid fa-shop"></i></a></li>
+                <li id="eventmodal"><a href="publicacionEventos.php"><i class="fa-solid fa-calendar-days"></i></a></li>
+                <li id="opinionsmodal"><a href="publicacionOpinion.php"><i class="fa-solid fa-message"></i></a></li>
             </ul>
         </div>
-        <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
-            <img src="images/user.jpg" alt="" />
-            <span  id="navbar_user_top">Edgar Guzman<br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
+        <div class="navbar_user" id="profilemodal" style="cursor:pointer">
+            <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
+            <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
     </div>
 
@@ -79,7 +92,7 @@
         </div>
     </div> 
 
-    <div class="right_row3">
+    <div class="right_row">
         <div class="row">
                 <div class="publish">
                     <div class="row_title">
@@ -177,9 +190,53 @@
                 </div>
             </div>
         </div>
+    <!-- Modal Profile -->
+    <div class="modalFisico modal-profile">
+        <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
+        <div class="modal-titleFisico">
+            <span>TU CUENTA</span>
+             <a href="settings.php"><i class="fa fa-cogs"></i></a>
+        </div>
+        <div class="modal-contentFisico">
+            <ul>
+                <li>
+                    <a href="PerfilConfiguracion.php">
+                        <i class="fa fa-tasks" aria-hidden="true"></i>
+                        <span><b>Perfil</b></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="funciones/logout.php">
+                        <i class="fa fa-power-off" aria-hidden="true"></i>
+                        <span><b>Cerrar sesión</b></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
-
+	<script src="js/jquery-3.6.1.js"></script>
+	<!--===============================================================================================-->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<!--===============================================================================================-->
+	<script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
+	<!--===============================================================================================-->
+    <script>
+    // Modals
+    $(document).ready(function(){
+        $("#profilemodal").hover(function(){
+            $(".modal-profile").toggle();
+        });
+        $(".modal-profile").hover(function(){
+            $(".modal-profile").toggle();
+        });
+        $("#navicon").click(function(){
+            $(".mobilemenu").fadeIn();
+        });
+        $(".all").click(function(){
+            $(".mobilemenu").fadeOut();
+        });
+    });
+    </script>
 </body>
 </html>
