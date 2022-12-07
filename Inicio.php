@@ -240,30 +240,6 @@
                     <img src="images/user-2.png" alt="" />
                     <span>Noberto agregó 20 fotos en <a href="" class="selected-orange">Comunidad UABC</a>..</span>
                 </div>
-                <div class="row_contain">
-                    <img src="images/user-6.jpg" alt="" />
-                    <span>Aylin Regalado publicó un estado en <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user.jpg" alt="" />
-                    <span>Edgar comentó en una publicacion de Aylin en <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-4.jpg" alt="" />
-                    <span> Julian ha ingreso a la plaforma, saludalo desde <a href="" class="selected-orange">Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-5.jpg" alt="" />
-                    <span>Josue commentó en una publicacion de Noberto en <a href="" class="selected-orange"> Comunidad UABC</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-2.jpg" alt="" />
-                    <span>Kevin le gustó la publicación de Ana Uzi en <a href="" class="selected-orange">foto</a>..</span>
-                </div>
-                <div class="row_contain">
-                    <img src="images/user-7.png" alt="" />
-                    <span>Jeniffer le gustó el video de Edgar <a href="" class="selected-orange">video</a>..</span>
-                </div>
             </div>
         </div>
     </div>
