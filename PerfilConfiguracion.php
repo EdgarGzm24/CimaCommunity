@@ -7,7 +7,7 @@
         header("location: login.php");
     }
 
-    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
+    $selectPerfil = "SELECT nombre, apellido_p, apellido_m, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
     $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
     $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
 ?>
@@ -19,14 +19,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->	
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
-    <!--===============================================================================================-->		
-    <link rel="stylesheet" type="text/css" href="css/estilosPerfil.css">
-    <!--===============================================================================================-->	
+    <!--===============================================================================================-->			
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--===============================================================================================-->		
-    <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/estilosPerfil.css">
     <!--===============================================================================================-->
     <title>Configuracion Perfil | CimaCommunity</title>
 </head>
@@ -72,7 +70,7 @@
                     </a>
                 </div>
                 <div class="datos-perfil">
-                    <h4 class="titulo-usuario">Nombre de usuario</h4>             
+                    <h4 class="titulo-usuario"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p']." ".$columnaPerfil['apellido_m'];?></h4>             
                 </div>
                 <div class="opcciones-perfil">
                     <button type="">Cambiar portada</button>             
@@ -86,7 +84,7 @@
 
 
     <!-- Modal Profile -->
-    <div class="modal modal-profile">
+    <div class="modalFisico modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>YOUR ACCOUNT</span>
