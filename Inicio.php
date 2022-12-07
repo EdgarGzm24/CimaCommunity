@@ -25,7 +25,7 @@
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <!--===============================================================================================->	
+    <!--===============================================================================================-->	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">	
     <!--===============================================================================================-->	
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -55,7 +55,7 @@
             </form>
             <div id="show-list"></div>
         </div>
-        <div class="navbar_icons center">
+        <div class="navbar_icons">
             <ul>                
                 <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
                 <li id="marketmodal"><i class="fa-solid fa-shop"></i><span id="notification">2</span></li>
@@ -63,7 +63,7 @@
                 <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
             </ul>
         </div>
-        <div class="navbar_user right" id="profilemodal" style="cursor:pointer">
+        <div class="navbar_user" id="profilemodal" style="cursor:pointer">
             <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="" />
             <span  id="navbar_user_top"><?php echo $columnaPerfil['nombre']." ".$columnaPerfil['apellido_p'];?><br><p>Alumno</p></span><i class="fa fa-angle-down"></i>
         </div>
@@ -138,11 +138,14 @@
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
                         <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
-                        
-                        <div class="dropdown">
-                            <button class="btn btn-secondary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-ellipsis-v"></i>
+                        <div class="dropdown-center">
+                            <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v"></i>
                             </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Editar</a></li>
+                                <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                            </ul>
                         </div>
                     </div>
                     <div class="feed_content">
@@ -385,5 +388,7 @@
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>        
     <!--===============================================================================================-->
     <script src="js/funcionesAjax.js"></script>
+    <!--===============================================================================================-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
