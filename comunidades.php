@@ -235,6 +235,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
+    <script src="js/funcionesAjax.js"></script>
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->

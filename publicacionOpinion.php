@@ -12,15 +12,12 @@
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
     FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
-	//$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); **
 ?>                                      
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
-    <!--===============================================================================================-->	
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"  type="text/css" />
     <!--===============================================================================================-->	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!--===============================================================================================-->	
@@ -312,8 +309,6 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!--===============================================================================================-->
 	<script src="js/jquery-3.6.1.js"></script>
 	<!--===============================================================================================-->
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -328,33 +323,12 @@
     <script>
     // Modals
     $(document).ready(function(){
-
-
-        $("#messagesmodal").hover(function(){
-            $(".modal-comments").toggle();
-        });
-        $(".modal-comments").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-
-
-        $("#friendsmodal").hover(function(){
-            $(".modal-friends").toggle();
-        });
-        $(".modal-friends").hover(function(){
-            $(".modal-friends").toggle();
-        });
-
-
         $("#profilemodal").hover(function(){
             $(".modal-profile").toggle();
         });
         $(".modal-profile").hover(function(){
             $(".modal-profile").toggle();
         });
-
-
         $("#navicon").click(function(){
             $(".mobilemenu").fadeIn();
         });
@@ -362,22 +336,6 @@
             $(".mobilemenu").fadeOut();
         });
     });
-    </script>
-    <script>
-        window.onscroll = function() {scrollFunction()};
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("myBtn").style.display = "block";
-            } else {
-                document.getElementById("myBtn").style.display = "none";
-            }
-        }
-
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
     </script>
 </body>
 </html>

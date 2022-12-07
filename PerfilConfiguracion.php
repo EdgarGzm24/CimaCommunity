@@ -41,7 +41,7 @@
         <div class="navbar_search">
             <form method="POST" action="funciones/validaComunidades.php">
                 <input type="text" name="buscarComunidad" id="buscarComunidad" placeholder="Busca tu comunidad.." autocomplete="off"/>
-                <button type="submit"> <a href="#" class="fa fa-search"></a></button>
+                <button type="submit"><a href="#" class="fa fa-search"></a></button>
             </form>            
             <div id="show-list"></div>
         </div>
@@ -187,6 +187,7 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
+    
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
