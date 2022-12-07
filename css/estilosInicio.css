@@ -1,5 +1,28 @@
 /* BASIC */
 
+.icon-search {
+    position: relative;
+    top: 5px;
+    left: 8px;
+    width: 50%;
+    height: 50%;
+    opacity: 1;
+    border-radius: 50%;
+    border: 3px solid mix($cornflower-blue, white, 35%);
+    transition: opacity 0.25s ease, transform 0.43s $snappy;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      right: -2px;
+      width: 4px;
+      border-radius: 3px;
+      transform: rotate(-45deg);
+      height: 10px;
+      background-color: mix($cornflower-blue, white, 35%);
+    }
+  }
+
 .fit{
     object-fit:cover;
     width: 20px;
