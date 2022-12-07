@@ -1,7 +1,13 @@
 
 <?php
 	require_once  'funciones/conexion.php';
-	
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if(!isset($usuario)){
+        header("location: login.php");
+    }
+
 	$sql = 'SELECT opiniones.idopiniones, opiniones.descripcion_opinion, opiniones.titulo, opiniones.calificacion, 
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
     FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';

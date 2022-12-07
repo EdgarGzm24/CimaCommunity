@@ -1,6 +1,12 @@
 <?php
 	require_once  'funciones/conexion.php';
-	
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if(!isset($usuario)){
+        header("location: login.php");
+    }
+
 	$sql = 'SELECT usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario, eventos.descripcion_evento,
     eventos.fecha_evento,eventos.fecha_publicacion_evento, eventos.foto_evento 
     FROM eventos INNER JOIN usuario ON eventos.usuario_idusuario = usuario.idusuario';

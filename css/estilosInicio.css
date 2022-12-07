@@ -211,14 +211,6 @@ body {
     background-color: #303347;
 }
 
-#notification {
-    font-size: 10px;
-    color: #fff;
-    background-color: #7C5AC2;
-    padding: 0.6px 5px;
-    border-radius: 100px
-}
-
 .navbar_user {
     width: auto;
     display: flex;
