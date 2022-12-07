@@ -77,31 +77,20 @@
 
     <div class="all">
         <div class="rowfixed"></div>
-        <div class="left_row border-radius fondo ">
-            <div>
-                <!-- Sidebar -->
-                <div id="sidebar">
-                    <div class="inner">
-                        <!-- Search Box -->
-                        <section id="search" class="alt">
-                            <form method="get" action="#">
-                            <input type="text" name="search" id="search" placeholder="Buscar..." />
-                            </form>
-                        </section>
-                            
-                        <!-- Menu -->
-                        <div id="menu">
-                            <ul>
-                                <p class="titulo">descripción <p><br>
-                                <p class="descripcion">
-                                <?php echo $row['descripcion_comunidad']?>
-                                </p> 
-                                <br>                                   
-                            </ul>
-                        </div>  
-                    </div>   
-                </div>
+        <div class="left_row border-radius ">
+            <!-- Sidebar -->
+            <div id="sidebar">                 
+                <div id="menu">
+                    <ul>
+                        <p class="titulo">descripción <p><br>
+                        <p class="descripcion">
+                        <?php echo $row['descripcion_comunidad']?>
+                        </p> 
+                        <br>                                   
+                    </ul>
+                </div>                       
             </div>
+          
         </div>
 
 
