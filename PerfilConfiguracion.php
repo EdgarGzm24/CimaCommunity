@@ -29,7 +29,6 @@
     <title>Configuracion Perfil | CimaCommunity</title>
 </head>
 <body>
-
     <div class="navbar">
         <div class="navbar_menuicon" id="navicon">
             <i class="fa fa-navicon"></i>
@@ -59,6 +58,10 @@
     </div>
 
     <div class="all">
+        <div class="">
+
+        </div>
+
     </div>
    
 
