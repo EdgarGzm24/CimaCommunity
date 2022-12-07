@@ -1,3 +1,16 @@
+<?php
+	require_once  'funciones/conexion.php';
+    session_start();
+    $usuario = $_SESSION['usuario'];
+
+    if(!isset($usuario)){
+        header("location: login.php");
+    }
+
+    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
+    $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
+    $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +27,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--===============================================================================================-->	
+    <!--===============================================================================================-->		
+    <link rel="stylesheet" type="text/css" href="css/estilosInicio.css">
+    <!--===============================================================================================-->
     <title>Configuracion Perfil | CimaCommunity</title>
 </head>
 <body>
@@ -34,10 +49,10 @@
         </div>
         <div class="navbar_icons">
             <ul>                
-                <li id="homemodal"><i class="fa-solid fa-house"></i><span id="notification">5</span></li>
-                <li id="marketmodal"><i class="fa-solid fa-shop"></i><span id="notification">2</span></li>
-                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></i><span id="notification">1</span></li>
-                <li id="opinionsmodal" ><i class="fa-solid fa-message"></i><span id="notification">4</span></li>
+                <li id="homemodal"><i class="fa-solid fa-house"></i></li>
+                <li id="marketmodal"><i class="fa-solid fa-shop"></i></li>
+                <li id="eventmodal"><i class="fa-solid fa-calendar-days"></i></li>
+                <li id="opinionsmodal"><i class="fa-solid fa-message"></i></li>
             </ul>
         </div>
         <div class="navbar_user" id="profilemodal" style="cursor:pointer">
@@ -86,77 +101,55 @@
         </div>
     </div>
     
-    <!-- NavMobile -->
+    <!-- Menu movil -->
     <div class="mobilemenu">
-        
         <div class="mobilemenu_profile">
             <img id="mobilemenu_portada" src="images/portada.jpg" />
             <div class="mobilemenu_profile">
                 <img id="mobilemenu_profile_pic" src="images/user.jpg" /><br>
-                <span>Jonh Hamstrong<br><p>150k followers / 50 follow</p></span>
+                <span>Edgar Guzman<br><p>150k seguidores / 50 seguidos</p></span>
             </div>
             <div class="mobilemenu_menu">
                 <ul>
-                    <li><a href="index.php"><i class="fa fa-globe"></i>Newsfeed</a></li>
-                    <li><a href="profile.php"><i class="fa fa-user"></i>Profile</a></li>
-                    <li><a href="friends.php"><i class="fa fa-users"></i>Friends</a></li>
-                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>messages</a></li>
-                    <li class="primarymenu"><i class="fa fa-compass"></i>Explore</li>
+                    <li><a href="index.php" id="mobilemenu-selected"><i class="fa fa-globe"></i>Feed</a></li>
+                    <li><a href="profile.php"><i class="fa fa-user"></i>Perfil</a></li>
+                    <li><a href="friends.php"><i class="fa fa-users"></i>Amigos</a></li>
+                    <li><a href="messages.php"><i class="fa fa-comments-o"></i>Comunidades</a></li>
+                    <li class="primarymenu"><i class="fa fa-compass"></i>Explora</li>
                     <ul class="mobilemenu_child">
-                        <li style="border:none"><a href="#"><i class="fa fa-globe"></i>Activity</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Friends</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Groups</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Pages</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Saves</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Amigos</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Comunidades</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Eventos</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-file"></i>Guardados</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-globe"></i>Actividades</a></li>
                     </ul>
-                    <li class="primarymenu"><i class="fa fa-user"></i>Rapid Access</li>
+                    <li class="primarymenu"><i class="fa fa-user"></i>Accesos rapidos</li>
                     <ul class="mobilemenu_child">
-                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Page.php</a></li>
-                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Your-Group.php</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Comunidades</a></li>
+                        <li style="border:none"><a href="#"><i class="fa fa-star-o"></i>Eventos</a></li>
                     </ul>
                 </ul>
                     <hr>
                 <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">FAQ's</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="login.php">Logout</a></li>
+                    <li><a href="#">Terminos & condiciones</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="funciones/logout.php">Cerrar tu sesión</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.6.1.js"></script>
     <script>
     // Modals
     $(document).ready(function(){
-
-
-        $("#messagesmodal").hover(function(){
-            $(".modal-comments").toggle();
-        });
-        $(".modal-comments").hover(function(){
-            $(".modal-comments").toggle();
-        });
-
-
-
-        $("#friendsmodal").hover(function(){
-            $(".modal-friends").toggle();
-        });
-        $(".modal-friends").hover(function(){
-            $(".modal-friends").toggle();
-        });
-
-
         $("#profilemodal").hover(function(){
             $(".modal-profile").toggle();
         });
         $(".modal-profile").hover(function(){
             $(".modal-profile").toggle();
         });
-
-
         $("#navicon").click(function(){
             $(".mobilemenu").fadeIn();
         });
@@ -164,8 +157,6 @@
             $(".mobilemenu").fadeOut();
         });
     });
-    </script>
-    <script>
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
