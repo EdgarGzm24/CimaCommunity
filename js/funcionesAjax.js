@@ -96,3 +96,29 @@ $('#formRegistro').submit(function(e){
       }
    })
 });
+
+$(document).ready(function () {
+  // Send Search Text to the server
+  $("#buscarComunidad").keyup(function () {
+      let searchText = $(this).val();
+      if (searchText != "") {
+      $.ajax({
+          url: "funciones/action.php",
+          method: "post",
+          data: {
+          query: searchText,
+          },
+          success: function (response) {
+          $("#show-list").html(response);
+          },
+      });
+      } else {
+      $("#show-list").html("");
+      }
+  });
+  // Set searched text in input field on click of search button
+  $(document).on("click", "a", function () {
+      $("#buscarComunidad").val($(this).text());
+      $("#show-list").html("");
+  });
+  });

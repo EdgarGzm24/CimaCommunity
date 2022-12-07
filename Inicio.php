@@ -325,40 +325,6 @@
     <script src="js/jquery-3.6.1.js"></script>
     <!--===============================================================================================-->
     <script type="text/javascript">
-    $(document).ready(function () {
-    // Send Search Text to the server
-    $("#buscarComunidad").keyup(function () {
-        let searchText = $(this).val();
-        if (searchText != "") {
-        $.ajax({
-            url: "funciones/action.php",
-            method: "post",
-            data: {
-            query: searchText,
-            },
-            success: function (response) {
-            $("#show-list").html(response);
-            },
-        });
-        } else {
-        $("#show-list").html("");
-        }
-    });
-    // Set searched text in input field on click of search button
-    $(document).on("click", "a", function () {
-        $("#buscarComunidad").val($(this).text());
-        $("#show-list").html("");
-    });
-    });
-
-    $(document).ready(function() {
-    var tableContextMenu = new ContextMenu("context-menu-items", menuItemClickListener);
-    });
-
-    function menuItemClickListener(menu_item, parent) {
-    alert("Menu Item Clicked: " + menu_item.text() + "\nRecord ID: " + parent.attr("data-row-id"));
-    }
-
     // Modals
     $(document).ready(function(){
         $("#profilemodal").hover(function(){
