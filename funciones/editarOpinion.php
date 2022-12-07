@@ -1,10 +1,10 @@
 <?php
    require_once  'conexion.php';
-    $titu = $_POST[''];
-    $des = $_POST[''];
-    $cal = $_POST[''];
+    $idopi =  $_POST['id'];
+    $titu = $_POST['titulo'];
+    $des = $_POST['des'];   
 
-    $sql = "UPDATE FROM opiniones SET  titulo = '$titu', descripcion_opinion ='$des', calificacion = '$cal' WHERE idopiniones = '$publi'";
+    $sql = "UPDATE opiniones SET  titulo = '$titu', descripcion_opinion ='$des' WHERE idopiniones = '$idopi'";
     $query = mysqli_query($conexion,$sql);
     if($query){
         Header("Location: ../publicacionOpinion.php");

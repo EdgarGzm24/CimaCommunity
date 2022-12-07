@@ -14,8 +14,7 @@
 <head>
     <meta charset="utf-8">
     <!--===============================================================================================-->	
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"  type="text/css" />
-    <!--===============================================================================================-->	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">	  	
     <!--===============================================================================================-->	
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->	
@@ -28,9 +27,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--===============================================================================================-->	
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"  type="text/css" />
-    <!--===============================================================================================-->	
-    
-       <!--===============================================================================================-->
+    <!--===============================================================================================-->    
+ 
     <title>Opiniones | CimaCommunity</title>
     
     <style>        
@@ -156,9 +154,10 @@
                                     <div class="menu">
                                         <div>
                                         <ul>
-                                            
-                                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="link">Editar</a></li>
+                                            <li><a href="funciones/popOpinion.php" data-bs-toggle="modal" data-bs-target="#exampleModal<?php echo $row['idopiniones']?>" class="link">Editar</a></li>
                                             <li><a href="funciones/eliminarOpinion.php?id=<?php echo $row['idopiniones']?>" class="link">Eliminar</a></li>                                        
+                                            <?php include('funciones/popOpinion.php');?>
+
                                         </ul>
                                         </div>
                                     </div>
@@ -237,32 +236,6 @@
     </div>
     <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 
-    <!---------- Modal Update ---------->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-			<div class="modal-content">			
-				<form id="formRegistro" method="POST" enctype="multipart/form-data">
-					<div class="modal-body">
-						<div class="mb-3 row">						
-							<div class="col-sm-3">
-								<input type="text" class="inputDiseno" id="inputApellidoP" name="inputApellidoP" required>
-							<div id="textoAyuda1" class="form-text">Apellido Paterno</div>
-							</div>
-							<div class="col-sm-3">
-								<input type="text" class="inputDiseno" id="inputApellidoM" name="inputApellidoM" required>
-							<div id="textoAyuda2" class="form-text">Apellido Materno</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="submit" class="btn-modal"><i class="fa-solid fa-right-to-bracket"></i>publicar</button>
-					</div>
-				</form>
-			</div>
-		</div>
-
-    </div>
-    <!---------- Fin del Modal ---------->
 
     <!-- Modal Profile -->
     <div class="modal modal-profile">
