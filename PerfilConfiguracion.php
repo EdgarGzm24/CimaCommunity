@@ -62,10 +62,10 @@
     
     <section class="perfil-usuario">
         <div class="contenedor-perfil">
-            <div class="portada-perfil" style="background-image: url('http://localhost/multimedia/relleno/fondo-9.png');">
+            <div class="portada-perfil" style="background-image: url('<?php echo $columnaPerfil['foto_portadaUsuario'];?>');">
                 <div class="sombra"></div>
                 <div class="avatar-perfil">
-                    <img src="http://localhost/multimedia/relleno/img-c9.png" alt="img">
+                    <img src="<?php echo $columnaPerfil['foto_usuario'];?>" alt="img">
                     <a href="#" class="cambiar-foto">
                         <i class="fas fa-camera"></i> 
                         <span>Cambiar foto</span>
