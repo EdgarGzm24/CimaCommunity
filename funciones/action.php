@@ -9,7 +9,7 @@
 
     if ($columnaComu) {
       foreach ($columnaComu as $row) {
-        echo '<a href="#" class="list-group-item list-group-item-action border-1">' . $row[0] . '</a>';
+        echo '<a href="comunidades.php" class="list-group-item list-group-item-action border-1">' . $row[0] . '</a>';
       }
     } else {
       echo '<p class="list-group-item border-1">No Record</p>';

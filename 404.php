@@ -1,5 +1,4 @@
 <?php
-
     require_once  'funciones/conexion.php';
     session_start();
     $usuario = $_SESSION['usuario'];
@@ -8,7 +7,7 @@
         header("location: login.php");
     }
 
-    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE login_idLogin = '$usuario'";
+    $selectPerfil = "SELECT nombre, apellido_p, foto_usuario, foto_portadaUsuario FROM usuario WHERE idusuario = '$usuario'";
     $ConsultaPerfil = mysqli_query($conexion, $selectPerfil);
     $columnaPerfil = mysqli_fetch_array($ConsultaPerfil);
 
