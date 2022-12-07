@@ -12,7 +12,6 @@
     opiniones.fecha_creacion_op, usuario.nombre, usuario.apellido_p, usuario.apellido_m, usuario.foto_usuario 
     FROM opiniones INNER JOIN usuario ON opiniones.usuario_idusuario = usuario.idusuario';
 	$query = mysqli_query($conexion, $sql);
-	//$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); **
 ?>                                      
 
 <!DOCTYPE html>

@@ -14,7 +14,7 @@
     $selectComunidad = "SELECT idcomunidad, nombre FROM comunidades";
     $ConsultaComunidad = mysqli_query($conexion, $selectComunidad);
 
-	$SelectPublicaciones = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
+	$SelectPublicaciones = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad, usuario.idusuario, usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones 
     INNER JOIN publicaciones
           ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
@@ -151,6 +151,9 @@
                     <div class="feed_title">
                         <img src="<?php echo $row['foto_usuario']?>" alt="" />
                         <span><b><?php echo $row['nombre']." ".$row['apellido_p']." ".$row['apellido_m']?></b> compartio una <a href="feed.php">foto</a><br><p><?php echo $row['fecha_creacion']?></p><p>Comunidad: <?php echo $row['nombreCom']?></p></span>
+                        <?php
+                        if($usuario == $row['idusuario']){
+                        ?>
                         <div class="dropdown-center">
                             <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-ellipsis-v"></i>
@@ -160,6 +163,9 @@
                                 <li><a class="dropdown-item" href="#">Eliminar</a></li>
                             </ul>
                         </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                     <div class="feed_content">
                         <div class="feed_content_image">
@@ -259,7 +265,7 @@
     </div>
 
     <!-- Modal Profile -->
-    <div class="modal modal-profile">
+    <div class="modalFisico modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
         <div class="modal-title">
             <span>TU CUENTA</span>
