@@ -1,6 +1,6 @@
 <?php
 	require_once  'funciones/conexion.php';
-	
+
 	$sql = "SELECT * FROM campus";
 	$query = mysqli_query($conexion, $sql);
 	$filas = mysqli_fetch_all($query, MYSQLI_ASSOC); 
