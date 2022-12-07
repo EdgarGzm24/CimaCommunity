@@ -121,4 +121,43 @@ $(document).ready(function () {
       $("#buscarComunidad").val($(this).text());
       $("#show-list").html("");
   });
-  });
+});
+
+function AlertaEliminacion(id) {
+    
+  Swal.fire({
+      title: 'Estas seguro que deseas eliminar esta publicacion?',
+      text: 'La publicacion sera eliminada permanentemente',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      confirmButtonText: 'Eliminar',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      background: '#2B2B2B' 
+  }).then((result) => {
+        if(result.value) {
+          eliminarDatos(id);
+        }
+  })
+}
+
+function eliminarDatos(id_Publicacion) {
+
+      $.ajax({
+          type: 'POST' ,
+          url: 'funciones/eliminarDatos.php' ,
+          dataType: 'html',
+          data: {id_Publicacion: id_Publicacion},
+          beforeSend: function(){},
+          success: function(){
+              Swal.fire({
+                  icon: 'success',
+                  title: 'La publicacion ha sido eliminada exitosamente!',
+                  showConfirmButton: false,
+                  timer: 2000,
+                  background: '#2B2B2B' 
+              })
+          }
+      });
+}

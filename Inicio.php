@@ -14,7 +14,10 @@
     $selectComunidad = "SELECT idcomunidad, nombre FROM comunidades";
     $ConsultaComunidad = mysqli_query($conexion, $selectComunidad);
 
-	$SelectPublicaciones = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad, usuario.idusuario, usuario.foto_usuario, usuario.nombre, usuario.apellido_p, usuario.apellido_m, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion, publicaciones.foto_publicacion 
+	$SelectPublicaciones = "SELECT comunidades.nombre AS nombreCom, comunidades.descripcion_comunidad,
+    usuario.idusuario, usuario.foto_usuario, usuario.nombre, usuario.apellido_p,
+    usuario.apellido_m, publicaciones.idPublicaciones, publicaciones.descripcion_publicacion, publicaciones.fecha_creacion,
+    publicaciones.foto_publicacion 
     FROM (comunidades_has_publicaciones 
     INNER JOIN publicaciones
           ON comunidades_has_publicaciones.publicaciones_idPublicaciones = publicaciones.idPublicaciones 
@@ -159,8 +162,8 @@
                             <i class="fas fa-ellipsis-v"></i>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Editar</a></li>
-                                <li><a class="dropdown-item" href="#">Eliminar</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="AlertaEliminacion(<?php echo $row['idPublicaciones']; ?>)">Eliminar</a></li>
                             </ul>
                         </div>
                         <?php
@@ -264,14 +267,33 @@
         </div>
     </div>
 
+    <!-- Modal Edit -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Profile -->
     <div class="modalFisico modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
-        <div class="modal-title">
+        <div class="modal-titleFisico">
             <span>TU CUENTA</span>
              <a href="settings.php"><i class="fa fa-cogs"></i></a>
         </div>
-        <div class="modal-content">
+        <div class="modal-contentFisico">
             <ul>
                 <li>
                     <a href="settings.php">
@@ -365,6 +387,7 @@
         readImage(this);
     });
     </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->

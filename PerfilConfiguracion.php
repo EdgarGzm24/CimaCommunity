@@ -78,11 +78,6 @@
             </div>      
         </div>
     </section>
-
-    
-   
-
-
     <!-- Modal Profile -->
     <div class="modalFisico modal-profile">
         <div class="modal-icon-select"><i class="fa fa-sort-asc" aria-hidden="true"></i></div>
@@ -186,7 +181,7 @@
         }
     </script>
     
-9<!--===============================================================================================-->
+    <!--===============================================================================================-->
     <script src="https://kit.fontawesome.com/f75ca2de84.js" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

@@ -46,7 +46,6 @@
                 mysqli_stmt_bind_param($sentencia, "ii", $comunidad, $idPubli);
                 mysqli_stmt_execute($sentencia);
             }
-    
 		}
     }
 ?>

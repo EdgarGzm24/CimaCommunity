@@ -844,6 +844,7 @@ body {
 .modalFisico {
     position: fixed;
     top: 43px;
+    z-index: 3;
 }
 
 .modal-profile {
